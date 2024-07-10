@@ -1,4 +1,5 @@
 <?php
     function ListTaiKhoan(){
-        require_once "views/taikhoan/list.php";
+        $listUsers=getAllTaikhoan();
+        require PATH_VIEW_ADMIN."taikhoan/list.php";
     }

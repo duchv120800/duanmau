@@ -25,19 +25,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php $stt=0; foreach ($listUsers as $user):  $stt++;?>
                                             <tr class="align-middle">
-                                                <td>3.</td>
-                                                <td>dd</td>
-                                                <td>dd</td>
-                                                <td>dd</td>
-                                                <td>dd</td>
-                                                <td>dd</td>
+                                                <td><?=$stt ?></td>
+                                                <td><?=$user['ten']?></td>
+                                                <td><?=$user['email'] ?></td>
+                                                <td><?=$user['sodienthoai'] ?></td>
+                                                <td><?php if($user['gioitinh']==1){ echo 'Nam';}else echo 'Nữ'; ?></td>
+                                                <td><?=$user['diachi'] ?></td>
                                                 <td>
                                                     <a href="" class="badge text-bg-success">Chi tiết</a>
                                                     <a href="" class="badge text-bg-primary">Sửa</a>
                                                     <a href="" class="badge text-bg-danger">Xóa</a>
                                                 </td>
                                             </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div> <!-- /.card-body -->
