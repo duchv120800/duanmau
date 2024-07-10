@@ -9,7 +9,12 @@
                         <div class="col-md-12">
                             <div class="card mb-4">
                                 <div class="card-header">
-                                    <h3 class="card-title">Danh sách tài khoản</h3>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="card-title">Danh sách tài khoản</span>
+                                            <a href="<?= BASE_URL_ADMIN.'?act=addtk'?>" class="btn btn-success">Thêm mới</a>
+                                        </div>
+                                    </div>
                                 </div> <!-- /.card-header -->
                                 <div class="card-body">
                                     <table class="table table-bordered">
@@ -28,7 +33,7 @@
                                             <?php $stt=0; foreach ($listUsers as $user):  $stt++;?>
                                             <tr class="align-middle">
                                                 <td><?=$stt ?></td>
-                                                <td><?=$user['ten']?></td>
+                                                <td><?=$user['tendangnhap']?></td>
                                                 <td><?=$user['email'] ?></td>
                                                 <td><?=$user['sodienthoai'] ?></td>
                                                 <td><?php if($user['gioitinh']==1){ echo 'Nam';}else echo 'Nữ'; ?></td>

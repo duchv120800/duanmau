@@ -1,7 +1,7 @@
 <?php
     function DashboardIndex(){
-        require_once "./main.php";
-    }
-    function Table(){
-        require_once "views/table.php";
+        $title= 'Dashboard';
+        $main_title= 'Dashboard';
+        $view = 'dashboard';
+        require_once PATH_VIEW_ADMIN."master.php";
     }

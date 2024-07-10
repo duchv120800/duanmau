@@ -15,4 +15,10 @@
             echo "</pre>";
         }
     }
+
+    if(!function_exists('e404')){
+        function e404(){
+           echo 'Page not found';
+        }
+    }
 ?>
