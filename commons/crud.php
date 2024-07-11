@@ -57,7 +57,7 @@
     if(!function_exists('getAll')){
         function getAll($tableName){
            try {
-            $sql="SELECT * FROM $tableName";
+            $sql="SELECT * FROM $tableName ORDER BY $tableName.id DESC";
 
             $stmt = $GLOBALS['conn']->prepare($sql);
 

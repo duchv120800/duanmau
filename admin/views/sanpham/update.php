@@ -3,54 +3,55 @@
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
                 <div class="card-header">
-                    <div class="card-title">Cập nhật tài khoản</div>
+                    <div class="card-title">
+                        <h3>Cập nhật sản phẩm</h3>
+                    </div>
                 </div> <!--end::Header--> <!--begin::Form-->
-                <form class="needs-validation" action="" method="POST" novalidate> <!--begin::Body-->
+                <form class="needs-validation" action="" method="POST" enctype="multipart/form-data" novalidate> <!--begin::Body-->
                     <div class="card-body"> <!--begin::Row-->
                         <div class="row g-3"> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Tên đăng nhập</label>
-                                <input type="text" name="tendangnhap" value="<?= $user['tendangnhap']?>" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Tên sản phẩm</label>
+                                <input type="text" value="<?= $sanpham['ten'] ?> " name="ten" placeholder="Nhập Tên sản phẩm" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Mật khẩu</label>
-                                <input type="password" name="matkhau" value="<?= $user['matkhau']?>" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Hình ảnh</label>
+                                <input type="file" name="hinhanh" placeholder="Chọn hình ảnh" class=" form-control" id="validationCustom01">
+                                <img src="<?= BASE_URL . 'uploads/' . $sanpham['hinhanh']?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị">
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Email</label>
-                                <input type="email" name="email" value="<?= $user['email']?>" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Giá</label>
+                                <input type="number" value="<?= $sanpham['gia']?>" name="gia" placeholder="Nhập giá" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Số điện thoại</label>
-                                <input type="text" name="sodienthoai" value="<?= $user['sodienthoai']?>" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Giá khuyến mại</label>
+                                <input type="number" value="<?= $sanpham['giakhuyenmai']?>" name="giakhuyenmai" placeholder="Nhập Giá khuyến mại" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Họ tên</label>
-                                <input type="text" name="hoten" value="<?= $user['hoten']?>" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Lượt xem</label>
+                                <input type="number" value="<?= $sanpham['luotxem']?>" name="luotxem" placeholder="Nhập lượt xem" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Địa chỉ</label>
-                                <input type="text" name="diachi" value="<?= $user['diachi']?>" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
-                            </div> <!--end::Col--> <!--begin::Col-->
-                            <div class="col-md-6">
-                                <label for="validationCustom04" class="form-label">Giới tính</label>
-                                <select class="form-select" name="gioitinh" id="validationCustom04" required>
-                                    <option value="1" <?= $user['gioitinh'] ? 'selected' : '';?>>Nam</option>
-                                    <option value="0" <?= $user['gioitinh'] ? '' : 'selected';?>>Nữ</option>
+                                <label for="validationCustom04" class="form-label">Danh mục</label>
+                                <select class="form-select" name="id_danhmuc" id="validationCustom04" required>
+                                    <?php foreach ($listDanhmuc as $danhmuc) : ?>
+                                        <option value="<?= $danhmuc['id'] ?>" <?=($sanpham['id_danhmuc'] === $danhmuc['id']) ? 'selected' : '';?>>
+                                            <?= $danhmuc['ten'] ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select a valid state.
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Vai trò</label>
-                                <input type="text" value="Khách hàng" class="form-control" id="validationCustom01" disabled>
+                                <label for="validationCustom01" class="form-label">Mô tả</label>
+                                <textarea name="mota" class="form-control" id="validationCustom01"><?=$sanpham['mota']?></textarea>
                                 <div class="invalid-feedback">
                                     Please select a valid state.
                                 </div>
@@ -58,7 +59,7 @@
                         </div> <!--end::Row-->
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
-                        <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>
+                        <a href="<?= BASE_URL_ADMIN . '?act=ds_sp' ?>" class="btn btn-info">Danh sách sản phẩm</a>
                         <input class="btn btn-success" type="submit" name="update" value="Cập nhật">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->

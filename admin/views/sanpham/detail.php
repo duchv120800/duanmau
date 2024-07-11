@@ -7,7 +7,7 @@
                     <th>Tên cột</th>
                     <th>Trường dữ liệu</th>
                 </tr>
-                <?php foreach ($user as $fieldName => $value) : ?>
+                <?php foreach ($sanpham as $fieldName => $value) : ?>
                     <tr>
                         <td><?= ucfirst($fieldName) ?></td>
                         <td>
@@ -17,10 +17,9 @@
                                     echo "*********";
                                     break;
 
-                                case 'vaitro':
-                                    echo $value ?
-                                        '<span class="badge text-bg-info">Quản trị</span>' :
-                                        '<span class="badge text-bg-warning">Khách Hàng</span>';
+                                case 'hinhanh':
+                                    echo '<img src="'.BASE_URL.'uploads/'.$sanpham['hinhanh'].
+                                    '" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị">';
                                     break;
                                     case 'gioitinh':
                                         echo $value ? 'Nam' : 'Nữ';
@@ -35,7 +34,7 @@
                 <?php endforeach ?>
 
             </table>
-            <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>
+            <a href="<?= BASE_URL_ADMIN . '?act=ds_sp' ?>" class="btn btn-info">Danh sách sản phẩm</a>
         </div> <!--end::Container-->
     </div> <!--end::App Content-->
 </main> <!--end::App Main--> <!--begin::Footer-->

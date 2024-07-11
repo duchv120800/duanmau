@@ -7,7 +7,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <h3 class="col">
-                                    Danh sách tài khoản
+                                    Danh sách sản phẩm
                                     <a href="<?= BASE_URL_ADMIN . '?act=add_sp' ?>" class="btn btn-success">Thêm mới</a>
                                 </h3>
                             </div>
@@ -18,10 +18,11 @@
                                     <tr>
                                         <th style="width: 10px">Stt</th>
                                         <th>Tên</th>
-                                        <th>Email</th>
-                                        <th>Số điện thoại</th>
-                                        <th>Địa chỉ</th>
-                                        <th>Vai trò</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Giá</th>
+                                        <th>Giá khuyến mại</th>
+                                        <th>Lượt xem</th>
+                                        <th>Danh mục</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
@@ -30,14 +31,14 @@
                                     foreach ($listSanpham as $sanpham) :  $stt++; ?>
                                         <tr class="align-middle">
                                             <td><?= $stt ?></td>
-                                            <td><?= $sanpham['tendangnhap'] ?></td>
-                                            <td><?= $sanpham['email'] ?></td>
-                                            <td><?= $sanpham['sodienthoai'] ?></td>
-                                            <td><?= $sanpham['diachi'] ?></td>
+                                            <td><?= $sanpham['ten'] ?></td>
                                             <td>
-                                                <?= $sanpham['vaitro'] ? '<span class="badge text-bg-info">Quản trị</span>'
-                                                    : '<span class="badge text-bg-warning">Khách Hàng</span>' ?>
+                                                <img src="<?= BASE_URL.'uploads/'.$sanpham['hinhanh'] ?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị ảnh">
                                             </td>
+                                            <td><?= $sanpham['gia'] ?></td>
+                                            <td><?= $sanpham['giakhuyenmai'] ?></td>
+                                            <td><?= $sanpham['luotxem'] ?></td>
+                                            <td><?= $sanpham['ten_danhmuc'] ?></td>
                                             <td>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=detail_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-success">Chi tiết</a>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=update_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-primary">Sửa</a>
