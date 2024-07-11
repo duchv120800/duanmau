@@ -3,6 +3,7 @@
     include '../commons/global.php';
     include '../commons/connect.php';
     include '../commons/crud.php';
+    include '../commons/count.php';
     //require tất cả file trong controllers và models
     require_file(PATH_CONTROLLER_ADMIN);
     require_file(PATH_MODEL_ADMIN);

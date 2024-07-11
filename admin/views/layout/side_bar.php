@@ -8,22 +8,28 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2"> <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                <li class="nav-item menu-open"> <a href="<?= BASE_URL_ADMIN ?>" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
-                        <p>
-                            TRANG CHỦ
-                            <!-- <i class="nav-arrow bi bi-chevron-right"></i> -->
-                        </p>
-                    </a>
+                <li class="nav-item menu-open">
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"> <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN ?>" class="nav-link <?= ($view == 'dashboard') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-speedometer"></i>
+                                <p>TRANG CHỦ</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="nav-link <?=($view == 'taikhoan/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
                                 <p>TÀI KHOẢN</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="<?= BASE_URL_ADMIN . '?act=ds_dm' ?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dm'?>" class="nav-link <?= ($view == 'danhmuc/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
                                 <p>DANH MỤC</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="<?= BASE_URL_ADMIN . '?act=ds_sp' ?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_sp'?>" class="nav-link <?= ($view == 'sanpham/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
                                 <p>SẢN PHẨM</p>
-                            </a> </li>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
