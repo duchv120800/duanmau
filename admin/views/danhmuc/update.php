@@ -3,21 +3,21 @@
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
                 <div class="card-header">
-                    <div class="card-title"><h3>Thêm mới danh mục</h3></div>
+                    <div class="card-title"><h3>Cập nhật danh mục</h3></div>
                 </div> <!--end::Header--> <!--begin::Form-->
                 <form class="needs-validation" action="" method="POST" novalidate> <!--begin::Body-->
                     <div class="card-body"> <!--begin::Row-->
                         <div class="row g-3"> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tên danh mục</label>
-                                <input type="text" name="ten" placeholder="Nhập tên danh mục" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="ten" value="<?= $danhmuc['ten']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                         </div> <!--end::Row-->
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
                         <a href="<?= BASE_URL_ADMIN . '?act=ds_dm' ?>" class="btn btn-info">Danh sách danh mục</a>
-                        <input class="btn btn-success" type="submit" name="themmoi" value="Thêm mới">
+                        <input class="btn btn-success" type="submit" name="update" value="Cập nhật">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->
                 <script>
