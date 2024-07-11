@@ -1,10 +1,16 @@
 <?php
     function ListTaiKhoan(){
+        $view='taikhoan/list';
+        $title='Tài Khoản';
+        $main_title='Tài khoản';
         $listUsers=getAllTaikhoan();
-        require PATH_VIEW_ADMIN."taikhoan/list.php";
+        require PATH_VIEW_ADMIN."master.php";
     }
 
     function AddTaiKhoan(){
-        require PATH_VIEW_ADMIN."taikhoan/add.php"; 
+        $view='taikhoan/add';
+        $title='Tài Khoản';
+        $main_title='Tài khoản';
+        require PATH_VIEW_ADMIN."master.php"; 
     }
 ?>

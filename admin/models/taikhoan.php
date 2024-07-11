@@ -1,7 +1,10 @@
 <?php
     function getAllTaikhoan(){
-        $sql="SELECT * FROM taikhoan";
-        $listUsers=pdo_query($sql);
+        $listUsers=getAll('taikhoan');
         return $listUsers;
     }
+
+    // function addTaikhoan(){
+    //     insert('taikhoan',$data);
+    // }
 ?>
