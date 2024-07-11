@@ -10,13 +10,13 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=dstk'?>" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
+                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=ds_tk'?>" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
                                         <p>TÀI KHOẢN</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=dsdm'?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=ds_dm'?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                         <p>DANH MỤC</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=dssp'?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
+                                <li class="nav-item"> <a href="<?=BASE_URL_ADMIN.'?act=ds_sp'?>" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
                                         <p>SẢN PHẨM</p>
                                     </a> </li>
                             </ul>

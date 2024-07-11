@@ -6,12 +6,10 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col">
-                                    <span class="card-title">Danh sách tài khoản</span>
-                                    <span>
-                                        <a href="<?= BASE_URL_ADMIN . '?act=addtk' ?>" class="btn btn-success">Thêm mới</a>
-                                    </span>
-                                </div>
+                                <h3 class="col">
+                                    Danh sách tài khoản
+                                    <a href="<?= BASE_URL_ADMIN . '?act=add_tk' ?>" class="btn btn-success">Thêm mới</a>
+                                </h3>
                             </div>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
@@ -22,8 +20,8 @@
                                         <th>Tên</th>
                                         <th>Email</th>
                                         <th>Số điện thoại</th>
-                                        <th>Giới tính</th>
                                         <th>Địa chỉ</th>
+                                        <th>Vai trò</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
@@ -35,14 +33,17 @@
                                             <td><?= $user['tendangnhap'] ?></td>
                                             <td><?= $user['email'] ?></td>
                                             <td><?= $user['sodienthoai'] ?></td>
-                                            <td><?php if ($user['gioitinh'] == 1) {
-                                                    echo 'Nam';
-                                                } else echo 'Nữ'; ?></td>
                                             <td><?= $user['diachi'] ?></td>
                                             <td>
-                                                <a href="" class="badge text-bg-success">Chi tiết</a>
-                                                <a href="" class="badge text-bg-primary">Sửa</a>
-                                                <a href="" class="badge text-bg-danger">Xóa</a>
+                                                <?= $user['vaitro'] ? '<span class="badge text-bg-info">Quản trị</span>'
+                                                    : '<span class="badge text-bg-warning">Khách Hàng</span>' ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_tk&id=' . $user['id'] ?>" class="btn text-bg-success">Chi tiết</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=update_tk&id=' . $user['id'] ?>" class="btn text-bg-primary">Sửa</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=delete_tk&id=' . $user['id'] ?>" class="btn text-bg-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
+                                                    Xóa
+                                                </a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

@@ -10,8 +10,11 @@
     $act=$_GET["act"] ?? '/';
     match($act){
         '/'=> DashboardIndex(),
-        'dstk'=>ListTaiKhoan(),
-        'addtk'=>AddTaiKhoan(),
+        'ds_tk'=>ListTaiKhoan(),
+        'detail_tk'=>DetailTaikhoan($_GET['id']),
+        'add_tk'=>AddTaiKhoan(),
+        'update_tk'=>UpdateTaiKhoan($_GET['id']),
+        'delete_tk'=>DeleteTaiKhoan($_GET['id']),
         // 'dsdm'=>ListDanhMuc(),
         // 'dssp'=>ListSanPham(),
     };

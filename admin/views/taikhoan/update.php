@@ -3,46 +3,46 @@
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
                 <div class="card-header">
-                    <div class="card-title">Thêm mới tài khoản</div>
+                    <div class="card-title">Cập nhật tài khoản</div>
                 </div> <!--end::Header--> <!--begin::Form-->
                 <form class="needs-validation" action="" method="POST" novalidate> <!--begin::Body-->
                     <div class="card-body"> <!--begin::Row-->
                         <div class="row g-3"> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tên đăng nhập</label>
-                                <input type="text" name="tendangnhap" placeholder="Nhập tên đăng nhập" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="tendangnhap" value="<?= $user['tendangnhap']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mật khẩu</label>
-                                <input type="password" name="matkhau" placeholder="Nhập mật khẩu" class="form-control" id="validationCustom01" required>
+                                <input type="password" name="matkhau" value="<?= $user['matkhau']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Email</label>
-                                <input type="email" name="email" placeholder="Nhập email" class="form-control" id="validationCustom01" required>
+                                <input type="email" name="email" value="<?= $user['email']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Số điện thoại</label>
-                                <input type="text" name="sodienthoai" placeholder="Nhập số điện thoại" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="sodienthoai" value="<?= $user['sodienthoai']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Họ tên</label>
-                                <input type="text" name="hoten" placeholder="Nhập họ tên" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="hoten" value="<?= $user['hoten']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Địa chỉ</label>
-                                <input type="text" name="diachi" placeholder="Nhập địa chỉ" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="diachi" value="<?= $user['diachi']?>" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Giới tính</label>
                                 <select class="form-select" name="gioitinh" id="validationCustom04" required>
-                                    <option value="1" selected>Nam</option>
-                                    <option value="0">Nữ</option>
+                                    <option value="1" <?= $user['gioitinh'] ? 'selected' : '';?>>Nam</option>
+                                    <option value="0" <?= $user['gioitinh'] ? '' : 'selected';?>>Nữ</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select a valid state.
@@ -59,7 +59,7 @@
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
                         <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>
-                        <input class="btn btn-success" type="submit" name="themmoi" value="Thêm mới">
+                        <input class="btn btn-success" type="submit" name="update" value="Cập nhật">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->
                 <script>

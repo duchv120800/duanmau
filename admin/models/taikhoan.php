@@ -4,7 +4,8 @@
         return $listUsers;
     }
 
-    // function addTaikhoan(){
+    // function insertTaikhoan(){
+        
     //     insert('taikhoan',$data);
     // }
 ?>
