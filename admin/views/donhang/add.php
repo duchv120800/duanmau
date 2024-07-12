@@ -14,27 +14,74 @@
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Tên người đặt</label>
-                                <input type="text" name="tennguoidat" placeholder="Nhập tên người đặt hàng" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Địa chỉ nhận hàng</label>
+                                <input type="text" name="diachinhanhang" placeholder="Nhập Địa chỉ nhận hàng" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Số điện thoại</label>
-                                <input type="text" name="sdt" placeholder="Nhập số điện thoại" class="form-control" id="validationCustom01" required>
+                                <label for="validationCustom01" class="form-label">Tên người nhận hàng</label>
+                                <input type="text" name="tennguoinhan" placeholder="Nhập tên người nhận hàng" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div> <!--end::Col--> <!--begin::Col-->
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Số điện thoại người nhận</label>
+                                <input type="number" name="sodienthoainguoinhan" placeholder="Nhập số điện thoại" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div> <!--end::Col--> <!--begin::Col-->
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Email người nhận</label>
+                                <input type="email" name="emailnguoinhan" placeholder="Nhập Email người nhận" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div> <!--end::Col--> <!--begin::Col-->
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
+                                <input type="text" name="ngaydathang" placeholder="Nhập theo fomat yyyy/mm/dd" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div> <!--end::Col--> <!--begin::Col-->
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Ghi chú</label>
+                                <input type="text" name="ghichu" placeholder="Nhập Ghi chú" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tổng tiền</label>
-                                <input type="text" name="gia" placeholder="Nhập tổng số tiền" class="form-control" id="validationCustom01" required>
+                                <input type="number" name="tongtien" placeholder="Nhập tổng số tiền" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Looks good!</div>
                             </div> <!--end::Col--> <!--begin::Col-->
-                            <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Trạng thái</label>
-                                <input type="text" name="trangthai" placeholder="Nhập trạng thái đơn hàng" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
-                            </div> <!--end::Col--> <!--begin::Col-->
-                            
                         </div> <!--end::Row-->
+                        <div class="col-md-6">
+                                <label for="validationCustom04" class="form-label">Tài khoản</label>
+                                <select class="form-select" name="id_taikhoan" id="validationCustom04" required>
+                                    <?php foreach ($listTaikhoan as $taikhoan) : ?>
+                                        <option value="<?= $taikhoan['id'] ?>"><?= $taikhoan['tendangnhap'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom04" class="form-label">Sản phẩm</label>
+                                <select class="form-select" name="id_sanpham" id="validationCustom04" required>
+                                    <?php foreach ($listSanpham as $sanpham) : ?>
+                                        <option value="<?= $sanpham['id'] ?>"><?= $sanpham['ten'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom04" class="form-label">Trạng thái</label>
+                                <select class="form-select" name="id_trangthai" id="validationCustom04" required>
+                                    <?php foreach ($listTrangthai as $trangthai) : ?>
+                                        <option value="<?= $trangthai['id'] ?>"><?= $trangthai['tentrangthai'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid state.
+                                </div>
+                            </div>
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
                         <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>

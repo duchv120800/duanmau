@@ -11,7 +11,7 @@
         $view='donhang/detail';
         $title='Xem chi tiết';
         $main_title='Đơn hàng';
-        $donhang=getOne('Donhang', $id);
+        $donhang=getOneDonhang($id);
         if(empty($donhang)){
             e404();
         }
@@ -22,13 +22,22 @@
         $view='donhang/add';
         $title='Thêm mới';
         $main_title='Thêm Đơn hàng';
+        $listSanpham=getAll('sanpham');
+        $listTaikhoan=getAll('taikhoan');
+        $listTrangthai=getAll('trangthaidonhang');
         if(!empty($_POST['themmoi'])){
             $data=[
-                "madonhang" => $_POST['madonhang'],
-                "tennguoidat" => $_POST['tennguoidat'],
-                "sdt" => $_POST['sdt'],
-                "gia" => $_POST['gia'],
-                "trangthai" => $_POST['trangthai'],
+                'madonhang' => $_POST['madonhang'],
+                'diachinhanhang' => $_POST['diachinhanhang'],
+                'tennguoinhan' => $_POST['tennguoinhan'],
+                'sodienthoainguoinhan' => $_POST['sodienthoainguoinhan'],
+                'emailnguoinhan' => $_POST['emailnguoinhan'],
+                'ngaydathang' => $_POST['ngaydathang'],
+                'ghichu' => $_POST['ghichu'],
+                'tongtien' => $_POST['tongtien'],
+                'id_taikhoan' => $_POST['id_taikhoan'],
+                'id_sanpham' => $_POST['id_sanpham'],
+                'id_trangthai' => $_POST['id_trangthai'],
             
             ];
             
@@ -43,15 +52,24 @@
         $view='donhang/update';
         $title='Cập nhật';
         $main_title='Cập nhật Đơn hang';
-        $sanpham=getOne('donhang',$id);
+        $listSanpham=getAll('sanpham');
+        $listTaikhoan=getAll('taikhoan');
+        $listTrangthai=getAll('trangthaidonhang');
+        $donhang=getOne('donhang',$id);
         if(!empty($_POST['update'])){
             $data=[
-                "madonhang" => $_POST['madonhang'],
-                "tennguoidat" => $_POST['tennguoidat'],
-                "sdt" => $_POST['sdt'],
-                "gia" => $_POST['gia'],
-                "trangthai" => $_POST['trangthai'],
-                
+                'madonhang' => $_POST['madonhang'],
+                'diachinhanhang' => $_POST['diachinhanhang'],
+                'tennguoinhan' => $_POST['tennguoinhan'],
+                'sodienthoainguoinhan' => $_POST['sodienthoainguoinhan'],
+                'emailnguoinhan' => $_POST['emailnguoinhan'],
+                'ngaydathang' => $_POST['ngaydathang'],
+                'ghichu' => $_POST['ghichu'],
+                'tongtien' => $_POST['tongtien'],
+                'id_taikhoan' => $_POST['id_taikhoan'],
+                'id_sanpham' => $_POST['id_sanpham'],
+                'id_trangthai' => $_POST['id_trangthai'],
+            
             ];
             
             update('donhang',$id,$data); 

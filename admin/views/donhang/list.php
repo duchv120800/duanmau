@@ -8,7 +8,7 @@
                             <div class="row">
                                 <h3 class="col">
                                     Danh sách đơn hàng
-                                    <a href="<?= BASE_URL_ADMIN . '?act=add_dm' ?>" class="btn btn-success">Thêm mới</a>
+                                    <a href="<?= BASE_URL_ADMIN . '?act=add_dh' ?>" class="btn btn-success">Thêm mới</a>
                                 </h3>
                             </div>
                         </div> <!-- /.card-header -->
@@ -19,7 +19,8 @@
                                         <th style="width: 10px">Stt</th>
                                         <th>Mã đơn hàng</th>
                                         <th>Tên người đặt</th>
-                                        <th>Số điện thoại</th>
+                                        <th>Tên người nhận</th>
+                                        <th>Số điện thoại nhận hàng</th>
                                         <th>Tổng tiền</th>
                                         <th>Trạng thái</th>
 
@@ -31,10 +32,11 @@
                                         <tr class="align-middle">
                                             <td><?= $stt ?></td>
                                             <td><?= $donhang['madonhang'] ?></td>
-                                            <td><?= $donhang['tennguoidat'] ?></td>
-                                            <td><?= $donhang['sdt'] ?></td>
-                                            <td><?= $donhang['gia'] ?></td>
-                                            <td><?= $donhang['trangthai'] ?></td>
+                                            <td><?= $donhang['tentaikhoan'] ?></td>
+                                            <td><?= $donhang['tennguoinhan'] ?></td>
+                                            <td><?= $donhang['sodienthoainguoinhan'] ?></td>
+                                            <td><?= $donhang['tongtien'] ?></td>
+                                            <td><?= $donhang['tentrangthai'] ?></td>
 
                                             <td>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=detail_dh&id=' . $donhang['id'] ?>" class="btn text-bg-success">Chi tiết</a>
