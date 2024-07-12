@@ -1,0 +1,38 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 28 Jun 2024 15:22:08 at https://template.hasthemes.com/rideo/rideo/shop.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://template.hasthemes.com/rideo/rideo/shop.html -O1 "C:\fpt\DAH" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:22:36	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/apple-touch-icon.png (from https://template.hasthemes.com/rideo/rideo/shop.html)
+15:23:11	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/login (from https://template.hasthemes.com/rideo/rideo/shop.html)
+15:23:26	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/apple-touch-icon.png (from https://template.hasthemes.com/rideo/rideo/shortcode/alerts.html)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/form.html (from https://template.hasthemes.com/rideo/rideo/shortcode/blog.html)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/product-details.html (from https://template.hasthemes.com/rideo/rideo/shortcode/blog.html)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/single-blog.html (from https://template.hasthemes.com/rideo/rideo/shortcode/blog.html)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/fonts/Pe-icon-7-stroke.eot?d7yf1v (from https://template.hasthemes.com/rideo/rideo/css/pe-icon-7-stroke.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/fonts/Pe-icon-7-stroke.eot? (from https://template.hasthemes.com/rideo/rideo/css/pe-icon-7-stroke.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/fonts/Pe-icon-7-stroke.ttf?d7yf1v (from https://template.hasthemes.com/rideo/rideo/css/pe-icon-7-stroke.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/fonts/Pe-icon-7-stroke.svg?d7yf1v (from https://template.hasthemes.com/rideo/rideo/css/pe-icon-7-stroke.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_inset-hard_100_fcfdfd_1x100.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_glass_85_dfeffc_1x400.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_glass_75_d0e5f5_1x400.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_inset-hard_100_f5f8f9_1x100.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-bg_glass_95_fef1ec_1x400.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_469bdd_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_d8e7f3_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_6da8d5_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_217bc0_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_f9bd01_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_2e83ff_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:27	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/css/images/ui-icons_cd0a0a_256x240.png (from https://template.hasthemes.com/rideo/rideo/css/jquery-ui.min.css)
+15:23:32	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/fonts/Pe-icon-7-stroke.eot?d7yf1v (from https://template.hasthemes.com/rideo/rideo/shortcode/css/pe-icon-7-stroke.min.css)
+15:23:32	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/fonts/Pe-icon-7-stroke.eot? (from https://template.hasthemes.com/rideo/rideo/shortcode/css/pe-icon-7-stroke.min.css)
+15:23:32	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/fonts/Pe-icon-7-stroke.ttf?d7yf1v (from https://template.hasthemes.com/rideo/rideo/shortcode/css/pe-icon-7-stroke.min.css)
+15:23:32	Error: 	"Not Found" (404) at link https://template.hasthemes.com/rideo/rideo/shortcode/fonts/Pe-icon-7-stroke.svg?d7yf1v (from https://template.hasthemes.com/rideo/rideo/shortcode/css/pe-icon-7-stroke.min.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 24 seconds : 196 links scanned, 168 files written (6525233 bytes overall) [4380152 bytes received at 52144 bytes/sec], 3336580 bytes transferred using HTTP compression in 93 files, ratio 30%, 39.2 requests per connection
+(27 errors, 0 warnings, 0 messages)

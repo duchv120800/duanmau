@@ -30,6 +30,11 @@
                                 <p>SẢN PHẨM</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dh'?>" class="nav-link <?= ($view == 'donhang/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
+                                <p>ĐƠN HÀNG</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

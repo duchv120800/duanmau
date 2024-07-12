@@ -1,4 +1,9 @@
 <?php require_once PATH_VIEW_ADMIN.'layout/header.php';?>
+<?php 
+    if($view=='login/login'){
+        require PATH_VIEW_ADMIN.$view.'.php';
+    }else{
+?>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
     <div class="app-wrapper"> <!--begin::Header-->
         <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
@@ -23,3 +28,6 @@
 </body><!--end::Body-->
 
 </html>
+<?php
+    }
+?>

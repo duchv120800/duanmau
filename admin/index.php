@@ -7,9 +7,16 @@
     //require tất cả file trong controllers và models
     require_file(PATH_CONTROLLER_ADMIN);
     require_file(PATH_MODEL_ADMIN);
+
+    if(!isset($_SESSION['tendangnhap'])){
+        $act='login';
+    }else{
+        $act=$_GET["act"] ?? '/';
+    }
    
-    $act=$_GET["act"] ?? '/';
     match($act){
+        'login'=> DirLogin(),
+        'logout'=> Logout(),
         '/'=> DashboardIndex(),
         // start crud taikhoan
         'ds_tk'=>ListTaiKhoan(),
@@ -31,5 +38,12 @@
         'update_sp'=>UpdateSanPham($_GET['id']),
         'delete_sp'=>DeleteSanPham($_GET['id']),
         // end san pham
+        // start crud don hang
+        'ds_dh'=>ListDonhang(),
+        'detail_dh'=>DetailDonhang($_GET['id']),
+        'add_dh'=>AddDonhang(),
+        'update_dh'=>UpdateDonhang($_GET['id']),
+        'delete_dh'=>DeleteDonhang($_GET['id']),
+        // end don hang
     };
 ?>
