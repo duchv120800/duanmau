@@ -3,7 +3,7 @@
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
                 <div class="card-header">
-                    <div class="card-title">Thêm mới đơn hàng</div>
+                    <div class="card-title"><h3>Thêm mới đơn hàng</h3></div>
                 </div> <!--end::Header--> <!--begin::Form-->
                 <form class="needs-validation" action="" method="POST" novalidate> <!--begin::Body-->
                     <div class="card-body"> <!--begin::Row-->

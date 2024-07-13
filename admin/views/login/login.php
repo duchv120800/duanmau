@@ -22,10 +22,14 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Đăng nhập để bắt đầu</p>
                 <form action="" method="post">
-                    <div class="input-group mb-3"> <input type="text" name="tendangnhap" class="form-control" placeholder="Nhập tên đăng nhập">
-                        <div class="input-group-text"> <span class="bi bi-envelope"></span> </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="tendangnhap" class="form-control" placeholder="Nhập tên đăng nhập">
+                        <div class="input-group-text">
+                            <span class="bi bi-envelope"></span>
+                        </div>
                     </div>
-                    <div class="input-group mb-3"> <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu">
+                    <div class="input-group mb-3">
+                        <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu">
                         <div class="input-group-text"> <span class="bi bi-lock-fill"></span> </div>
                     </div> <!--begin::Row-->
                     <div class="row">
@@ -33,7 +37,7 @@
                             <!-- <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">
                                     Remember Me
                                 </label> </div> -->
-                        </div> 
+                        </div>
                         <div class="col-6">
                             <div class="d-grid gap-2"> <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button> </div>
                         </div> <!-- /.col -->

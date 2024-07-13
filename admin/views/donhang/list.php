@@ -13,7 +13,7 @@
                             </div>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" style="text-align:center">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">Stt</th>
@@ -23,13 +23,13 @@
                                         <th>Số điện thoại nhận hàng</th>
                                         <th>Tổng tiền</th>
                                         <th>Trạng thái</th>
-
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $stt = 0;
                                     foreach ($listDonhang as $donhang) :  $stt++; ?>
-                                        <tr class="align-middle">
+                                        <tr class="align-middle" style="text-align:center">
                                             <td><?= $stt ?></td>
                                             <td><?= $donhang['madonhang'] ?></td>
                                             <td><?= $donhang['tentaikhoan'] ?></td>
