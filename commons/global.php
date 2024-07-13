@@ -21,4 +21,10 @@
            echo 'Page not found';
         }
     }
+
+    if(!function_exists('notification')){
+        function notification($noti){
+           echo $noti;
+        }
+    }
 ?>

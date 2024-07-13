@@ -10,4 +10,5 @@
 
     define( 'BASE_URL','http://localhost/du_an1/');
     define( 'BASE_URL_ADMIN','http://localhost/du_an1/admin/');
+
 ?>
