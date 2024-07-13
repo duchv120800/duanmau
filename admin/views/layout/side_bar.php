@@ -11,27 +11,27 @@
                 <li class="nav-item menu-open">
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= BASE_URL_ADMIN ?>" class="nav-link <?= ($view == 'dashboard') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-speedometer"></i>
+                            <a href="<?= BASE_URL_ADMIN ?>" class="nav-link <?= ($view == 'dashboard') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-house-door-fill"></i>
                                 <p>TRANG CHỦ</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="nav-link <?=($view == 'taikhoan/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
+                            <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="nav-link <?=($view == 'taikhoan/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-person-lines-fill"></i>
                                 <p>TÀI KHOẢN</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dm'?>" class="nav-link <?= ($view == 'danhmuc/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dm'?>" class="nav-link <?= ($view == 'danhmuc/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-stack"></i>
                                 <p>DANH MỤC</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASE_URL_ADMIN .'?act=ds_sp'?>" class="nav-link <?= ($view == 'sanpham/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_sp'?>" class="nav-link <?= ($view == 'sanpham/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-collection-fill"></i>
                                 <p>SẢN PHẨM</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dh'?>" class="nav-link <?= ($view == 'donhang/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-circle"></i>
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_dh'?>" class="nav-link <?= ($view == 'donhang/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-bag-check-fill"></i>
                                 <p>ĐƠN HÀNG</p>
                             </a>
                         </li>

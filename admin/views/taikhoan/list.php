@@ -1,6 +1,16 @@
 <main class="app-main"> <!--begin::App Content Header-->
     <div class="app-content-header"> <!--begin::Container-->
         <div class="container-fluid"> <!--begin::Row-->
+        <div id="alert" class="alert <?php if($alert){echo ' alert-success';}else{echo ' alert-danger';}?>" <?php if(isset($notification) && ($notification != "")){echo "";}else{echo "hidden";}?>>
+            <?php 
+                if(isset($notification) && ($notification != "")) {
+                    echo $notification;
+            ?>
+            <script>hidden_notification();</script>
+            <?php
+                }
+            ?>
+        </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-4">

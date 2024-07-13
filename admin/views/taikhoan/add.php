@@ -1,9 +1,6 @@
 <main class="app-main"> <!--begin::App Content Header-->
     <div class="app-content-header"> <!--begin::Container-->
         <div class="container-fluid"> <!--begin::Row-->
-            <div class="alert alert-success">
-                <?= $notification;?>
-            </div>
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
                 <div class="card-header">
                     <div class="card-title"><h3>Thêm mới tài khoản</h3></div>

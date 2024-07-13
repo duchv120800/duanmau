@@ -4,6 +4,7 @@
     include '../commons/connect.php';
     include '../commons/crud.php';
     include '../commons/count.php';
+    include '../commons/hidden_notification.php';
     //require tất cả file trong controllers và models
     require_file(PATH_CONTROLLER_ADMIN);
     require_file(PATH_MODEL_ADMIN);

@@ -62,6 +62,7 @@ function UpdateTaiKhoan($id)
 
         update('taikhoan', $id, $data);
         header('location:' . BASE_URL_ADMIN . '?act=ds_tk');
+        $GLOBALS['notification']='ok';
         exit();
     }
     require PATH_VIEW_ADMIN . "master.php";
@@ -70,10 +71,11 @@ function UpdateTaiKhoan($id)
 function DeleteTaikhoan($id)
 {
     $user = delete('taikhoan', $id);
-
     $view = 'taikhoan/list';
     $title = 'Tài Khoản';
     $main_title = 'Tài khoản';
     $listUsers = getAllTaikhoan();
+    $notification='Xóa thành công';
+    $alert=true;
     require PATH_VIEW_ADMIN . "master.php";
 }
