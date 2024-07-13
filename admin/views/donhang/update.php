@@ -13,42 +13,66 @@
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mã đơn hàng</label>
                                 <input type="text" value="<?= $donhang['madonhang'] ?>" name="madonhang" placeholder="Nhập mã đơn hàng" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Địa chỉ nhận hàng</label>
                                 <input type="text" value="<?= $donhang['diachinhanhang'] ?>" name="diachinhanhang" placeholder="Nhập Địa chỉ nhận hàng" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tên người nhận hàng</label>
                                 <input type="text" value="<?= $donhang['tennguoinhan'] ?>" name="tennguoinhan" placeholder="Nhập tên người nhận hàng" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Số điện thoại người nhận</label>
                                 <input type="number" value="<?= $donhang['sodienthoainguoinhan'] ?>" name="sodienthoainguoinhan" placeholder="Nhập số điện thoại" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Email người nhận</label>
                                 <input type="email" value="<?= $donhang['emailnguoinhan'] ?>" name="emailnguoinhan" placeholder="Nhập Email người nhận" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
                                 <input type="date" value="<?= $donhang['ngaydathang'] ?>" name="ngaydathang" placeholder="Nhập theo fomat yyyy/mm/dd" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ghi chú</label>
                                 <input type="text" value="<?= $donhang['ghichu'] ?>" name="ghichu" placeholder="Nhập Ghi chú" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tổng tiền</label>
                                 <input type="number" value="<?= $donhang['tongtien'] ?>" name="tongtien" placeholder="Nhập tổng số tiền" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này!
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                         </div> <!--end::Row-->
                         <div class="col-md-6">
@@ -59,7 +83,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Không được để trống trường này!
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -70,7 +94,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Không được để trống trường này!
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -81,7 +105,7 @@
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Không được để trống trường này!
                             </div>
                         </div>
                     </div> <!--end::Body--> <!--begin::Footer-->

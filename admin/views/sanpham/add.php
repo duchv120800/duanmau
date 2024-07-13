@@ -13,27 +13,42 @@
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Tên sản phẩm</label>
                                 <input type="text" name="ten" placeholder="Nhập Tên sản phẩm" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Hình ảnh</label>
                                 <input type="file" name="hinhanh" placeholder="Chọn hình ảnh" class=" form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Giá</label>
                                 <input type="number" name="gia" placeholder="Nhập giá" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Giá khuyến mại</label>
                                 <input type="number" name="giakhuyenmai" placeholder="Nhập Giá khuyến mại" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Lượt xem</label>
                                 <input type="number" name="luotxem" placeholder="Nhập lượt xem" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Looks good!</div>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Danh mục</label>
@@ -43,20 +58,20 @@
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please select a valid state.
+                                    Không được để trống trường này.
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mô tả</label>
                                 <textarea name="mota" class="form-control" id="validationCustom01"></textarea>
                                 <div class="invalid-feedback">
-                                    Please select a valid state.
+                                    Không được để trống trường này.
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                         </div> <!--end::Row-->
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
-                        <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách sản phẩm</a>
+                        <a href="<?= BASE_URL_ADMIN . '?act=ds_sp' ?>" class="btn btn-info">Danh sách sản phẩm</a>
                         <input class="btn btn-success" type="submit" name="themmoi" value="Thêm mới">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->
