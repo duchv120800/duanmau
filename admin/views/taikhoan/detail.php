@@ -22,9 +22,16 @@
                                         '<span class="badge text-bg-info">Quản trị</span>' :
                                         '<span class="badge text-bg-warning">Khách Hàng</span>';
                                     break;
-                                    case 'gioitinh':
-                                        echo $value ? 'Nam' : 'Nữ';
-                                        break;
+                                case 'gioitinh':
+                                    echo $value ? 'Nam' : 'Nữ';
+                                    break;
+                                case 'anhdaidien':
+                                    echo
+                                    "<img src='" . BASE_URL . "uploads/" . $value . "' style='width:100px;height:100px;object-fit:contain;' alt='Ảnh lỗi'/>";
+                                    break;
+                                case 'gioitinh':
+                                    echo $value ? 'Nam' : 'Nữ';
+                                    break;
                                 default:
                                     echo $value;
                                     break;

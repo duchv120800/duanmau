@@ -2,6 +2,7 @@
     define( 'PATH_CONTROLLER', __DIR__.'./../controllers/');
     define( 'PATH_MODEL',__DIR__.'./../models/');
     define( 'PATH_VIEW',__DIR__.'./../views/');
+    define( 'PATH_COMMON',__DIR__.'./../commons/');
 
     define( 'PATH_CONTROLLER_ADMIN', __DIR__.'./../admin/controllers/');
     define( 'PATH_MODEL_ADMIN',__DIR__.'./../admin/models/');

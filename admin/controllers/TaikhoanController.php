@@ -26,14 +26,25 @@ function AddTaiKhoan()
     $title = 'Thêm mới';
     $main_title = 'Thêm tài khoản';
     if (!empty($_POST['themmoi'])) {
+        $anhdaidien = $_FILES['anhdaidien']['name'];
+
+        $target_dir = '../uploads/';
+    
+        $target_file = $target_dir . basename($_FILES['anhdaidien']['name']);
+        if (move_uploaded_file($_FILES['anhdaidien']['tmp_name'], $target_file)) {
+                // echo "Bạn đã upload ảnh thành công";
+        } else {
+                // echo "Upload ảnh không thành công";
+        }
         $data = [
             "tendangnhap" => $_POST['tendangnhap'],
             "matkhau" => $_POST['matkhau'],
             "email" => $_POST['email'],
             "sodienthoai" => $_POST['sodienthoai'],
             "hoten" => $_POST['hoten'],
-            "diachi" => $_POST['diachi'],
             "gioitinh" => $_POST['gioitinh'],
+            "diachi" => $_POST['diachi'],
+            "anhdaidien" => $anhdaidien,
         ];
 
         insert('taikhoan', $data);
@@ -49,15 +60,29 @@ function UpdateTaiKhoan($id)
     $title = 'Cập nhật';
     $main_title = 'Cập nhật tài khoản';
     $user = getOne('taikhoan', $id);
+    $anhdaidiencu=$user['anhdaidien'];
     if (!empty($_POST['update'])) {
+        $anhdaidien = $_FILES['anhdaidien']['name'];
+        if($anhdaidien==''){
+            $anhdaidien=$anhdaidiencu;
+        }
+        $target_dir = '../uploads/';
+    
+        $target_file = $target_dir . basename($_FILES['anhdaidien']['name']);
+        if (move_uploaded_file($_FILES['anhdaidien']['tmp_name'], $target_file)) {
+                // echo "Bạn đã upload ảnh thành công";
+        } else {
+                // echo "Upload ảnh không thành công";
+        }
         $data = [
             "tendangnhap" => $_POST['tendangnhap'],
             "matkhau" => $_POST['matkhau'],
             "email" => $_POST['email'],
             "sodienthoai" => $_POST['sodienthoai'],
             "hoten" => $_POST['hoten'],
-            "diachi" => $_POST['diachi'],
             "gioitinh" => $_POST['gioitinh'],
+            "diachi" => $_POST['diachi'],
+            "anhdaidien" => $anhdaidien,
         ];
 
         update('taikhoan', $id, $data);

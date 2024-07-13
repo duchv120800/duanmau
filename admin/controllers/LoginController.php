@@ -12,6 +12,7 @@ function DirLogin()
         
         $_SESSION['tendangnhap']=$user['tendangnhap'];
         $_SESSION['id']=$user['id'];
+        $_SESSION['anhdaidien']=$user['anhdaidien'];
 
         header('location:'.BASE_URL_ADMIN);
         exit(); 
@@ -25,6 +26,7 @@ function Logout()
     $title = 'login';
     unset($_SESSION['tendangnhap']);
     unset($_SESSION['id']);
+    unset($_SESSION['anhdaidien']);
 
     require PATH_VIEW_ADMIN . "master.php";
 }
