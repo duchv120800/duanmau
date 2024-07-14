@@ -39,11 +39,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Hình ảnh mô tả</label>
-                                <input type="file" name="hinhanhs" placeholder="Chọn hình ảnh" class="form-control" id="validationCustom01" multiple>
-                                <div class="valid-feedback">Có vẻ tốt!</div>
-                                <div class="invalid-feedback">
-                                    Không được để trống trường này.
-                                </div>
+                                <input type="file" name="hinhanhs[]" placeholder="Chọn hình ảnh" class="form-control" multiple>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Giá</label>

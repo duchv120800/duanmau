@@ -37,6 +37,7 @@ function AddSanPham()
         } else {
                 // echo "Upload ảnh không thành công";
         }
+
         $data = [
             "ten" => $_POST['ten'],
             "gia" => $_POST['gia'],
@@ -48,6 +49,26 @@ function AddSanPham()
         ];
 
         insert('sanpham', $data);
+        $id_sanpham_moi=$GLOBALS['conn']->LastInsertId();
+
+        $hinhanhs = $_FILES['hinhanhs']['name'];
+        if($hinhanhs!=''){
+            foreach($hinhanhs as $key => $value){
+                if (move_uploaded_file($_FILES['hinhanhs']['tmp_name'][$key], $target_dir.$value)) {
+                    $data_album[] = [
+                        'id_sanpham' => $id_sanpham_moi,
+                        'tenanh' => $value
+                    ];
+                } else {
+                        // echo "Upload ảnh không thành công";
+                }
+            }
+        }
+
+        foreach ($data_album as $data){
+            insert('anhsanpham', $data);
+        }
+
         header('location:' . BASE_URL_ADMIN . '?act=ds_sp');
         exit();
     }
@@ -96,7 +117,7 @@ function UpdateSanPham($id)
 
 function DeleteSanPham($id)
 {
-    $sanpham = delete('sanpham', $id);
+    delete('sanpham', $id);
 
     $view = 'sanpham/list';
     $title = 'Sản phẩm';
