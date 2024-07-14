@@ -3,17 +3,18 @@ function DirLogin()
 {
     $view = 'login/login';
     $title = 'login';
+    
     if(!empty($_POST)){
         $data=[
             "tendangnhap" => $_POST['tendangnhap'],
             "matkhau" => $_POST['matkhau'],
         ];
+       
         $user=Login($data);
-        
         $_SESSION['tendangnhap']=$user['tendangnhap'];
         $_SESSION['id']=$user['id'];
         $_SESSION['anhdaidien']=$user['anhdaidien'];
-
+        
         header('location:'.BASE_URL_ADMIN);
         exit(); 
     }

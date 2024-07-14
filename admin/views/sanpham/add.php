@@ -19,8 +19,27 @@
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
+                                <label for="validationCustom04" class="form-label">Danh mục</label>
+                                <select class="form-select" name="id_danhmuc" id="validationCustom04" required>
+                                    <?php foreach ($listDanhmuc as $danhmuc) : ?>
+                                        <option value="<?= $danhmuc['id'] ?>"><?= $danhmuc['ten'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Hình ảnh</label>
                                 <input type="file" name="hinhanh" placeholder="Chọn hình ảnh" class=" form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Hình ảnh mô tả</label>
+                                <input type="file" name="hinhanhs" placeholder="Chọn hình ảnh" class="form-control" id="validationCustom01" multiple>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này.
@@ -50,17 +69,6 @@
                                     Không được để trống trường này.
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
-                            <div class="col-md-6">
-                                <label for="validationCustom04" class="form-label">Danh mục</label>
-                                <select class="form-select" name="id_danhmuc" id="validationCustom04" required>
-                                    <?php foreach ($listDanhmuc as $danhmuc) : ?>
-                                        <option value="<?= $danhmuc['id'] ?>"><?= $danhmuc['ten'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Không được để trống trường này.
-                                </div>
-                            </div>
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mô tả</label>
                                 <textarea name="mota" class="form-control" id="validationCustom01"></textarea>

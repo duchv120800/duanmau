@@ -22,9 +22,11 @@
         }
     }
 
-    if(!function_exists('notification')){
-        function notification($noti){
-           echo $noti;
-        }
-    }
+    // if(!function_exists('notification')){
+    //    function notification(){    
+    //         $notification=3;
+    //     //    return $notification;    
+    //     }
+    // }
+
 ?>

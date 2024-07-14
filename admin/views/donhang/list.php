@@ -35,7 +35,7 @@
                                             <td><?= $donhang['tentaikhoan'] ?></td>
                                             <td><?= $donhang['tennguoinhan'] ?></td>
                                             <td><?= $donhang['sodienthoainguoinhan'] ?></td>
-                                            <td><?= $donhang['tongtien'] ?></td>
+                                            <td><?= $donhang['tongtien'] ?>đ</td>
                                             <td><?= $donhang['tentrangthai'] ?></td>
 
                                             <td>

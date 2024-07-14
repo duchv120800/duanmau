@@ -23,13 +23,13 @@
                 <p class="login-box-msg">Đăng nhập để bắt đầu</p>
                 <form action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" name="tendangnhap" class="form-control" placeholder="Nhập tên đăng nhập">
+                        <input type="text" name="tendangnhap" class="form-control" placeholder="Nhập tên đăng nhập" required>
                         <div class="input-group-text">
                             <span class="bi bi-envelope"></span>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu">
+                        <input type="password" name="matkhau" class="form-control" placeholder="Nhập mật khẩu" required>
                         <div class="input-group-text"> <span class="bi bi-lock-fill"></span> </div>
                     </div> <!--begin::Row-->
                     <div class="row">
@@ -43,8 +43,8 @@
                         </div> <!-- /.col -->
                     </div> <!--end::Row-->
                 </form>
-                <p class="mb-1"> <a href="forgot-password.html">Quên mật khẩu</a> </p>
-                <p class="mb-0"> <a href="register.html" class="text-center">
+                <p class="mb-1"> <a href="">Quên mật khẩu</a> </p>
+                <p class="mb-0"> <a href="" class="text-center">
                         Đăng ký tài khoản
                     </a> </p>
             </div> <!-- /.login-card-body -->

@@ -38,7 +38,6 @@
                 'id_taikhoan' => $_POST['id_taikhoan'],
                 'id_sanpham' => $_POST['id_sanpham'],
                 'id_trangthai' => $_POST['id_trangthai'],
-            
             ];
             
             insert('donhang',$data); 
