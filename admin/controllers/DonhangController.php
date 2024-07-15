@@ -80,6 +80,8 @@
 
     function DeleteDonhang($id){
         $sanpham=delete('donhang', $id);
+        $alert=true;
+        $notification='Xóa đơn hàng thành công!';
         
         $view='donhang/list';
         $title='Đơn hàng';

@@ -52,7 +52,7 @@
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
-                                <input type="date" value="<?= $donhang['ngaydathang'] ?>" name="ngaydathang" placeholder="Nhập theo fomat yyyy/mm/dd" class="form-control" id="validationCustom01" required>
+                                <input type="date" value="<?= $donhang['ngaydathang'] ?>" name="ngaydathang" placeholder="Nhập theo fomat yyyy-mm-dd" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!
@@ -110,7 +110,7 @@
                         </div>
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
-                        <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách đơn hàng</a>
+                        <a href="<?= BASE_URL_ADMIN . '?act=ds_dh' ?>" class="btn btn-info">Danh sách đơn hàng</a>
                         <input class="btn btn-success" type="submit" name="themmoi" value="Cập nhật">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->

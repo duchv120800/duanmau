@@ -38,3 +38,44 @@ function getOneSanPham($id)
         debug($e);
     }
 }
+
+function getAnhSanPham($id_sanpham)
+{
+    try {
+        $sql = "SELECT tenanh FROM anhsanpham WHERE id_sanpham= $id_sanpham";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}
+
+    function getSanPhamLienQuan($tableName, $id_sanpham){
+           try {
+            $sql="SELECT * FROM $tableName WHERE id_sanpham = :id_sanpham limit 1";
+
+            $stmt = $GLOBALS['conn']->prepare($sql);
+
+            $stmt->bindParam(':id_sanpham',$id_sanpham);
+
+            $stmt->execute();
+
+            return $stmt->fetch();
+           } catch (\Exception $e) {
+                debug($e);
+           }
+        }
+
+function DeleteAnhSanPham($id_sanpham){
+    try {
+        $sql = "DELETE FROM anhsanpham WHERE anhsanpham.id_sanpham= $id_sanpham";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+
+        $stmt->execute();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}

@@ -83,6 +83,7 @@ function UpdateSanPham($id)
     $main_title = 'Cập nhật Sản phẩm';
     $sanpham = getOne('sanpham', $id);
     $old_hinhanh = $sanpham['hinhanh'];
+    $anhsanpham = getAnhSanPham($id);
     if (!empty($_POST['update'])) {
         $hinhanh = $_FILES['hinhanh']['name'];
 
@@ -109,6 +110,27 @@ function UpdateSanPham($id)
         ];
 
         update('sanpham', $id, $data);
+
+        $hinhanhs = $_FILES['hinhanhs']['name'];
+        $data_album=[];
+        if(!empty(array_filter($hinhanhs))){
+            DeleteAnhSanPham($id);
+            foreach($hinhanhs as $key => $value){
+                if (move_uploaded_file($_FILES['hinhanhs']['tmp_name'][$key], $target_dir.$value)) {
+                    $data_album[] = [
+                        'id_sanpham' => $id,
+                        'tenanh' => $value
+                    ];
+                } else {
+                        // echo "Upload ảnh không thành công";
+                }
+            }
+        }
+
+        foreach ($data_album as $data){
+            insert('anhsanpham', $data);
+        }
+
         header('location:' . BASE_URL_ADMIN . '?act=ds_sp');
         exit();
     }
@@ -117,7 +139,16 @@ function UpdateSanPham($id)
 
 function DeleteSanPham($id)
 {
-    delete('sanpham', $id);
+    $donhang=getSanPhamLienQuan('donhang',$id);
+    $anhsanpham=getSanPhamLienQuan('anhsanpham',$id);
+    if(empty($donhang)&&empty($anhsanpham)){
+        delete('sanpham', $id);
+        $alert=true;
+        $notification='Xóa sản phẩm thành công!';
+    }else{
+        $alert=false;
+        $notification='Sản phẩm liên quan đến đơn hàng hoặc ảnh sản phẩm nên không thể xóa!';
+    }
 
     $view = 'sanpham/list';
     $title = 'Sản phẩm';

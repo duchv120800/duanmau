@@ -50,7 +50,7 @@
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
-                                <input type="text" name="ngaydathang" placeholder="Nhập theo fomat yyyy/mm/dd" class="form-control" id="validationCustom01" required>
+                                <input type="text" name="ngaydathang" placeholder="Nhập theo fomat yyyy-mm-dd" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!

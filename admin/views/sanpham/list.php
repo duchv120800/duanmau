@@ -13,6 +13,16 @@
                             </div>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
+                        <div id="alert" class="alert <?php if($alert){echo ' alert-success';}else{echo ' alert-danger';}?>" <?php if(isset($notification) && ($notification != "")){echo "";}else{echo "hidden";}?> style="text-align:center">
+                            <?php 
+                                if(isset($notification) && ($notification != "")) {
+                                    echo $notification;
+                            ?>
+                            <script>hidden_notification();</script>
+                            <?php
+                                }
+                            ?>
+                        </div>
                             <table class="table table-bordered" style="text-align:center">
                                 <thead>
                                     <tr>
