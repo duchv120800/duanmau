@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Ảnh đại diện</label>
-                                <input type="file" name="anhdaidien" class="form-control" id="validationCustom01" required>
+                                <input type="file" name="anhdaidien" class="form-control">
                                 <img src="<?=BASE_URL.'uploads/'.$user['anhdaidien']?>" style="width:100px;height:100px;object-fit:contain;" alt="">
                                 <div class="invalid-feedback">
                                     Ảnh đại diện không được để trống.

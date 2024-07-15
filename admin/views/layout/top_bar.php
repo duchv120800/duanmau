@@ -13,8 +13,8 @@
                 </li> <!--end::User Image--> <!--begin::Menu Body-->
 
                 <li class="user-footer">
-                    <a href="<?= BASE_URL_ADMIN . '?act=detail_tk&id=' . $_SESSION['id'] ?>" class="btn btn-default btn-flat">Profile</a>
-                    <a href="<?= BASE_URL_ADMIN . '?act=logout' ?>" class="btn btn-default btn-flat float-end">Logout</a>
+                    <a href="<?= BASE_URL_ADMIN . '?act=detail_tk&id=' . $_SESSION['id'] ?>" class="btn btn-default btn-info">Profile</a>
+                    <a href="<?= BASE_URL_ADMIN . '?act=logout' ?>" class="btn btn-default btn-danger flat float-end">Logout</a>
                 </li> <!--end::Menu Footer-->
             </ul>
         </li> <!--end::User Menu Dropdown-->
