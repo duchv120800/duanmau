@@ -76,7 +76,7 @@
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Tài khoản</label>
-                                <select class="form-select" name="id_taikhoan" id="validationCustom04" required>
+                                <select class="form-select" name="id_taikhoan" id="validationCustom04">
                                     <?php foreach ($listTaikhoan as $taikhoan) : ?>
                                         <option value="<?= $taikhoan['id'] ?>"><?= $taikhoan['tendangnhap'] ?></option>
                                     <?php endforeach; ?>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Sản phẩm</label>
-                                <select class="form-select" name="id_sanpham" id="validationCustom04" required>
+                                <select class="form-select" name="id_sanpham" id="validationCustom04" require>
                                     <?php foreach ($listSanpham as $sanpham) : ?>
                                         <option value="<?= $sanpham['id'] ?>"><?= $sanpham['ten'] ?></option>
                                     <?php endforeach; ?>
@@ -111,7 +111,7 @@
 
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
-                        <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>
+                        <a href="<?= BASE_URL_ADMIN . '?act=ds_dh' ?>" class="btn btn-info">Danh sách đơn hàng</a>
                         <input class="btn btn-success" type="submit" name="themmoi" value="Thêm mới">
                     </div> <!--end::Footer-->
                 </form> <!--end::Form--> <!--begin::JavaScript-->

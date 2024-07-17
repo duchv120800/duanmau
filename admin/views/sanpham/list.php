@@ -13,15 +13,7 @@
                             </div>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
-                            <div id="alert" class="alert <?php if ($alert) {
-                                                                echo ' alert-success';
-                                                            } else {
-                                                                echo ' alert-danger';
-                                                            } ?>" <?php if (isset($notification) && ($notification != "")) {
-                                                                                                                                    echo "";
-                                                                                                                                } else {
-                                                                                                                                    echo "hidden";
-                                                                                                                                } ?> style="text-align:center">
+                            <div id="alert" class="alert <?php if ($alert) {echo ' alert-success';} else {echo ' alert-danger';} ?>" <?php if (isset($notification) && ($notification != "")) {echo "";} else {echo "hidden";} ?> style="text-align:center">
                                 <?php
                                 if (isset($notification) && ($notification != "")) {
                                     echo $notification;
@@ -55,8 +47,8 @@
                                             <td>
                                                 <img src="<?= BASE_URL . 'uploads/' . $sanpham['hinhanh'] ?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị ảnh">
                                             </td>
-                                            <td><?= number_format($sanpham['gia'], 0, ',', '.')?>đ</td>
-                                            <td><?= number_format($sanpham['giakhuyenmai'], 0, ',', '.')?>đ</td>
+                                            <td><?= number_format($sanpham['gia'], 0, ',', '.') ?>đ</td>
+                                            <td><?= number_format($sanpham['giakhuyenmai'], 0, ',', '.') ?>đ</td>
                                             <td><?= $sanpham['luotxem'] ?></td>
                                             <td><?= $sanpham['ten_danhmuc'] ?></td>
                                             <td>

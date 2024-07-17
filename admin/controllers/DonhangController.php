@@ -33,7 +33,7 @@ function AddDonhang()
     $date_time = date('Y-m-d H:i:s');
     $hashed_date_time = hash('sha256', $date_time);
     $madonhang = substr(strtoupper($hashed_date_time),0,6);
-    if (!empty($_POST['themmoi'])) {
+    if (!empty($_POST['themmoi'])) { 
         $data = [
             'madonhang' => $madonhang,
             'diachinhanhang' => $_POST['diachinhanhang'],
@@ -44,10 +44,9 @@ function AddDonhang()
             'ghichu' => $_POST['ghichu'],
             'tongtien' => $_POST['tongtien'],
             'id_taikhoan' => $_POST['id_taikhoan'],
-            'id_sanpham' => $_POST['id_sanpham'],
+            'id_sanpham[]' => $_POST['id_sanpham'],
             'id_trangthai' => $_POST['id_trangthai'],
         ];
-
         insert('donhang', $data);
         header('location:' . BASE_URL_ADMIN . '?act=ds_dh');
         exit();

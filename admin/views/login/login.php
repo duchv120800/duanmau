@@ -36,20 +36,13 @@
                         <div class="input-group-text"> <span class="bi bi-lock-fill"></span> </div>
                     </div> <!--begin::Row-->
                     <div class="row">
-                        <div class="col-">
-                            <!-- <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault">
-                                    Remember Me
-                                </label> </div> -->
-                        </div>
                         <div class="col-6">
                             <div class="d-grid gap-2 text-center"> <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button> </div>
                         </div> <!-- /.col -->
                     </div> <!--end::Row-->
                 </form>
-                <p class="mb-1"> <a href="">I forgot my password</a> </p>
-                <p class="mb-0"> <a href="" class="text-center">
-                        Register a new membership
-                    </a> </p>
+                <p class="mb-1"> <a href="">Quên mật khẩu</a> </p>
+                <p class="mb-0"> <a href="" class="text-center">Đăng ký tài khoản</a> </p>
             </div> <!-- /.login-card-body -->
         </div>
     </div>
