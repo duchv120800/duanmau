@@ -2,20 +2,22 @@
     <div class="app-content-header"> <!--begin::Container-->
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
-                <div class="card-header">
-                    <div class="card-title"><h3>Thêm mới đơn hàng</h3></div>
+                <div class="card-header bg-info">
+                    <div class="card-title">
+                        <h3>Thêm mới đơn hàng</h3>
+                    </div>
                 </div> <!--end::Header--> <!--begin::Form-->
                 <form class="needs-validation" action="" method="POST" novalidate> <!--begin::Body-->
                     <div class="card-body"> <!--begin::Row-->
                         <div class="row g-3"> <!--begin::Col-->
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mã đơn hàng</label>
                                 <input type="text" name="madonhang" placeholder="Nhập mã đơn hàng" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!
                                 </div>
-                            </div> <!--end::Col--> <!--begin::Col-->
+                            </div> -->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Địa chỉ nhận hàng</label>
                                 <input type="text" name="diachinhanhang" placeholder="Nhập Địa chỉ nhận hàng" class="form-control" id="validationCustom01" required>
@@ -50,7 +52,7 @@
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
-                                <input type="text" name="ngaydathang" placeholder="Nhập theo fomat yyyy-mm-dd" class="form-control" id="validationCustom01" required>
+                                <input type="date" name="ngaydathang" placeholder="Nhập ngày đặt hàng" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!
@@ -72,8 +74,7 @@
                                     Không được để trống trường này!
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
-                        </div> <!--end::Row-->
-                        <div class="col-md-6">
+                            <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Tài khoản</label>
                                 <select class="form-select" name="id_taikhoan" id="validationCustom04" required>
                                     <?php foreach ($listTaikhoan as $taikhoan) : ?>
@@ -106,6 +107,8 @@
                                     Không được để trống trường này!
                                 </div>
                             </div>
+                        </div> <!--end::Row-->
+
                     </div> <!--end::Body--> <!--begin::Footer-->
                     <div class="card-footer">
                         <a href="<?= BASE_URL_ADMIN . '?act=ds_tk' ?>" class="btn btn-info">Danh sách tài khoản</a>

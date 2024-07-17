@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <table class="table table-bordered" style="text-align:center">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th style="width: 10px">Stt</th>
                                         <th>Tên</th>
                                         <th>Email</th>
@@ -49,10 +49,10 @@
                                                     : '<span class="badge text-bg-warning">Khách Hàng</span>' ?>
                                             </td>
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_tk&id=' . $user['id'] ?>" class="btn text-bg-success">Chi tiết</a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=update_tk&id=' . $user['id'] ?>" class="btn text-bg-primary">Sửa</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_tk&id=' . $user['id'] ?>" class="btn text-bg-success"><i class="fas fa-solid fa-eye"></i></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=update_tk&id=' . $user['id'] ?>" class="btn text-bg-primary"><i class="fa fa-pen"></i></a>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=delete_tk&id=' . $user['id'] ?>" class="btn text-bg-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
-                                                    Xóa
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                         </tr>

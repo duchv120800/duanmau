@@ -25,7 +25,7 @@
                         </div>
                             <table class="table table-bordered" style="text-align:center">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th style="width: 10px">Stt</th>
                                         <th>Mã đơn hàng</th>
                                         <th>Tên người đặt</th>
@@ -49,10 +49,10 @@
                                             <td><?= $donhang['tentrangthai'] ?></td>
 
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_dh&id=' . $donhang['id'] ?>" class="btn text-bg-success">Chi tiết</a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=update_dh&id=' . $donhang['id'] ?>" class="btn text-bg-primary">Sửa</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_dh&id=' . $donhang['id'] ?>" class="btn text-bg-success"><i class="fas fa-solid fa-eye"></i></a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=update_dh&id=' . $donhang['id'] ?>" class="btn text-bg-primary"><i class="fa fa-pen"></i></a>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=delete_dh&id=' . $donhang['id'] ?>" class="btn text-bg-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
-                                                    Xóa
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                         </tr>

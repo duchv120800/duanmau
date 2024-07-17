@@ -25,7 +25,7 @@
                         </div>
                             <table class="table table-bordered" style="text-align:center">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th style="width: 10px">Stt</th>
                                         <th>Tên danh mục</th>
                                         <th>Thao tác</th>
@@ -38,9 +38,9 @@
                                             <td><?= $stt ?></td>
                                             <td><?= $danhmuc['ten'] ?></td>
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=update_dm&id=' . $danhmuc['id'] ?>" class="btn text-bg-primary">Sửa</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=update_dm&id=' . $danhmuc['id'] ?>" class="btn text-bg-primary"><i class="fa fa-pen"></i></a>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=delete_dm&id=' . $danhmuc['id'] ?>" class="btn text-bg-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
-                                                    Xóa
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -2,7 +2,7 @@
     <div class="app-content-header"> <!--begin::Container-->
         <div class="container-fluid"> <!--begin::Row-->
             <div class="card card-info card-outline mb-4"> <!--begin::Header-->
-                <div class="card-header">
+                <div class="card-header bg-info">
                     <div class="card-title">
                         <h3>Thêm mới sản phẩm</h3>
                     </div>
@@ -56,10 +56,58 @@
                                 <div class="invalid-feedback">
                                     Không được để trống trường này.
                                 </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Số lượng</label>
+                                <input type="number" name="soluong" placeholder="Nhập Số lượng" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Lượt xem</label>
                                 <input type="number" name="luotxem" placeholder="Nhập lượt xem" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Thương hiệu</label>
+                                <input type="text" name="thuonghieu" placeholder="Nhập Thương hiệu" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Xuất xứ</label>
+                                <input type="text" name="xuatxu" placeholder="Nhập Xuất xứ" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Phong cách</label>
+                                <input type="text" name="phongcach" placeholder="Nhập Phong cách" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Độ lưu hương</label>
+                                <input type="text" name="doluuhuong" placeholder="Nhập Độ lưu hương" class="form-control" id="validationCustom01" required>
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">Nồng độ</label>
+                                <input type="text" name="nongdo" placeholder="Nhập Nồng độ" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này.

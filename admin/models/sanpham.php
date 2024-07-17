@@ -53,23 +53,25 @@ function getAnhSanPham($id_sanpham)
     }
 }
 
-    function getSanPhamLienQuan($tableName, $id_sanpham){
-           try {
-            $sql="SELECT * FROM $tableName WHERE id_sanpham = :id_sanpham limit 1";
+function getSanPhamLienQuan($tableName, $id_sanpham)
+{
+    try {
+        $sql = "SELECT * FROM $tableName WHERE id_sanpham = :id_sanpham limit 1";
 
-            $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt = $GLOBALS['conn']->prepare($sql);
 
-            $stmt->bindParam(':id_sanpham',$id_sanpham);
+        $stmt->bindParam(':id_sanpham', $id_sanpham);
 
-            $stmt->execute();
+        $stmt->execute();
 
-            return $stmt->fetch();
-           } catch (\Exception $e) {
-                debug($e);
-           }
-        }
+        return $stmt->fetch();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}
 
-function DeleteAnhSanPham($id_sanpham){
+function DeleteAnhSanPham($id_sanpham)
+{
     try {
         $sql = "DELETE FROM anhsanpham WHERE anhsanpham.id_sanpham= $id_sanpham";
         $stmt = $GLOBALS['conn']->prepare($sql);

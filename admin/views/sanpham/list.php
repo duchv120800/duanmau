@@ -13,19 +13,29 @@
                             </div>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
-                        <div id="alert" class="alert <?php if($alert){echo ' alert-success';}else{echo ' alert-danger';}?>" <?php if(isset($notification) && ($notification != "")){echo "";}else{echo "hidden";}?> style="text-align:center">
-                            <?php 
-                                if(isset($notification) && ($notification != "")) {
+                            <div id="alert" class="alert <?php if ($alert) {
+                                                                echo ' alert-success';
+                                                            } else {
+                                                                echo ' alert-danger';
+                                                            } ?>" <?php if (isset($notification) && ($notification != "")) {
+                                                                                                                                    echo "";
+                                                                                                                                } else {
+                                                                                                                                    echo "hidden";
+                                                                                                                                } ?> style="text-align:center">
+                                <?php
+                                if (isset($notification) && ($notification != "")) {
                                     echo $notification;
-                            ?>
-                            <script>hidden_notification();</script>
-                            <?php
+                                ?>
+                                    <script>
+                                        hidden_notification();
+                                    </script>
+                                <?php
                                 }
-                            ?>
-                        </div>
+                                ?>
+                            </div>
                             <table class="table table-bordered" style="text-align:center">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-primary">
                                         <th style="width: 10px">Stt</th>
                                         <th>Tên</th>
                                         <th>Hình ảnh</th>
@@ -43,17 +53,21 @@
                                             <td><?= $stt ?></td>
                                             <td><?= $sanpham['ten'] ?></td>
                                             <td>
-                                                <img src="<?= BASE_URL.'uploads/'.$sanpham['hinhanh'] ?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị ảnh">
+                                                <img src="<?= BASE_URL . 'uploads/' . $sanpham['hinhanh'] ?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị ảnh">
                                             </td>
                                             <td><?= $sanpham['gia'] ?></td>
                                             <td><?= $sanpham['giakhuyenmai'] ?></td>
                                             <td><?= $sanpham['luotxem'] ?></td>
                                             <td><?= $sanpham['ten_danhmuc'] ?></td>
                                             <td>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-success">Chi tiết</a>
-                                                <a href="<?= BASE_URL_ADMIN . '?act=update_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-primary">Sửa</a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=detail_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-success">
+                                                    <i class="fas fa-solid fa-eye"></i>
+                                                </a>
+                                                <a href="<?= BASE_URL_ADMIN . '?act=update_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-primary">
+                                                    <i class="fa fa-pen"></i>
+                                                </a>
                                                 <a href="<?= BASE_URL_ADMIN . '?act=delete_sp&id=' . $sanpham['id'] ?>" class="btn text-bg-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
-                                                    Xóa
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </td>
                                         </tr>

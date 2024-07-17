@@ -14,6 +14,7 @@ function DetailSanPham($id)
     $title = 'Xem chi tiết';
     $main_title = 'Sản phẩm';
     $sanpham = getOneSanPham($id);
+    $anh_thumnail=getAnhSanPham($id);
     if (empty($sanpham)) {
         e404();
     }
@@ -43,8 +44,14 @@ function AddSanPham()
             "gia" => $_POST['gia'],
             "hinhanh" => $hinhanh,
             "giakhuyenmai" => $_POST['giakhuyenmai'],
+            "soluong" => $_POST['soluong'],
             "mota" => $_POST['mota'],
             "luotxem" => $_POST['luotxem'],
+            "thuonghieu" => $_POST['thuonghieu'],
+            "xuatxu" => $_POST['xuatxu'],
+            "phongcach" => $_POST['phongcach'],
+            "doluuhuong" => $_POST['doluuhuong'],
+            "nongdo" => $_POST['nongdo'],
             "id_danhmuc" => $_POST['id_danhmuc'],
         ];
 
@@ -104,8 +111,14 @@ function UpdateSanPham($id)
             "gia" => $_POST['gia'],
             "hinhanh" => $hinhanh,
             "giakhuyenmai" => $_POST['giakhuyenmai'],
+            "soluong" => $_POST['soluong'],
             "mota" => $_POST['mota'],
             "luotxem" => $_POST['luotxem'],
+            "thuonghieu" => $_POST['thuonghieu'],
+            "xuatxu" => $_POST['xuatxu'],
+            "phongcach" => $_POST['phongcach'],
+            "doluuhuong" => $_POST['doluuhuong'],
+            "nongdo" => $_POST['nongdo'],
             "id_danhmuc" => $_POST['id_danhmuc'],
         ];
 

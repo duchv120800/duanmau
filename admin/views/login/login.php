@@ -17,8 +17,11 @@
 
 <body class="login-page bg-body-secondary">
     <div class="login-box">
-        <div class="login-logo"> <a href="../index2.html"><b>Admin</b>DAH</a> </div> <!-- /.login-logo -->
-        <div class="card">
+        <div class="card card-outline card-primary">
+            <div class="card-header"> <a href="../index2.html" class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover">
+                    <h1 class="mb-0"> <b>Admin</b>DAH
+                    </h1>
+                </a> </div>
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Đăng nhập để bắt đầu</p>
                 <form action="" method="post">
@@ -39,17 +42,17 @@
                                 </label> </div> -->
                         </div>
                         <div class="col-6">
-                            <div class="d-grid gap-2"> <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button> </div>
+                            <div class="d-grid gap-2 text-center"> <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button> </div>
                         </div> <!-- /.col -->
                     </div> <!--end::Row-->
                 </form>
-                <p class="mb-1"> <a href="">Quên mật khẩu</a> </p>
+                <p class="mb-1"> <a href="">I forgot my password</a> </p>
                 <p class="mb-0"> <a href="" class="text-center">
-                        Đăng ký tài khoản
+                        Register a new membership
                     </a> </p>
             </div> <!-- /.login-card-body -->
         </div>
-    </div> <!-- /.login-box --> <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
