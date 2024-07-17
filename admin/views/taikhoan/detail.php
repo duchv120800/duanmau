@@ -14,13 +14,13 @@
                       <h5><b>Vai trò : </b><?=$user['vaitro'] ? '<strong class="badge text-bg-success">Quản trị</strong>' : '<strong class="badge text-bg-warning">Khách hàng</strong>'?></h5>
                       <hr>
                       <ul class="ml-4 mb-0 fa-ul">
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-solid fa-user"></i></span> Tên đăng nhập : <strong><?=$user['tendangnhap']?></strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-key"></i></span> Mật khẩu : <strong>*********</strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-solid fa-envelope"></i></span> Email : <strong><?=$user['email']?></strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Điện thoại # : <strong><?=$user['sodienthoai']?></strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Địa chỉ : <strong><?=$user['diachi']?></strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-signature"></i></span> Họ tên : <strong><?=$user['hoten']?></strong></h5></li>
-                        <li><h5><span class="fa-li"><i class="fas fa-lg fa-venus-mars"></i></span> Giới tính : <strong><?=$user['gioitinh']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-solid fa-user"></i></span><h5> Tên đăng nhập : <strong style="color:#17a2b8"><?=$user['tendangnhap']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-key"></i></span><h5> Mật khẩu : <strong style="color:#17a2b8">*********</strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-solid fa-envelope"></i></span><h5> Email : <strong style="color:#17a2b8"><?=$user['email']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span><h5> Điện thoại # : <strong style="color:#17a2b8"><?=$user['sodienthoai']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-building"></i></span><h5> Địa chỉ : <strong style="color:#17a2b8"><?=$user['diachi']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-signature"></i></span><h5> Họ tên : <strong style="color:#17a2b8"><?=$user['hoten']?></strong></h5></li>
+                        <li><span class="fa-li"><i class="fas fa-lg fa-venus-mars"></i></span><h5> Giới tính : <strong style="color:#17a2b8"><?=$user['gioitinh']?'Nam':'Nữ'?></strong></h5></li>
                       </ul>
                     </div>
                     <div class="col-5 text-center">

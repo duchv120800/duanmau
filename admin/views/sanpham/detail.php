@@ -26,8 +26,8 @@
                         <h5> Lượt xem : <em><?= $sanpham['luotxem'] ?></em></h5>
                         <hr>
                         <h5 class="mt-3">Giá sản phẩm :
-                            <em><span style="text-decoration-line: line-through; color:red"><?= $sanpham['gia'] ?>đ</span>
-                                <?= $sanpham['giakhuyenmai'] ?>đ</em>
+                            <em><span style="text-decoration-line: line-through; color:red"><?= number_format($sanpham['gia'], 0, ',', '.')?>đ</span>
+                                <?= number_format($sanpham['gia'], 0, ',', '.')?>đ</em>
                         </h5>
 
                         <hr>

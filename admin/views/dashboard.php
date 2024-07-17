@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="col-4 text-center">
                                     <div id="sparkline-2" class="text-dark"></div>
-                                    <div class="text-white">Trức tuyến</div>
+                                    <div class="text-white">Trực tuyến</div>
                                 </div>
                                 <div class="col-4 text-center">
                                     <div id="sparkline-3" class="text-dark"></div>

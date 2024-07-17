@@ -45,7 +45,7 @@
                                             <td><?= $donhang['tentaikhoan'] ?></td>
                                             <td><?= $donhang['tennguoinhan'] ?></td>
                                             <td><?= $donhang['sodienthoainguoinhan'] ?></td>
-                                            <td><?= $donhang['tongtien'] ?>đ</td>
+                                            <td><?= number_format($donhang['tongtien'], 0, ',', '.')?>đ</td>
                                             <td><?= $donhang['tentrangthai'] ?></td>
 
                                             <td>

@@ -64,7 +64,7 @@
                 <strong>Ghi chú:</strong>
                 <?= $donhang['ghichu'] ?><br>
                 <strong>Giá sản phẩm:</strong>
-                <?= $donhang['giasanpham'] ?>đ<br>
+                <?= number_format($donhang['giasanpham'], 0, ',', '.')?>đ<br>
               </div>
             </div>
             <div class="col-md-4">
@@ -74,15 +74,15 @@
                   <table class="table">
                     <tr>
                       <th style="width:50%">Giá sản phẩm:</th>
-                      <td><?= $donhang['tongtien'] ?>đ</td>
+                      <td><?= number_format($donhang['tongtien'], 0, ',', '.')?>đ</td>
                     </tr>
                     <tr>
                       <th style="width:50%">Phí vận chuyển:</th>
-                      <td><?= $phivanchuyen = 15000; ?>đ</td>
+                      <td>15.000đ</td>
                     </tr>
                     <tr>
                       <th style="width:50%">Tổng thanh toán:</th>
-                      <td><?= $donhang['tongtien'] + $phivanchuyen ?>đ</td>
+                      <td><?= number_format($donhang['tongtien']+15000, 0, ',', '.')?>đ</td>
                     </tr>
                   </table>
                 </div>

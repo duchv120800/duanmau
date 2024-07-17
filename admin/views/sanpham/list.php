@@ -55,8 +55,8 @@
                                             <td>
                                                 <img src="<?= BASE_URL . 'uploads/' . $sanpham['hinhanh'] ?>" style="width:100px; height:100px objecfit=contain;" alt="Lỗi hiển thị ảnh">
                                             </td>
-                                            <td><?= $sanpham['gia'] ?></td>
-                                            <td><?= $sanpham['giakhuyenmai'] ?></td>
+                                            <td><?= number_format($sanpham['gia'], 0, ',', '.')?>đ</td>
+                                            <td><?= number_format($sanpham['giakhuyenmai'], 0, ',', '.')?>đ</td>
                                             <td><?= $sanpham['luotxem'] ?></td>
                                             <td><?= $sanpham['ten_danhmuc'] ?></td>
                                             <td>
