@@ -13,4 +13,5 @@ $act=$_GET["act"]?? "/";
 
 match ($act) {
     '/' => HomeIndex(),
+    'sp_detail'=> ChiTietSanPham($_GET['id_sp']),
 };
