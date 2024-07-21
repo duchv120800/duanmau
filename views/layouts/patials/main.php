@@ -65,10 +65,9 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
         <div class="row">
             <div class="col-md-6">
                 <div class="discount-left">
-                    <h4>Mountain DCJ bike 5003</h4>
-                    <h2>Pormotional <strong>Sale Up 20%</strong></h2>
-                    <p>SRAM has always been an engine of innovation in cycling, and the new eTap wireless drivetrain
-                        platform is that engine revving to the redline.</p>
+                    <h4><?=$sanphamsales[0]['ten']?></h4>
+                    <h2><strong>Sale Up To <?=$sanphamsales[0]['sale']?>%</strong></h2>
+                    <p><?= substr($sanphamsales[0]['mota'], 0, 300) ?>...</p>
                     <div class="count-text clearfix">
                         <ul id="countdown-1">
                             <li>
@@ -94,7 +93,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
             </div>
             <div class="col-md-6">
                 <div class="discount-right">
-                    <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/products/6.jpg" width="555" height="426" alt="" />
+                    <img src="<?= BASE_URL ?>uploads/<?=$sanphamsales[0]['hinhanh']?>" width="555" height="426" alt="" />
                 </div>
             </div>
         </div>

@@ -79,3 +79,18 @@ function getSanPhamLienQuan($id_danhmuc)
         debug($e);
     }
 }
+
+function getSanPhamSale()
+{
+    try {
+        $sql = "SELECT * FROM sanpham WHERE sale > 0 ORDER BY sanpham.sale DESC";
+
+        $stmt = $GLOBALS['conn']->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}

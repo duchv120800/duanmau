@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './commons/env.php';
 include './commons/global.php';
 include './commons/connect.php';
@@ -14,4 +15,5 @@ $act=$_GET["act"]?? "/";
 match ($act) {
     '/' => HomeIndex(),
     'sp_detail'=> ChiTietSanPham($_GET['id_sp']),
+    'taikhoan' => DangKyDangNhap(),
 };

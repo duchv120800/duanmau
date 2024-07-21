@@ -27,7 +27,11 @@
                             </li>
                             <li>
                                 <i class="fa fa-user"></i>
-                                <a href="my-account.html">Account</a>
+                                <a href="<?= BASE_URL ?>?act=taikhoan">Tài khoản</a>
+                                <ul>
+                                    <li>Đăng nhập</li>
+                                    <li>Đăng ký</li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -40,36 +44,26 @@
             <div class="row">
                 <div class="col-12 header-bottom-bg">
                     <div class="logo floatleft">
-                        <a href="index.html">
+                        <a href="<?= BASE_URL ?>">
                             <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/logo.png" width="139" height="60" alt="Rideo" />
                         </a>
                     </div>
                     <div class="mainmenu text-center floatleft">
                         <nav>
                             <ul>
-                                <li><a href="<?= BASE_URL ?>">Home</a>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html">Home Version One</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-2.html">Home Version Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-3.html">Home Version Three</a>
-                                        </li>
-                                    </ul>
+                                <li>
+                                    <a href="<?= BASE_URL ?>">Trang chủ</a>
                                 </li>
                                 <li>
-                                    <a href="shop.html">Danh mục</a>
-                                            <ul>
-                                            <?php foreach($danhmucs as $danhmuc): ?>
-                                                <li>
-                                                    <a href="#"><i class="fa fa-arrow-circle-o-up"></i> <?=$danhmuc['ten']?></a>
-                                                </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        </li>
+                                    <a href="">Danh mục</a>
+                                    <ul>
+                                        <?php foreach ($danhmucs as $danhmuc) : ?>
+                                            <li>
+                                                <a href="#"><i class="fa fa-arrow-circle-o-up"></i> <?= $danhmuc['ten'] ?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
                                 </li>
                                 <li><a href="about.html">about</a></li>
                                 <li><a href="#">shortcode</a>
@@ -122,18 +116,8 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li><a href="index.html">Home</a>
-                                        <ul>
-                                            <li>
-                                                <a href="index.html">Home Version One</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">Home Version Two</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">Home Version Three</a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <a href="index.html">Trang chủ</a>
                                     </li>
                                     <li>
                                         <a href="shop.html">products</a>
@@ -194,7 +178,7 @@
                                             </li>
                                             <li>
                                                 <a href="my-account.html">My account</a>
-                                            </li> 
+                                            </li>
                                         </ul>
                                     </li>
                                     <li>

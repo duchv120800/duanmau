@@ -11,7 +11,7 @@
 		content="Rideo – Bicycle Store HTML Template is a clean and elegant design – suitable for accessories, bicycle, biking, clean, creative, mountain biking, responsive, store, sport, interior, shopping. It has a fully responsive width adjusts automatically to any screen size or resolution.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="https://htmldemo.net/rideo/rideo/img/favicon.ico">
 	<link rel="apple-touch-icon" href="apple-touch-icon.html">
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -22,6 +22,19 @@
 	<!-- all css here -->
 	<!-- style css -->
 	<link rel="stylesheet" href="<?=BASE_URL?>client/template/rideo/rideo/style.css">
+	<style>
+		.slick-slide {
+			height: auto !important;
+		}
+		.pro-img::after{
+			width: auto !important;
+		}
+		.banner-child{
+			width: 100%;
+			height: 297px !important;
+			object-fit: cover;
+		}
+	</style>
 </head>
 
 <body>
