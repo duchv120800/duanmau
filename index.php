@@ -15,5 +15,8 @@ $act=$_GET["act"]?? "/";
 match ($act) {
     '/' => HomeIndex(),
     'sp_detail'=> ChiTietSanPham($_GET['id_sp']),
-    'taikhoan' => DangKyDangNhap(),
+    'dangnhap' => DirDangNhap(),
+    'dangxuat' => DirDangXuat(),
+    'dangky' => DangKy(),
+    'hoso' => getOne($_GET['id']),
 };

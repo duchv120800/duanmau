@@ -120,7 +120,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                 <div class="single-products">
                     <div class="row">
                         <?php foreach ($sanphamphobienhomes as $sanphamphobienhome) : ?>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mb-20">
                                 <div class="product-item">
                                     <div class="pro-img">
                                         <a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $sanphamphobienhome['id'] ?>"><img src="<?= BASE_URL ?>uploads/<?= $sanphamphobienhome['hinhanh'] ?>" width="318" height="239" alt="Product" /></a>

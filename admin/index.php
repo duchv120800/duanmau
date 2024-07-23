@@ -9,7 +9,7 @@
     require_file(PATH_CONTROLLER_ADMIN);
     require_file(PATH_MODEL_ADMIN);
 
-    if(!isset($_SESSION['tendangnhap'])){
+    if(!isset($_SESSION['tendangnhap'])||!isset($_SESSION['vaitro'])){
         $act='login';
     }else{
         $act=$_GET["act"] ?? '/';

@@ -1,5 +1,5 @@
 <header>
-    <div class="header-top">
+    <!-- <div class="header-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -28,17 +28,17 @@
                             <li>
                                 <i class="fa fa-user"></i>
                                 <a href="<?= BASE_URL ?>?act=taikhoan">Tài khoản</a>
-                                <ul>
+                                <!-- <ul>
                                     <li>Đăng nhập</li>
                                     <li>Đăng ký</li>
-                                </ul>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> --> 
     <div id="sticky-menu" class="header-bottom">
         <div class="container">
             <div class="row">
@@ -95,18 +95,25 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Pages</a>
-                                    <ul>
-                                        <li>
-                                            <a href="login.html">Login</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-account.html">My account</a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li>
                                     <a href="contact.html">contact</a>
+                                </li>
+                                <li><a href="">Tài khoản</a>
+                                    <ul>
+                                        <?php if (isset($_SESSION['tendangnhap'])) { ?>
+                                            <li>
+                                                <a href="<?= BASE_URL ?>?act=hoso">Hồ sơ</a>
+                                                <a href="<?= BASE_URL ?>?act=dangxuat">Đăng xuất</a>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li>
+                                                <a href="<?= BASE_URL ?>?act=dangnhap">Đăng nhập</a>
+                                            </li>
+                                        <?php } ?>
+                                        <li>
+                                            <a href="<?= BASE_URL ?>?act=dangky">Đăng ký</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>

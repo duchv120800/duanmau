@@ -34,6 +34,12 @@
 			height: 297px !important;
 			object-fit: cover;
 		}
+		.mt-20{
+			margin-top: 20px !important;
+		}
+		.mb-20{
+			margin-bottom: 20px !important;
+		}
 	</style>
 </head>
 

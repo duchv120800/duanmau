@@ -12,6 +12,7 @@ function DirLogin()
        
         $user=Login($data);
         $_SESSION['tendangnhap']=$user['tendangnhap'];
+        $_SESSION['vaitro']=$user['vaitro'];
         $_SESSION['id']=$user['id'];
         $_SESSION['anhdaidien']=$user['anhdaidien'];
         
