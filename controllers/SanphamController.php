@@ -3,6 +3,7 @@ function ChiTietSanPham($idsp)
 {
     $view = 'sanpham/detail';
     $sanpham = getOneSanPham($idsp);
+    $binhluans = getAllBinhLuan($idsp);
     $danhmucs=getAllDanhmuc();
     $sanphamlienquans=getSanPhamLienQuan($sanpham['id_danhmuc']);
     $anhmotas= getAnhSanPham($idsp);

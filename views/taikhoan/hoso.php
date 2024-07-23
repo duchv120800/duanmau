@@ -2,7 +2,7 @@
     <img src="<?= BASE_URL . 'uploads/banner.jpg' ?>" class="banner-child" alt="Page Banner" />
 </div>
 <!-- page banner area end -->
-<div class="app-content"> <!--begin::Container-->
+<div class="app-content mt-20 mb-20"> <!--begin::Container-->
     <div class="container-fluid"> <!--begin::Row-->
         <div class="col-12 col-md-12 d-flex align-items-stretch flex-column">
             <div class="row">

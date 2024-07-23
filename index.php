@@ -19,4 +19,5 @@ match ($act) {
     'dangxuat' => DirDangXuat(),
     'dangky' => DangKy(),
     'hoso' => HoSoTaiKhoan($_GET['id']),
+    'giohang' => ViewGioHang(),
 };

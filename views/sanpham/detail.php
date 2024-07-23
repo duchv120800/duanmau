@@ -139,27 +139,24 @@
                         </div>
                         <div class="tab-pane fade single-blog-page" id="reviews">
                             <div class="leave-comment">
-                                <h4>leave your review</h4>
+                                <?php foreach ($binhluans as $binhluan):?>
+                                    <div>
+                                    <h5 style="display: inline-block;"><?=$binhluan['tentaikhoan']?> </h5>
+                                    <p style="display: inline-block;"> <?=$binhluan['ngaybinhluan']?></p>
+                                    </div>
+                                <p><?=$binhluan['noidung']?></p>
+                                <hr>
+                                <?php endforeach;?>
                                 <form action="#">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-text">
-                                                <input type="text" name="name" placeholder="Your Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="input-text">
-                                                <input type="text" name="email" placeholder="Email" required="">
-                                            </div>
-                                        </div>
                                         <div class="col-12">
                                             <div class="input-text">
-                                                <textarea name="comment" id="comment" placeholder="Comment" rows="4"></textarea>
+                                                <textarea name="comment" id="comment" placeholder="Nhập nội dung bình luận" rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="submit-text">
-                                                <input type="submit" name="submit" value="submit comments">
+                                                <input type="submit" name="submit" value="Bình luận">
                                             </div>
                                         </div>
                                     </div>

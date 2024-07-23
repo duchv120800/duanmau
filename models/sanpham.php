@@ -94,3 +94,25 @@ function getSanPhamSale()
         debug($e);
     }
 }
+
+function getAllBinhLuan($id_sanpham) {
+    try {
+        $sql = "SELECT binhluan.*, taikhoan.tendangnhap AS tentaikhoan 
+            FROM binhluan 
+            INNER JOIN taikhoan
+            ON binhluan.id_taikhoan = taikhoan.id
+            WHERE binhluan.id_sanpham=:id_sanpham
+            AND binhluan.trangthai=1
+            ";
+
+        $stmt = $GLOBALS['conn']->prepare($sql);
+
+        $stmt->bindParam(':id_sanpham', $id_sanpham);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}

@@ -65,38 +65,10 @@
                                     </ul>
                                 </li>
                                 </li>
-                                <li><a href="about.html">about</a></li>
-                                <li><a href="#">shortcode</a>
-                                    <ul>
-                                        <li>
-                                            <a href="shortcode/alerts.html">alerts</a>
-                                        </li>
-                                        <li>
-                                            <a href="shortcode/buttons.html">buttons</a>
-                                        </li>
-                                        <li>
-                                            <a href="shortcode/blog.html">blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="shortcode/collapse.html">collapse</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog-1.html">blog</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog-1.html">Blog Style One</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-2.html">Blog Style Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-blog.html">Single Blog</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">Sản phẩm</a></li>
+                                <li><a href="blog-1.html">Giới thiệu</a></li>
                                 <li>
-                                    <a href="contact.html">contact</a>
+                                    <a href="contact.html">Liên hệ</a>
                                 </li>
                                 <li><a href="">Tài khoản</a>
                                     <ul>
@@ -201,7 +173,7 @@
                             <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
                                 <ul class="cart-menu">
                                     <li>
-                                        <a href="cart.html"><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
+                                        <a href=""><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
                                         <div class="cart-menu-title">
                                             <a href="cart.html">
                                                 <h5>Mount POW C058 FG </h5>
@@ -221,7 +193,7 @@
                                         <span class="cancel-item"><i class="fa fa-close"></i></span>
                                     </li>
                                     <li class="cart-menu-btn">
-                                        <a href="cart.html">view cart</a>
+                                        <a href="<?= BASE_URL ?>?act=giohang">view cart</a>
                                         <a href="checkout.html">checkout</a>
                                     </li>
                                 </ul>

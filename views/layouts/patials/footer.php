@@ -1,11 +1,11 @@
 <footer>
-    <div class="footer-logo-text">
+    <!-- <div class="footer-logo-text">
         <div class="container text-center">
             <a href="index.html"><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/logo2.png" width="175" height="75" alt="Logo" /></a>
             <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
             <p> suffered alteration in some form, by injected humour, or randomised</p>
         </div>
-    </div>
+    </div> -->
     <!-- footer top start -->
     <div class="footer-top section-padding">
         <div class="container">
