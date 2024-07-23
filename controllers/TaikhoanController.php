@@ -15,6 +15,7 @@ function DirDangNhap() {
             if(!empty($user)){
                 $_SESSION['tendangnhap']=$user['tendangnhap'];
                 $_SESSION['vaitro']=$user['vaitro'];
+                $_SESSION['id']=$user['id'];
                 header('location:'.BASE_URL);
             }else{
                 $alert=false;
@@ -58,9 +59,16 @@ function DangKy()
     require PATH_VIEW . "master.php";
 }
 
+function HoSoTaiKhoan($id) {
+    $view="taikhoan/hoso";
+    $user=getOne('taikhoan',$id);
+    require_once PATH_VIEW . "master.php";
+}
+
 function DirDangXuat() {
     unset($_SESSION['tendangnhap']);
     unset($_SESSION['vaitro']);
+    unset($_SESSION['id']);
     $view="taikhoan/dangnhap";
     require_once PATH_VIEW . "master.php";
 }

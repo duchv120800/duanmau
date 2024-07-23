@@ -18,5 +18,5 @@ match ($act) {
     'dangnhap' => DirDangNhap(),
     'dangxuat' => DirDangXuat(),
     'dangky' => DangKy(),
-    'hoso' => getOne($_GET['id']),
+    'hoso' => HoSoTaiKhoan($_GET['id']),
 };

@@ -7,8 +7,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Nước hoa DAH</title>
-	<meta name="description"
-		content="Rideo – Bicycle Store HTML Template is a clean and elegant design – suitable for accessories, bicycle, biking, clean, creative, mountain biking, responsive, store, sport, interior, shopping. It has a fully responsive width adjusts automatically to any screen size or resolution.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="https://htmldemo.net/rideo/rideo/img/favicon.ico">
@@ -16,6 +14,7 @@
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
 	<link
 		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400;1,500&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"
 		rel="stylesheet">
@@ -39,6 +38,13 @@
 		}
 		.mb-20{
 			margin-bottom: 20px !important;
+		}
+		.img-circle{
+			border-radius: 50%;
+		}
+		.img-fluid{
+			width: 100%;
+			height: auto;
 		}
 	</style>
 </head>

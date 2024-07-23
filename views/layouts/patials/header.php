@@ -102,7 +102,7 @@
                                     <ul>
                                         <?php if (isset($_SESSION['tendangnhap'])) { ?>
                                             <li>
-                                                <a href="<?= BASE_URL ?>?act=hoso">Hồ sơ</a>
+                                                <a href="<?= BASE_URL ?>?act=hoso&id=<?=$_SESSION['id']?>">Hồ sơ</a>
                                                 <a href="<?= BASE_URL ?>?act=dangxuat">Đăng xuất</a>
                                             </li>
                                         <?php } else { ?>
