@@ -1,8 +1,21 @@
 <main class="app-main"> <!--begin::App Content Header-->
   <section class="content">
     <div class="card card-solid">
-      <div class="card-header bg-info">
-        <h5 class="mb-0">Chi tiết đơn hàng</h5>
+      <?php
+      if ($donhang['id_trangthai'] == 1) {
+        $bgColor = 'warning';
+      } else if ($donhang['id_trangthai'] < 5) {
+        $bgColor = 'info';
+      } else if ($donhang['id_trangthai'] == 5) {
+        $bgColor = 'danger';
+      } else if ($donhang['id_trangthai'] == 6) {
+        $bgColor = 'primary';
+      } else {
+        $bgColor = 'success';
+      }
+      ?>
+      <div class="card-header bg-<?= $bgColor ?>">
+        <h5 class="mb-0">Trạng thái : <?= $donhang['tentrangthai'] ?></h5>
       </div>
       <div class="card-body">
         <div class="container-fluid">
@@ -49,7 +62,7 @@
                 <?= $donhang['ngaydathang'] ?><br>
                 <strong>Trạng thái đơn hàng:</strong>
                 <?= $donhang['tentrangthai'] ?><br>
-                <strong>Hình thức thanh toán:</strong>
+                <strong>Thanh toán:</strong>
                 <?= $donhang['hinhthucthanhtoan'] ?><br>
               </div>
             </div>
