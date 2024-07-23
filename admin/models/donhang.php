@@ -30,10 +30,10 @@ function getOneDonhang($id) {
                sanpham.ten AS tensanpham, 
                sanpham.hinhanh AS hinhanhsanpham, 
                sanpham.gia AS giasanpham,
-               taikhoan.hoten AS hotennguoigui, 
-               taikhoan.diachi AS diachinguoigui,
-               taikhoan.sodienthoai AS sodienthoainguoigui,
-               taikhoan.email AS emailnguoigui,
+               taikhoan.hoten AS hotennguoidat, 
+               taikhoan.diachi AS diachinguoidat,
+               taikhoan.sodienthoai AS sodienthoainguoidat,
+               taikhoan.email AS emailnguoidat,
                trangthaidonhang.tentrangthai AS tentrangthai
         FROM donhang 
         LEFT JOIN sanpham ON donhang.id_sanpham = sanpham.id 
@@ -47,6 +47,28 @@ function getOneDonhang($id) {
         $stmt->execute();
 
         return $stmt->fetch();
+
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+        return null;
+    }
+}
+
+function getSanPhamDonHang($id_donhang) {
+    try {
+
+        $sql = "SELECT chitietdonhang.*, 
+                sanpham.ten AS tensanpham,
+                sanpham.hinhanh AS anhsanpham
+                FROM chitietdonhang 
+                JOIN sanpham ON chitietdonhang.id_sanpham = sanpham.id 
+                WHERE chitietdonhang.id_donhang = :id_donhang";
+
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->bindParam(':id_donhang', $id_donhang);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
 
     } catch (Exception $e) {
         echo "Lỗi: " . $e->getMessage();

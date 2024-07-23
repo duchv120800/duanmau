@@ -14,6 +14,7 @@ function DetailDonhang($id)
     $title = 'Xem chi tiết';
     $main_title = 'Đơn hàng';
     $donhang = getOneDonhang($id);
+    $sanphamdonhangs = getSanPhamDonHang($id);
 
     if (empty($donhang)) {
         e404();

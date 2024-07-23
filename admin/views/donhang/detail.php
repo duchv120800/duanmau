@@ -1,23 +1,25 @@
 <main class="app-main"> <!--begin::App Content Header-->
   <section class="content">
     <div class="card card-solid">
-      <div class="card-header bg-info"><h5 class="mb-0">Chi tiết đơn hàng</h5></div>
+      <div class="card-header bg-info">
+        <h5 class="mb-0">Chi tiết đơn hàng</h5>
+      </div>
       <div class="card-body">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4">
               <!-- Thông tin người gửi -->
               <div class="invoice-info">
-                <h3>Người gửi</h3>
+                <h3>Thông tin người đặt</h3>
                 <address>
                   <strong>Họ tên:</strong>
-                  <?= $donhang['hotennguoigui'] ?><br>
+                  <?= $donhang['hotennguoidat'] ?><br>
                   <strong>Địa Chỉ:</strong>
-                  <?= $donhang['diachinguoigui'] ?><br>
+                  <?= $donhang['diachinguoidat'] ?><br>
                   <strong>Điện thoại:</strong>
-                  <?= $donhang['sodienthoainguoigui'] ?><br>
+                  <?= $donhang['sodienthoainguoidat'] ?><br>
                   <strong>Email:</strong>
-                  <?= $donhang['emailnguoigui'] ?>
+                  <?= $donhang['emailnguoidat'] ?>
                 </address>
               </div>
             </div>
@@ -53,28 +55,52 @@
             </div>
           </div>
           <hr>
+          <!-- Table row -->
+          <div class="row">
+            <div class="col-12 table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $tongtien = 0; ?>
+                  <?php foreach ($sanphamdonhangs as $key => $sanpham) : ?>
+                    <tr>
+                      <td><?= $key + 1 ?></td>
+                      <td><?= $sanpham['tensanpham'] ?></td>
+                      <td>
+                        <img src="<?= BASE_URL . 'uploads/' . $sanpham['anhsanpham'] ?>" alt="" style="width:50px;height:50px;object-fit:contain;">
+                      </td>
+                      <td><?= $sanpham['dongia'] ?></td>
+                      <td><?= $sanpham['soluong'] ?></td>
+                      <td><?= $sanpham['tongtien'] ?></td>
+                    </tr>
+                    <?php $tongtien += $sanpham['tongtien']; ?>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
           <!-- Thông tin thanh toán -->
           <div class="row">
             <!-- thông tin sản phẩm -->
-            <div class="col-md-8">
-              <div class="invoice-info">
-                <h3>Thông tin sản phẩm</h3>
-                <img src="<?= BASE_URL . 'uploads/' . $donhang['hinhanhsanpham'] ?>" alt="" style="width:100px;height:100px;object-fit:contain;"><br>
-                <h5><?= $donhang['tensanpham'] ?></h5>
-                <strong>Ghi chú:</strong>
-                <?= $donhang['ghichu'] ?><br>
-                <strong>Giá sản phẩm:</strong>
-                <?= number_format($donhang['giasanpham'], 0, ',', '.')?>đ<br>
-              </div>
-            </div>
             <div class="col-md-4">
               <div class="invoice-info">
                 <h3>Thanh toán</h3>
                 <div class="table-responsive">
                   <table class="table">
                     <tr>
-                      <th style="width:50%">Giá sản phẩm:</th>
-                      <td><?= number_format($donhang['tongtien'], 0, ',', '.')?>đ</td>
+                      <th style="width:50%">Tổng tiền:</th>
+                      <td><?= number_format($tongtien, 0, ',', '.') ?>đ</td>
                     </tr>
                     <tr>
                       <th style="width:50%">Phí vận chuyển:</th>
@@ -82,7 +108,7 @@
                     </tr>
                     <tr>
                       <th style="width:50%">Tổng thanh toán:</th>
-                      <td><?= number_format($donhang['tongtien']+15000, 0, ',', '.')?>đ</td>
+                      <td><?= number_format($tongtien + 15000, 0, ',', '.') ?>đ</td>
                     </tr>
                   </table>
                 </div>

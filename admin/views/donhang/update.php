@@ -101,7 +101,13 @@
                             <label for="validationCustom04" class="form-label">Trạng thái</label>
                             <select class="form-select" name="id_trangthai" id="validationCustom04" required>
                                 <?php foreach ($listTrangthai as $trangthai) : ?>
-                                    <option value="<?= $trangthai['id'] ?>" <?= ($donhang['id_trangthai'] === $trangthai['id']) ? 'selected' : ''; ?>><?= $trangthai['tentrangthai'] ?></option>
+                                    <option
+                                        value="<?= $trangthai['id'] ?>" 
+                                        <?= ($donhang['id_trangthai'] === $trangthai['id']) ? 'selected' : ''; ?>
+                                        <?= ($trangthai['id'] < $donhang['id_trangthai']) ? 'disabled' : ''; ?>
+                                    >
+                                        <?= $trangthai['tentrangthai'] ?>
+                                    </option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="invalid-feedback">
