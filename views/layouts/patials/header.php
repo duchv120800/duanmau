@@ -59,13 +59,13 @@
                                     <ul>
                                         <?php foreach ($danhmucs as $danhmuc) : ?>
                                             <li>
-                                                <a href="#"><i class="fa fa-arrow-circle-o-up"></i> <?= $danhmuc['ten'] ?></a>
+                                                <a href="<?= BASE_URL ?>?act=sanpham&id_danhmuc=<?= $danhmuc['id'] ?>"><i class="fa fa-arrow-circle-o-up"></i> <?= $danhmuc['ten'] ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
                                 </li>
-                                <li><a href="#">Sản phẩm</a></li>
+                                <li><a href="<?= BASE_URL ?>?act=sanpham&id_danhmuc=0">Sản phẩm</a></li>
                                 <li><a href="blog-1.html">Giới thiệu</a></li>
                                 <li>
                                     <a href="contact.html">Liên hệ</a>
@@ -170,7 +170,7 @@
                     <!-- mobile menu end -->
                     <div class="cart-menu-area floatright">
                         <ul>
-                            <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+                            <li><a><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?=!empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
                                 <ul class="cart-menu">
                                     <li>
                                         <a href=""><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>

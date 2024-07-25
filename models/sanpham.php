@@ -1,5 +1,28 @@
 <?php
-function SanPhamMoiHome() {
+function getAllSanpham($id_danhmuc = 0, $limit = 12, $offset = 0)
+{
+    try {
+        $sql = "SELECT * from sanpham";
+        // if ($keyw != "") {
+        //     $sql .= " and name like '%" . $keyw . "%'";
+        // }
+        if ($id_danhmuc > 0) {
+            $sql .= " where id_danhmuc =" . $id_danhmuc;
+        }
+        $sql .= " order by sanpham.id desc limit " . $limit . " offset " . $offset;
+
+        $stmt = $GLOBALS['conn']->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    } catch (\Exception $e) {
+        debug($e);
+    }
+}
+
+function SanPhamMoiHome()
+{
     try {
         $sql = "SELECT * FROM sanpham ORDER BY sanpham.id DESC LIMIT 4";
 
@@ -28,7 +51,8 @@ function SanPhamPhoBienHome()
     }
 }
 
-function getOneSanPham($id) {
+function getOneSanPham($id)
+{
     try {
         $sql = "SELECT sanpham.*, danhmuc.ten AS ten_danhmuc 
             FROM sanpham 
@@ -95,7 +119,8 @@ function getSanPhamSale()
     }
 }
 
-function getAllBinhLuan($id_sanpham) {
+function getAllBinhLuan($id_sanpham)
+{
     try {
         $sql = "SELECT binhluan.*, taikhoan.tendangnhap AS tentaikhoan 
             FROM binhluan 

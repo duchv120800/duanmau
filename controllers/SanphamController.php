@@ -9,3 +9,12 @@ function ChiTietSanPham($idsp)
     $anhmotas= getAnhSanPham($idsp);
     require_once PATH_VIEW . "master.php";
 }
+
+function ListSanPham($id_danhmuc)
+{
+    $view = 'sanpham/list';
+    $danhmucs=getAllDanhmuc();
+    $listsanphams= getAllSanPham($id_danhmuc);
+    require_once PATH_VIEW . "master.php";
+}
+

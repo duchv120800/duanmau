@@ -33,13 +33,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                             <div class="actions-btn">
                                 <ul class="clearfix">
                                     <li>
-                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                        <button class="addToCard" data-id="<?= $sanphammoihome['id'] ?>" onclick="addGiohang(<?= $sanphammoihome['id'] ?>, '<?= $sanphammoihome['ten'] ?>', <?= $sanphammoihome['giakhuyenmai'] ?>)">Thêm vào giỏ hàng</button>
                                     </li>
                                 </ul>
                             </div>
@@ -65,8 +59,8 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
         <div class="row">
             <div class="col-md-6">
                 <div class="discount-left">
-                    <h4><?=$sanphamsales[0]['ten']?></h4>
-                    <h2><strong>Sale Up To <?=$sanphamsales[0]['sale']?>%</strong></h2>
+                    <h4><?= $sanphamsales[0]['ten'] ?></h4>
+                    <h2><strong>Sale Up To <?= $sanphamsales[0]['sale'] ?>%</strong></h2>
                     <p><?= substr($sanphamsales[0]['mota'], 0, 300) ?>...</p>
                     <div class="count-text clearfix">
                         <ul id="countdown-1">
@@ -93,7 +87,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
             </div>
             <div class="col-md-6">
                 <div class="discount-right">
-                    <img src="<?= BASE_URL ?>uploads/<?=$sanphamsales[0]['hinhanh']?>" width="555" height="426" alt="" />
+                    <img src="<?= BASE_URL ?>uploads/<?= $sanphamsales[0]['hinhanh'] ?>" width="555" height="426" alt="" />
                 </div>
             </div>
         </div>
@@ -154,3 +148,29 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
     </div>
 </section>
 <!-- popular-product section end -->
+
+<!-- start ajax -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    let tongSanpham = document.getElementById('tongSanpham');
+
+    function addGiohang(idSanpham, tenSanpham, giaSanpham) {
+        console.log(idSanpham);
+        $.ajax({
+            type: "POST",
+            url: "./views/giohang/giohang.php",
+            data: {
+                id: idSanpham,
+                ten: tenSanpham,
+                gia: giaSanpham,
+            },
+            success: function(response) {
+                tongSanpham.innerText = response;
+                alert("Bạn đã thêm sản phẩm vào giỏ hàng thành công");
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

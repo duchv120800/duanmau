@@ -1,19 +1,12 @@
 <?php
-session_start();
-// Kiểm tra xem biến session 'giohang' đã được khởi tạo hay chưa
-if (!isset($_SESSION['giohang'])) {
-    $_SESSION['giohang'] = [];
-}
-if (!defined('BASE_URL')) {
-    define('BASE_URL', 'http://localhost/du_an1/');
-}
-
+// session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$idSanpham = $_POST['id'];
 	$tenSanpham = $_POST['ten'];
 	$giaSanpham = $_POST['gia'];
 
 	// kiểm tra sp đã có trong giỏ hàng hay chưa
+	$_SESSION['giohang'] = [];
 	$index = array_search($idSanpham, array_column($_SESSION['giohang'], 'id'));
 
 	if ($index !== false) {
@@ -21,15 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	} else {
 		// Nếu sản phẩm chưa tồn tại thì thêm vào giỏ hàng
 		$sanpham = [
-			'id' => $idSanpham,
-			'ten' => $tenSanpham,
-			'gia' => $giaSanpham,
-			'quantity' => 1,
+			'idSanpham' => $idSanpham,
+			'tenSanpham' => $tenSanpham,
+			'giaSanpham' => $giaSanpham,
+			'quantity' => 1
 		];
 		$_SESSION['giohang'][] = $sanpham;
 	}
-	echo count($_SESSION['giohang']);
 } else {
-	echo "Yêu cầu không hợp lệ ";
+	echo "<h1>yêu cầu không hợp lệ</h1>";
 };
 ?>
