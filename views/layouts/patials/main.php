@@ -122,13 +122,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                                     <div class="actions-btn">
                                         <ul class="clearfix">
                                             <li>
-                                                <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-heart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="fa fa-eye"></i></a>
+                                                <button class="addToCard" data-id="<?= $sanphamphobienhome['id'] ?>" onclick="addGiohang(<?= $sanphamphobienhome['id'] ?>, '<?= $sanphamphobienhome['ten'] ?>', <?= $sanphamphobienhome['giakhuyenmai'] ?>)">Thêm vào giỏ hàng</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -158,7 +152,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
         console.log(idSanpham);
         $.ajax({
             type: "POST",
-            url: "./views/giohang/giohang.php",
+            url: "<?= BASE_URL ?>models/giohang.php",
             data: {
                 id: idSanpham,
                 ten: tenSanpham,

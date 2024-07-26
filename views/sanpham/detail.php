@@ -36,8 +36,8 @@
                 <div class="right">
                     <div class="singl-pro-title">
                         <h3><?= $sanpham['ten'] ?></h3>
-                        <h3><em><span style="text-decoration-line: line-through; color:red"><?= number_format($sanpham['gia'], 0, ',', '.') ?>đ</span>
-                                <?= number_format($sanpham['gia'], 0, ',', '.') ?>đ</em></h1>
+                        <h3><em><del><?= number_format($sanpham['gia'], 0, ',', '.') ?>đ</del>
+                                <span style="color: #ff6600"><?= number_format($sanpham['giakhuyenmai'], 0, ',', '.') ?>đ</em></span></h1>
                             <p><?= substr($sanpham['mota'], 0, 300) ?>...</p>
                             <!-- <hr /> -->
                             <!-- <div class="color-brand clearfix">
@@ -65,16 +65,9 @@
 
                                 <ul class="clearfix text-center">
                                     <li>
-                                        <a href="cart.html"><i class="fa fa-shopping-cart"></i> add to cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html"><i class="fa fa-heart-o"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-compress"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-share-alt"></i></a>
+                                        <button class="addToCard" data-id="<?= $sanpham['id'] ?>" onclick="Test()">
+                                            <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -200,7 +193,7 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star gray-star"></i>
                                         </div>
-                                        <p><span><?= number_format($sanpham['gia'], 0, ',', '.') ?>đ</span> <del><?= number_format($sanpham['giakhuyenmai'], 0, ',', '.') ?>đ</del></p>
+                                        <p><del><?= number_format($sanphamlienquan['gia'], 0, ',', '.') ?>đ</del> <span style="color:#ff6600; font-size:large"><?= number_format($sanphamlienquan['giakhuyenmai'], 0, ',', '.') ?>đ</span></p>
                                     </div>
                                 </div>
                             </div>
