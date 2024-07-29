@@ -56,7 +56,7 @@ if (empty($listSanphamGiohang)) {
 											</form>
 										</td>
 										<td><?= number_format((int)$sanpham['giakhuyenmai'] * (int)$soluong, 0, ',', '.') ?>đ</td>
-										<td><i class="fa fa-trash" title="Remove this product"></i></td>
+										<td><i onclick="xoaSanphamGiohang(<?= $sanpham['id'] ?>)" class="fa fa-trash" title="Remove this product"></i></td>
 									</tr>
 
 								<?php
@@ -157,13 +157,13 @@ if (empty($listSanphamGiohang)) {
 		// Gui yeu cau cap nhat so luong
 		$.ajax({
 			type: 'POST',
-			url: '<?=BASE_URL?>views/giohang/capnhatsoluong.php',
+			url: '<?= BASE_URL ?>views/giohang/capnhatsoluong.php',
 			data: {
 				id: id,
 				soluong: soluong
 			},
 			success: function(response) {
-				$.post('<?=BASE_URL?>views/giohang/tableCartOrder.php', function(data) {
+				$.post('<?= BASE_URL ?>views/giohang/tableCartOrder.php', function(data) {
 					$("#cartOrder").html(data);
 				});
 			},
@@ -171,5 +171,25 @@ if (empty($listSanphamGiohang)) {
 				console.log(error);
 			}
 		});
+	}
+
+	function xoaSanphamGiohang(idSanpham) {
+		if (confirm('Bạn có chắc chắn xóa sản phẩm khỏi giỏ hàng?')) {
+			$.ajax({
+				type: 'POST',
+				url: '<?= BASE_URL ?>views/giohang/xoaSanphamGiohang.php',
+				data: {
+					id: idSanpham
+				},
+				success: function(response) {
+					$.post('<?= BASE_URL ?>views/giohang/tableCartOrder.php', function(data) {
+						$("#cartOrder").html(data);
+					});
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		}
 	}
 </script>
