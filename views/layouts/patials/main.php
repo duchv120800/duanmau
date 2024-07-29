@@ -149,7 +149,6 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
     let tongSanpham = document.getElementById('tongSanpham');
 
     function addGiohang(idSanpham, tenSanpham, giaSanpham) {
-        console.log(idSanpham);
         $.ajax({
             type: "POST",
             url: "<?= BASE_URL ?>models/giohang.php",

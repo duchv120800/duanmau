@@ -1,17 +1,22 @@
-<!-- page banner area start -->
-<div class="page-banner">
-	<img src="<?= BASE_URL ?>client/template/rideo/rideo/img/slider/bg1.jpg" width="1903" height="297" alt="Page Banner" />
-</div>
-<!-- page banner area end -->
-<!-- cart page content section start -->
 <?php
-if (empty($listSanphamGiohang)) {
-	echo "<h2>Chưa có sản phẩm nào trong giỏ hàng</h2>";
-} else {
+session_start();
+include '../../commons/env.php';
+include '../../commons/global.php';
+include '../../commons/connect.php';
+include '../../commons/cart.php';
+include '../../commons/count.php';
+include '../../commons/hidden_notification.php';
+//require tất cả file trong controllers và models
+require_file(PATH_CONTROLLER);
+// require_file(PATH_MODEL);
+
+if (!empty($_SESSION['giohang'])) {
+	$giohang = $_SESSION['giohang'];
+	$idSanpham = array_column($giohang, 'id');
+	$listIdSanpham = implode(',', $idSanpham);
+	$listSanphamGiohang = getAllSanphamGiohang($listIdSanpham);
 ?>
-	<section class="cart-page section-padding">
-		<div id="cartOrder" class="container">
-			<div class="row">
+<div class="row">
 				<div class="col-12">
 					<div class="table-responsive table-one margin-minus section-padding-bottom">
 						<table class="spacing-table text-center">
@@ -139,37 +144,6 @@ if (empty($listSanphamGiohang)) {
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- cart page content section end -->
 <?php
 }
 ?>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
-	function capNhatSoLuong(id, index) {
-		// Lay gia tri input #soluong
-		let soluong = $('#soluong_' + id).val();
-		if (soluong <= 0) {
-			soluong = 1;
-		}
-
-		// Gui yeu cau cap nhat so luong
-		$.ajax({
-			type: 'POST',
-			url: '<?=BASE_URL?>views/giohang/capnhatsoluong.php',
-			data: {
-				id: id,
-				soluong: soluong
-			},
-			success: function(response) {
-				$.post('<?=BASE_URL?>views/giohang/tableCartOrder.php', function(data) {
-					$("#cartOrder").html(data);
-				});
-			},
-			error: function(error) {
-				console.log(error);
-			}
-		});
-	}
-</script>
