@@ -7,7 +7,7 @@
 <!-- cart page content section start -->
 <?php
 if (empty($listSanphamGiohang)) {
-	echo "<h2 style='margin:20px; text-align:center;'>Chưa có sản phẩm nào trong giỏ hàng</h2>";
+	echo "<h2 style='margin:20px; text-align:center; color:#ff6600;'>Chưa có sản phẩm nào trong giỏ hàng!</h2>";
 } else {
 ?>
 	<section class="cart-page section-padding">
@@ -186,6 +186,7 @@ if (empty($listSanphamGiohang)) {
 	}
 
 	function xoaSanphamGiohang(idSanpham) {
+		console.log(idSanpham);
 		if (confirm('Bạn có chắc chắn xóa sản phẩm khỏi giỏ hàng?')) {
 			$.ajax({
 				type: 'POST',

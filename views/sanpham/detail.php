@@ -141,9 +141,9 @@
                                 <hr>
                                 <?php endforeach;?>
                                 <?php
-                                if(isset($_SESSION['tendangnhap'])){
+                                if(isset($_SESSION['taikhoan']['tendangnhap'])){
                                 ?>
-                                <form action="#" method="POST">
+                                <form action="?act=sp_detail&id_sp=<?= $sanpham['id'] ?>" method="POST">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="input-text">

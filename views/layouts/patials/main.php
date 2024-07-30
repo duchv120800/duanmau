@@ -13,8 +13,8 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                     <div class="shape">
                         <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/icon/t-shape.png" width="16" height="16" alt="Title Shape" />
                     </div>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a
-                        page when looking at its layout.</p>
+                    <p>Sản phẩm mới - Trải nghiệm mới</p>
+                    <p>Đón nhận xu hướng mới nhất ngay hôm nay!.</p>
                 </div>
             </div>
         </div>
@@ -106,8 +106,8 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                     <div class="shape">
                         <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/icon/t-shape.png" width="16" height="16" alt="Title Shape" />
                     </div>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a
-                        page when looking at its layout.</p>
+                    <p>Sản phẩm phổ biến - Chất lượng đảm bảo.</p>
+                    <p>Khám phá những sản phẩm hot nhất ngay bây giờ!</p>
                 </div>
             </div>
         </div>

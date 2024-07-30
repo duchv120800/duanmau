@@ -6,12 +6,12 @@
 <div class="row mt-20">
     <div class="col-4"></div>
     <div class="col-4">
-    <div class="card card-outline card-primary">
+    <div class="card card-outline card-primary mt-20 mb-20">
             <div class="card-header"> <a href="" class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover">
                     <h3 class="mb-0"> Đăng nhập</h3>
                 </a> </div>
             <div class="card-body login-card-body">
-                <div id="alert" class="alert <?php if($alert){echo ' alert-success';}else{echo ' alert-danger';}?>" <?php if(isset($notification) && ($notification != "")){echo "";}else{echo "hidden";}?>>
+                <div id="alert" class="alert <?=$alert ? ' alert-success' : ' alert-danger';?>" <?= isset($notification) && $notification !== "" ? "" : "hidden";?>>
                     <?php 
                         if(isset($notification) && ($notification != "")) {
                             echo $notification;

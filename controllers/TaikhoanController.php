@@ -2,6 +2,7 @@
 function DirDangNhap()
 {
     $view = "taikhoan/dangnhap";
+    $danhmucs = getAllDanhmuc();
     if (isset($_POST["dangnhap"])) {
         $tendangnhap = $_POST["tendangnhap"];
         $matkhau = $_POST["matkhau"];
@@ -31,6 +32,7 @@ function DangKy()
 {
     $view = 'taikhoan/dangky';
     $title = 'Đăng ký';
+    $danhmucs = getAllDanhmuc();
     if (!empty($_POST['dangky'])) {
         $anhdaidien = $_FILES['anhdaidien']['name'];
 
@@ -64,6 +66,7 @@ function HoSoTaiKhoan($id)
 {
     $view = "taikhoan/hoso";
     $user = getOne('taikhoan', $id);
+    $danhmucs = getAllDanhmuc();
     require_once PATH_VIEW . "master.php";
 }
 

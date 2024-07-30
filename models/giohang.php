@@ -8,12 +8,12 @@ if (!defined('BASE_URL')) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$idSanpham = $_POST['id'];
-	$tenSanpham = $_POST['ten'];
-	$giaSanpham = $_POST['gia'];
+	$idSanpham = $_POST['id'] ?? '';
+	$tenSanpham = $_POST['ten'] ?? '';
+	$giaSanpham = $_POST['gia'] ?? '';
 
 	if (!empty($idSanpham) && !empty($tenSanpham) && !empty($giaSanpham)) {
-		
+
 		session_start();
 
 		// kiểm tra sp đã có trong giỏ hàng hay chưa

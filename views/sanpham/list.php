@@ -1,6 +1,6 @@
 <!-- page banner area start -->
 <div class="page-banner">
-    <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/slider/bg1.jpg" width="1903" height="297" alt="Page Banner" />
+    <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/slider/bg1.jpg" width="1903" height="200" alt="Page Banner" />
 </div>
 <!-- page banner area end -->
 <!-- popular-product section start -->

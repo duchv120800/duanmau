@@ -9,7 +9,6 @@ if (!defined('BASE_URL')) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   
     $idSanpham = $_POST['id'];
 
     if (!empty($_SESSION['giohang'])) {
