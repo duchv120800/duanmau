@@ -6,6 +6,7 @@ function ViewGioHang()
         $giohang = $_SESSION['giohang'];
         $idSanpham = array_column($giohang, 'id');
         $listIdSanpham = implode(',', $idSanpham);
+
         $listSanphamGiohang = getAllSanphamGiohang($listIdSanpham);
     }
 

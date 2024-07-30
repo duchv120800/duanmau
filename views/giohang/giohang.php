@@ -2,11 +2,12 @@
 <div class="page-banner">
 	<img src="<?= BASE_URL ?>client/template/rideo/rideo/img/slider/bg1.jpg" width="1903" height="297" alt="Page Banner" />
 </div>
+
 <!-- page banner area end -->
 <!-- cart page content section start -->
 <?php
 if (empty($listSanphamGiohang)) {
-	echo "<h2>Chưa có sản phẩm nào trong giỏ hàng</h2>";
+	echo "<h2 style='margin:20px; text-align:center;'>Chưa có sản phẩm nào trong giỏ hàng</h2>";
 } else {
 ?>
 	<section class="cart-page section-padding">
@@ -69,13 +70,12 @@ if (empty($listSanphamGiohang)) {
 				</div>
 			</div>
 			<div class="row">
+				<h3>Địa chỉ giao hàng</h3>
 				<div class="col-md-4">
 					<div class="estimate-text">
-						<h3>Estimate Shipping And Tax</h3>
-						<p>Enter your destination to get shipping & tax</p>
 						<form action="#">
 							<div class="single-select">
-								<label>Country *</label>
+								<label>Quốc gia *</label>
 								<div class="custom-select">
 									<select class="form-control">
 										<option>Options</option>
@@ -88,7 +88,7 @@ if (empty($listSanphamGiohang)) {
 								</div>
 							</div>
 							<div class="single-select">
-								<label>State/Province *</label>
+								<label>Tỉnh/Thành Phố *</label>
 								<div class="custom-select">
 									<select class="form-control">
 										<option>Options</option>
@@ -101,7 +101,7 @@ if (empty($listSanphamGiohang)) {
 								</div>
 							</div>
 							<div class="single-select">
-								<label>Zip/Postal Code</label>
+								<label>Huyện *</label>
 								<div class="input-text">
 									<input type="text" name="zip" />
 								</div>
@@ -113,17 +113,30 @@ if (empty($listSanphamGiohang)) {
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="estimate-text coupon">
-						<h3>Discount Code</h3>
-						<p>Enter your coupon code if you have one</p>
-						<form action="#">
-							<div class="input-text">
-								<input type="text" name="coupon" />
+					<div class="estimate-text">
+						<!-- <form action="#"> -->
+							<div class="single-select">
+							<label>Số nhà *</label>
+								<div class="input-text">
+									<input type="text" name="zip" />
+								</div>
 							</div>
-							<div class="submit-text">
-								<input type="submit" name="submit" value="Apply Coupon">
+							<div class="single-select">
+							<label>Số nhà *</label>
+								<div class="input-text">
+									<input type="text" name="zip" />
+								</div>
 							</div>
-						</form>
+							<div class="single-select">
+								<label>Số nhà *</label>
+								<div class="input-text">
+									<input type="text" name="zip" />
+								</div>
+								<div class="submit-text quotes">
+									<input type="submit" name="submit" value="Get A Quote">
+								</div>
+							</div>
+						<!-- </form> -->
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -133,9 +146,8 @@ if (empty($listSanphamGiohang)) {
 							<p>Tổng tiền thanh toán: <span class="floatright"><?= number_format($tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
 						</div>
 						<div class="default-btn text-right">
-							<a class="btn-style" href="checkout.html">PROCCED TO CHECKOUT</a>
+							<a class="btn-style" href="checkout.html">TIẾN HÀNG THANH TOÁN</a>
 						</div>
-						<p><strong>Checkout with multiples address</strong></p>
 					</div>
 				</div>
 			</div>

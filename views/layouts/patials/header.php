@@ -1,51 +1,11 @@
 <header>
-    <!-- <div class="header-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="left floatleft">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                +11 (019) 25184203
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope-o"></i>
-                                raid@mail.com
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="right floatright">
-                        <ul>
-                            <li>
-                                <form action="#">
-                                    <button type="submit" aria-label="Right Align">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                    <input type="search" placeholder="Search" />
-                                </form>
-                            </li>
-                            <li>
-                                <i class="fa fa-user"></i>
-                                <a href="<?= BASE_URL ?>?act=taikhoan">Tài khoản</a>
-                                <!-- <ul>
-                                    <li>Đăng nhập</li>
-                                    <li>Đăng ký</li>
-                                </ul> -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- </div> --> 
     <div id="sticky-menu" class="header-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-12 header-bottom-bg">
-                    <div class="logo floatleft">
+                    <div class="floatleft">
                         <a href="<?= BASE_URL ?>">
-                            <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/logo.png" width="139" height="60" alt="Rideo" />
+                            <img src="<?= BASE_URL ?>uploads/logo.png" width="100" height="55" alt="DAH" />
                         </a>
                     </div>
                     <div class="mainmenu text-center floatleft">
@@ -72,9 +32,9 @@
                                 </li>
                                 <li><a href="">Tài khoản</a>
                                     <ul>
-                                        <?php if (isset($_SESSION['tendangnhap'])) { ?>
+                                        <?php if (isset($_SESSION['taikhoan']['tendangnhap'])) { ?>
                                             <li>
-                                                <a href="<?= BASE_URL ?>?act=hoso&id=<?=$_SESSION['id']?>">Hồ sơ</a>
+                                                <a href="<?= BASE_URL ?>?act=hoso&id=<?= $_SESSION['taikhoan']['id_taikhoan'] ?>">Hồ sơ</a>
                                                 <a href="<?= BASE_URL ?>?act=dangxuat">Đăng xuất</a>
                                             </li>
                                         <?php } else { ?>
@@ -170,8 +130,8 @@
                     <!-- mobile menu end -->
                     <div class="cart-menu-area floatright">
                         <ul>
-                            <li><a><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?=!empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
-                                <ul class="cart-menu">
+                            <li><a href="<?= BASE_URL ?>?act=giohang"><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
+                                <!-- <ul class="cart-menu">
                                     <li>
                                         <a href=""><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
                                         <div class="cart-menu-title">
@@ -193,10 +153,10 @@
                                         <span class="cancel-item"><i class="fa fa-close"></i></span>
                                     </li>
                                     <li class="cart-menu-btn">
-                                        <a href="<?= BASE_URL ?>?act=giohang">view cart</a>
-                                        <a href="checkout.html">checkout</a>
+                                        <a href="<?= BASE_URL ?>?act=giohang">Tới giỏ hàng</a>
+                                        <a href="checkout.html">Thanh toán</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>

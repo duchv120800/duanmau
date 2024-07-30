@@ -33,7 +33,9 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                             <div class="actions-btn">
                                 <ul class="clearfix">
                                     <li>
-                                        <button class="addToCard" data-id="<?= $sanphammoihome['id'] ?>" onclick="addGiohang(<?= $sanphammoihome['id'] ?>, '<?= $sanphammoihome['ten'] ?>', <?= $sanphammoihome['giakhuyenmai'] ?>)">Thêm vào giỏ hàng</button>
+                                        <button class="addToCard" data-id="<?= $sanphammoihome['id'] ?>" onclick="addGiohang(<?= $sanphammoihome['id'] ?>, '<?= $sanphammoihome['ten'] ?>', <?= $sanphammoihome['giakhuyenmai'] ?>)">
+                                            Thêm vào giỏ hàng
+                                        </button>
                                     </li>
                                 </ul>
                             </div>

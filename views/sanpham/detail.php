@@ -140,20 +140,28 @@
                                 <p><?=$binhluan['noidung']?></p>
                                 <hr>
                                 <?php endforeach;?>
-                                <form action="#">
+                                <?php
+                                if(isset($_SESSION['tendangnhap'])){
+                                ?>
+                                <form action="#" method="POST">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="input-text">
-                                                <textarea name="comment" id="comment" placeholder="Nhập nội dung bình luận" rows="4"></textarea>
+                                                <textarea name="noidung" id="comment" placeholder="Nhập nội dung bình luận" rows="4"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="submit-text">
-                                                <input type="submit" name="submit" value="Bình luận">
+                                                <input type="submit" name="binhluan" value="Bình luận">
                                             </div>
                                         </div>
                                     </div>
                                 </form>
+                                <?php
+                                }else{
+                                    echo "<div style='color:#ff6600'>Bạn cần đang nhập để bình luận!</div>";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
