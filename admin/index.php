@@ -46,5 +46,12 @@
         'update_dh'=>UpdateDonhang($_GET['id']),
         'delete_dh'=>DeleteDonhang($_GET['id']),
         // end don hang
+        
+        //start bình luận
+        'ds_bl' => ListBinhluan(),
+        'update_bl' => UpdateBinhluan(), 
+        'save_edit' => SaveEditBinhluan(), 
+        'delete_bl' => DeleteBinhluan(),
+        // end bình luận
     };
 ?>

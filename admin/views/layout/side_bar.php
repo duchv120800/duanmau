@@ -35,6 +35,11 @@
                                 <p>ĐƠN HÀNG</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL_ADMIN .'?act=ds_bl'?>" class="nav-link <?= ($view == 'binhluan/list') ? 'active' : ''; ?>"> <i class="nav-icon bi bi-chat-square-dots-fill"></i>
+                                <p>BÌNH LUẬN</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
