@@ -130,9 +130,9 @@
                     <!-- mobile menu end -->
                     <div class="cart-menu-area floatright">
                         <ul>
-                            <li><a href="<?= BASE_URL ?>?act=giohang"><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
-                                <!-- <ul class="cart-menu">
-                                    <li>
+                            <li><a href="#"><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
+                                <ul class="cart-menu">
+                                    <!-- <li>
                                         <a href=""><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
                                         <div class="cart-menu-title">
                                             <a href="cart.html">
@@ -151,12 +151,18 @@
                                             <span>1 x $2500</span>
                                         </div>
                                         <span class="cancel-item"><i class="fa fa-close"></i></span>
-                                    </li>
+                                    </li> -->
                                     <li class="cart-menu-btn">
-                                        <a href="<?= BASE_URL ?>?act=giohang">Tới giỏ hàng</a>
-                                        <a href="checkout.html">Thanh toán</a>
+                                        <a href="<?= BASE_URL ?>?act=giohang">Giỏ hàng</a>
                                     </li>
-                                </ul> -->
+                                    <?php
+                                    if (isset($_SESSION['taikhoan']['id_taikhoan']) && $_SESSION['taikhoan']['id_taikhoan'] !== '') {
+                                    ?>
+                                        <li class="cart-menu-btn">
+                                            <a href="<?= BASE_URL ?>?act=donhang&id_ttdh=0">Đơn hàng</a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
                             </li>
                         </ul>
                     </div>

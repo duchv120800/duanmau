@@ -7,7 +7,7 @@
 <!-- cart page content section start -->
 <?php
 if (empty($listSanphamGiohang)) {
-	echo "<h2 style='margin:20px; text-align:center; color:#ff6600;'>Chưa có sản phẩm nào trong giỏ hàng!</h2>";
+	echo "<h2 style='margin:100px; text-align:center; color:#ff6600;'>Chưa có sản phẩm nào trong giỏ hàng!</h2>";
 } else {
 ?>
 	<section class="cart-page section-padding">
@@ -16,9 +16,9 @@ if (empty($listSanphamGiohang)) {
 				<div class="col-12">
 					<div class="table-responsive table-one margin-minus section-padding-bottom">
 						<table class="spacing-table text-center">
-							<thead>
+							<thead style="background-color: #dcdcdc;">
 								<tr>
-									<th>Ảnh sản phẩm</th>
+									<th>Thông tin sản phẩm</th>
 									<th>Tên</th>
 									<th>Số lượng</th>
 									<th>Tổng tiền</th>
@@ -43,7 +43,7 @@ if (empty($listSanphamGiohang)) {
 												<img src="<?= BASE_URL ?>uploads/<?= $sanpham['hinhanh'] ?>" width="150" height="auto" alt="<?= $sanpham['ten'] ?>" />
 											</a>
 											<div class="items-dsc">
-												<p><a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $sanpham['id'] ?>"><?= $sanpham['ten'] ?></a></p>
+												<p style="font-size:x-large;"><a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $sanpham['id'] ?>"><?= $sanpham['ten'] ?></a></p>
 											</div>
 										</td>
 										<td><?= number_format((int)$sanpham['giakhuyenmai'], 0, ',', '.') ?>đ</td>
@@ -59,98 +59,87 @@ if (empty($listSanphamGiohang)) {
 										<td><?= number_format((int)$sanpham['giakhuyenmai'] * (int)$soluong, 0, ',', '.') ?>đ</td>
 										<td><i onclick="xoaSanphamGiohang(<?= $sanpham['id'] ?>)" class="fa fa-trash" title="Remove this product"></i></td>
 									</tr>
-
 								<?php
 									$tongTienHang += ((int)$sanpham['giakhuyenmai'] * (int)$soluong);
 								endforeach;
 								?>
+								<tr style="font-weight: bold;">
+									<td></td>
+									<td colspan="2">Tổng tiền hàng</td>
+									<td colspan="2"><?= number_format($tongTienHang, 0, ',', '.') ?>đ</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<h3>Địa chỉ giao hàng</h3>
-				<div class="col-md-4">
-					<div class="estimate-text">
-						<form action="#">
-							<div class="single-select">
-								<label>Quốc gia *</label>
-								<div class="custom-select">
-									<select class="form-control">
-										<option>Options</option>
-										<option>Aruba</option>
-										<option>Australia </option>
-										<option>Bahrain</option>
-										<option>Bangladesh</option>
-										<option>Chile</option>
-									</select>
-								</div>
+			<?php
+			if (isset($_SESSION['taikhoan']['tendangnhap']) && $_SESSION['taikhoan']['vaitro'] === 0) {
+			?>
+				<form action="?act=thanhtoan" method="post">
+					<div class="row">
+						<h3>Địa chỉ giao hàng</h3>
+						<div class="col-md-4">
+							<div class="estimate-text">
+								<form action="#">
+									<label>Tên người nhận<span style="color:red;">*</span></label>
+									<div class="input-text">
+										<input type="text" name="tennguoinhan" />
+									</div>
+									<label>Số điện thoại người nhận<span style="color:red;">*</span></label>
+									<div class="input-text">
+										<input type="number" name="sodienthoainguoinhan" />
+									</div>
+									<label>Email người nhận<span style="color:red;">*</span></label>
+									<div class="input-text">
+										<input type="email" name="emailnguoinhan" />
+									</div>
+									<label>Ghi chú</label>
+									<div class="input-text">
+										<textarea name="ghichu" placeholder="" rows="3"></textarea>
+									</div>
+								</form>
 							</div>
-							<div class="single-select">
-								<label>Tỉnh/Thành Phố *</label>
-								<div class="custom-select">
-									<select class="form-control">
-										<option>Options</option>
-										<option>Kerala</option>
-										<option>Madhya</option>
-										<option>Manipur</option>
-										<option>Dhaka</option>
-										<option>Chili</option>
-									</select>
-								</div>
-							</div>
-							<div class="single-select">
-								<label>Huyện *</label>
-								<div class="input-text">
-									<input type="text" name="zip" />
-								</div>
-								<div class="submit-text quotes">
-									<input type="submit" name="submit" value="Get A Quote">
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="estimate-text">
-						<!-- <form action="#"> -->
-							<div class="single-select">
-							<label>Số nhà *</label>
-								<div class="input-text">
-									<input type="text" name="zip" />
-								</div>
-							</div>
-							<div class="single-select">
-							<label>Số nhà *</label>
-								<div class="input-text">
-									<input type="text" name="zip" />
-								</div>
-							</div>
-							<div class="single-select">
-								<label>Số nhà *</label>
-								<div class="input-text">
-									<input type="text" name="zip" />
-								</div>
-								<div class="submit-text quotes">
-									<input type="submit" name="submit" value="Get A Quote">
-								</div>
-							</div>
-						<!-- </form> -->
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="estimate-text responsive">
-						<div class="subtotal clearfix">
-							<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
-							<p>Tổng tiền thanh toán: <span class="floatright"><?= number_format($tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
 						</div>
-						<div class="default-btn text-right">
-							<a class="btn-style" href="checkout.html">TIẾN HÀNG THANH TOÁN</a>
+						<div class="col-md-4">
+							<div class="estimate-text">
+								<label>Tỉnh/Thành phố<span style="color:red;">*</span></label>
+								<div class="input-text">
+									<input type="text" name="tinh/thanhpho" />
+								</div>
+								<label>Quận/Huyện<span style="color:red;">*</span></label>
+								<div class="input-text">
+									<input type="text" name="quan/huyen" />
+								</div>
+								<label>Xã/Phường<span style="color:red;">*</span></label>
+								<div class="input-text">
+									<input type="text" name="xa/phuong" />
+								</div>
+								<label>Tên đường/Số nhà<span style="color:red;">*</span></label>
+								<div class="input-text">
+									<input type="text" name="tenduong/sonha" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="estimate-text responsive">
+								<div class="subtotal clearfix">
+									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
+									<p>Tổng tiền thanh toán: <span class="floatright"><?= number_format($tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
+									<input type="hidden" name="tongtien" value="<?= $tongTienHang + 15000 ?>">
+								</div>
+								<div class="default-btn text-right">
+									<input type="submit" name="thanhtoan" value="THANH TOÁN">
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+				</form>
+			<?php
+			} else {
+				echo '<h4 style="color:#ff6600; text-align:center">Bạn cần đăng nhập để đặt hàng!</h4>';
+			}
+			?>
 		</div>
 	</section>
 	<!-- cart page content section end -->

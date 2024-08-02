@@ -27,4 +27,9 @@ match ($act) {
     'dangky' => DangKy(),
     'hoso' => HoSoTaiKhoan($_GET['id']),
     'giohang' => ViewGioHang(),
+    'thanhtoan' => ThanhToan(),
+    'donhang' => ViewDonHang($_GET['id_ttdh']),
+    'dh_detail' => ChiTietDonHang($_GET['id_dh']),
+    'huy_donhang' => DirHuyDonHang($_GET['id_dh']),
+    
 };

@@ -52,18 +52,38 @@
 		}
 
 		.product-item:hover {
-			border: 2px solid #ff6600 !important;
+			/* border: 2px solid #ff6600 !important; */
 			transform: scale(1.03);
+			transition-duration: 0.5s;
 			height: auto;
 		}
-		.addToCard{
+
+		.addToCard {
 			border: 2px solid #ff6600;
 			border-radius: 3px;
-			color:white;
+			color: white;
 			background-color: #ff6600;
 			padding: 5px;
 			font-weight: bold;
 			text-transform: uppercase;
+		}
+
+		.spacing-table {
+			border-collapse: collapse !important;
+		}
+
+		.ten_trang_thai_dh {
+			color:black;
+			border-left: 1px solid #8d7b7b;
+			padding: 0 10px;
+		}
+
+		.active_tt {
+			color: #ff6600;
+			text-decoration: underline;
+		}
+		.btn_donhang{
+			font-weight: 500;
 		}
 	</style>
 </head>
@@ -75,6 +95,7 @@
 
 	<!-- header section start -->
 	<?php
+	$danhmucs=getAllDanhmuc();
 	require_once PATH_VIEW . 'layouts/patials/header.php';
 	?>
 	<!-- header section end -->
@@ -124,7 +145,7 @@
 	<!-- main js -->
 	<script src="<?= BASE_URL ?>client/template/rideo/rideo/js/main.js"></script>
 
-	
+
 
 </body>
 

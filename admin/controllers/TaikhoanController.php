@@ -87,7 +87,6 @@ function UpdateTaiKhoan($id)
 
         update('taikhoan', $id, $data);
         header('location:' . BASE_URL_ADMIN . '?act=ds_tk');
-        $GLOBALS['notification']='ok';
         exit();
     }
     require PATH_VIEW_ADMIN . "master.php";

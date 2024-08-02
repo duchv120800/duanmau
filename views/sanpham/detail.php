@@ -65,7 +65,7 @@
 
                                 <ul class="clearfix text-center">
                                     <li>
-                                        <button class="addToCard" data-id="<?= $sanpham['id'] ?>" onclick="Test()">
+                                        <button class="addToCard" data-id="<?= $sanpham['id'] ?>" onclick="addGiohang(<?= $sanpham['id'] ?>, <?= $sanpham['ten'] ?>, <?= $sanpham['giakhuyenmai'] ?>)">
                                             <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
                                         </button>
                                     </li>
@@ -213,3 +213,27 @@
     </div>
 </section>
 <!-- related product section end -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+    let tongSanpham = document.getElementById('tongSanpham');
+
+    function addGiohang(idSanpham, tenSanpham, giaSanpham) {
+        $.ajax({
+            type: "POST",
+            url: "<?= BASE_URL ?>models/giohang.php",
+            data: {
+                id: idSanpham,
+                ten: tenSanpham,
+                gia: giaSanpham,
+            },
+            success: function(response) {
+                tongSanpham.innerText = response;
+                alert("Bạn đã thêm sản phẩm vào giỏ hàng thành công");
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
