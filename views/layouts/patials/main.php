@@ -84,7 +84,7 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                             </li>
                         </ul>
                     </div>
-                    <a class="shop-btn" href="shop.html">view more</a>
+                    <a class="shop-btn" href="shop.html">Xem thêm</a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -145,27 +145,4 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
 </section>
 <!-- popular-product section end -->
 
-<!-- start ajax -->
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
-    let tongSanpham = document.getElementById('tongSanpham');
 
-    function addGiohang(idSanpham, tenSanpham, giaSanpham) {
-        $.ajax({
-            type: "POST",
-            url: "<?= BASE_URL ?>models/giohang.php",
-            data: {
-                id: idSanpham,
-                ten: tenSanpham,
-                gia: giaSanpham,
-            },
-            success: function(response) {
-                tongSanpham.innerText = response;
-                alert("Bạn đã thêm sản phẩm vào giỏ hàng thành công");
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
-</script>

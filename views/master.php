@@ -73,7 +73,7 @@
 		}
 
 		.ten_trang_thai_dh {
-			color:black;
+			color: black;
 			border-left: 1px solid #8d7b7b;
 			padding: 0 10px;
 		}
@@ -82,8 +82,17 @@
 			color: #ff6600;
 			text-decoration: underline;
 		}
-		.btn_donhang{
+
+		.btn_donhang {
 			font-weight: 500;
+		}
+
+		.cart-menu {
+			width: 200px !important;
+		}
+
+		.cart-menu-btn {
+			padding: 5px 10px !important;
 		}
 	</style>
 </head>
@@ -95,7 +104,7 @@
 
 	<!-- header section start -->
 	<?php
-	$danhmucs=getAllDanhmuc();
+	$danhmucs = getAllDanhmuc();
 	require_once PATH_VIEW . 'layouts/patials/header.php';
 	?>
 	<!-- header section end -->
@@ -145,6 +154,30 @@
 	<!-- main js -->
 	<script src="<?= BASE_URL ?>client/template/rideo/rideo/js/main.js"></script>
 
+	<!-- start ajax -->
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script>
+		let tongSanpham = document.getElementById('tongSanpham');
+
+		function addGiohang(idSanpham, tenSanpham, giaSanpham) {
+			$.ajax({
+				type: "POST",
+				url: "<?= BASE_URL ?>models/giohang.php",
+				data: {
+					id: idSanpham,
+					ten: tenSanpham,
+					gia: giaSanpham,
+				},
+				success: function(response) {
+					tongSanpham.innerText = response;
+					alert("Bạn đã thêm sản phẩm vào giỏ hàng thành công");
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			});
+		}
+	</script>
 
 
 </body>

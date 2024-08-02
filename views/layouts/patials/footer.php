@@ -13,7 +13,7 @@
                 <div class="col-md-4 col-lg-4">
                     <div class="s-footer-text">
                         <div class="footer-title">
-                            <h4>Socail Network</h4>
+                            <h4>Mạng Xã Hội</h4>
                         </div>
                         <div class="social-link actions-btn clearfix">
                             <ul>
@@ -31,13 +31,13 @@
                                 </li>
                             </ul>
                         </div>
-                        <h4>Newsletter</h4>
+                        <h4>Bản Tin</h4>
                         <form action="#">
                             <div class="input-text">
-                                <input type="text" name="email" placeholder="Email Address" />
+                                <input type="text" name="email" placeholder="Địa Chỉ Email" />
                             </div>
                             <div class="submit-text">
-                                <input type="submit" name="submit" value="submit" />
+                                <input type="submit" name="submit" value="Nhập" />
                             </div>
                         </form>
                     </div>
@@ -45,21 +45,21 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="s-footer-text">
                         <div class="footer-title">
-                            <h4>Contact</h4>
+                            <h4>Liên Hệ</h4>
                         </div>
                         <div class="contact-link">
                             <ul>
                                 <li>
                                     <span>Email:</span>
-                                    <p>Domain@email.com Name@company.info</p>
+                                    <p>Duchv43256@fpt.edu.vn Huynvph43256@fpt.edu.vn</p>
                                 </li>
                                 <li>
-                                    <span>Phone:</span>
-                                    <p>+111 (019) 25184203 +111 (018) 50950555</p>
+                                    <span>SĐT:</span>
+                                    <p>+840523716999 +840333456456</p>
                                 </li>
                                 <li>
-                                    <span>Address:</span>
-                                    <p>777/a4 Bonosri Road, Danpura East USA. -25000</p>
+<span>Địa Chỉ:</span>
+                                    <p>Fpt Polytechnic - Trịnh Văn Bô - Hà Nội</p>
                                 </li>
                             </ul>
                         </div>
@@ -68,24 +68,24 @@
                 <div class="col-md-2 col-lg-2">
                     <div class="s-footer-text">
                         <div class="footer-title">
-                            <h4>INFORMATION</h4>
+                            <h4>Thông Tin</h4>
                         </div>
                         <div class="footer-menu">
                             <ul>
                                 <li>
-                                    <a href="about.html">About Us</a>
+                                    <a href="about.html">Về Chúng Tôi</a>
                                 </li>
                                 <li>
-                                    <a href="#">Our Store</a>
+                                    <a href="#">Cửa Hàng</a>
                                 </li>
                                 <li>
-                                    <a href="#">Order history</a>
+                                    <a href="#">Lịch Sử Đơn Hàng</a>
                                 </li>
                                 <li>
-                                    <a href="#">Help</a>
+                                    <a href="#">Giúp Đỡ</a>
                                 </li>
                                 <li>
-                                    <a href="#">FAQ</a>
+                                    <a href="#">Câu Hỏi Thường Gặp</a>
                                 </li>
                             </ul>
                         </div>
@@ -94,24 +94,24 @@
                 <div class="col-md-2 col-lg-3">
                     <div class="s-footer-text">
                         <div class="footer-title">
-                            <h4>My Account</h4>
+                            <h4>Tài Khoản Của Tôi</h4>
                         </div>
                         <div class="footer-menu">
                             <ul>
                                 <li>
-                                    <a href="#">My Orer</a>
+                                    <a href="#">Đơn Hàng Của Tôi</a>
                                 </li>
                                 <li>
-                                    <a href="cart.html">My Cart</a>
+                                    <a href="cart.html">Giỏ Hàng Của Tôi</a>
                                 </li>
                                 <li>
-                                    <a href="wishlist.html">Wishlist</a>
+                                    <a href="wishlist.html">Danh Sách Yêu Thích</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login</a>
+                                    <a href="login.html">Đăng Nhập</a>
                                 </li>
                                 <li>
-                                    <a href="login-2.html">Register</a>
+                                    <a href="login-2.html">Đăng ký</a>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +127,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="left floatleft">
-                        <p>Copyright &copy; 2021 - Template Powered By <a href="#">RIDEO</a></p>
+<p>Copyright &copy; 2024 - Mẫu Được Cung Cấp Bởi <a href="#">ĐAH</a></p>
                     </div>
                     <div class="right mayment-card floatright">
                         <ul>

@@ -132,26 +132,6 @@
                         <ul>
                             <li><a href="#"><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
                                 <ul class="cart-menu">
-                                    <!-- <li>
-                                        <a href=""><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
-                                        <div class="cart-menu-title">
-                                            <a href="cart.html">
-                                                <h5>Mount POW C058 FG </h5>
-                                            </a>
-                                            <span>1 x $2500</span>
-                                        </div>
-                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html"><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/cart/1.png" width="85" height="81" alt="" /></a>
-                                        <div class="cart-menu-title">
-                                            <a href="cart.html">
-                                                <h5>Mount POW C058 FG </h5>
-                                            </a>
-                                            <span>1 x $2500</span>
-                                        </div>
-                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
-                                    </li> -->
                                     <li class="cart-menu-btn">
                                         <a href="<?= BASE_URL ?>?act=giohang">Giỏ hàng</a>
                                     </li>
