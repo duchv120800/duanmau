@@ -12,6 +12,18 @@ if (empty($listSanphamGiohang)) {
 ?>
 	<section class="cart-page section-padding">
 		<div id="cartOrder" class="container">
+			<div id="alert" class="alert alert-<?= $alert ? ' success' : ' danger'; ?>" <?= isset($notification) && $notification !== "" ? "" : "hidden"; ?>>
+				<?php
+				if (isset($notification) && ($notification != "")) {
+					echo $notification;
+				?>
+					<script>
+						hidden_notification();
+					</script>
+				<?php
+				}
+				?>
+			</div>
 			<div class="row">
 				<div class="col-12">
 					<div class="table-responsive table-one margin-minus section-padding-bottom">
@@ -84,15 +96,15 @@ if (empty($listSanphamGiohang)) {
 								<form action="#">
 									<label>Tên người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="text" name="tennguoinhan" />
+										<input type="text" name="tennguoinhan" required/>
 									</div>
 									<label>Số điện thoại người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="number" name="sodienthoainguoinhan" />
+										<input type="number" name="sodienthoainguoinhan" required/>
 									</div>
 									<label>Email người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="email" name="emailnguoinhan" />
+										<input type="email" name="emailnguoinhan" required/>
 									</div>
 									<label>Ghi chú</label>
 									<div>
@@ -105,19 +117,19 @@ if (empty($listSanphamGiohang)) {
 							<div class="estimate-text">
 								<label>Tỉnh/Thành phố<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tinh/thanhpho" />
+									<input type="text" name="tinh/thanhpho" required/>
 								</div>
 								<label>Quận/Huyện<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="quan/huyen" />
+									<input type="text" name="quan/huyen" required/>
 								</div>
 								<label>Xã/Phường<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="xa/phuong" />
+									<input type="text" name="xa/phuong" required/>
 								</div>
 								<label>Tên đường/Số nhà<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tenduong/sonha" />
+									<input type="text" name="tenduong/sonha" required/>
 								</div>
 							</div>
 						</div>
