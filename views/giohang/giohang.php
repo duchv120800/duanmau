@@ -95,8 +95,8 @@ if (empty($listSanphamGiohang)) {
 										<input type="email" name="emailnguoinhan" />
 									</div>
 									<label>Ghi chú</label>
-									<div class="input-text">
-										<textarea name="ghichu" placeholder="" rows="3"></textarea>
+									<div>
+										<textarea class="ghichu_dathang" name="ghichu" placeholder="" rows="3"></textarea>
 									</div>
 								</form>
 							</div>

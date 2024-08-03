@@ -15,7 +15,7 @@
                         <?php foreach ($anhmotas as $anhmota) : ?>
                             <div>
                                 <img src="<?= BASE_URL ?>uploads/<?= $anhmota['tenanh'] ?>" width="555" height="587" alt="" />
-                                <a href="<?= BASE_URL ?>uploads/<?= $anhmota['tenanh'] ?>" title="Product Title"><img src="<?= BASE_URL ?>uploads/<?= $anhmota['tenanh'] ?>" width="21" height="22" alt="" /></a>
+                                <a href="<?= BASE_URL ?>uploads/<?= $anhmota['tenanh'] ?>" title="Zoom"><img src="<?= BASE_URL ?>client/template/rideo/rideo/img/icon/zoom.png" width="21" height="22" alt="" /></a>
                             </div>
                         <?php endforeach; ?>
                     </div>

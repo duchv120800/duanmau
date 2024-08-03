@@ -25,6 +25,7 @@ function ChiTietSanPham($idsp)
 function ListSanPham($id_danhmuc)
 {
     $view = 'sanpham/list';
-    $listsanphams= getAllSanPham($id_danhmuc);
+    $listsanphams= getAllSanphamClient($id_danhmuc);
+    $tendanhmuc=getTenDanhmuc($id_danhmuc);
     require_once PATH_VIEW . "master.php";
 }

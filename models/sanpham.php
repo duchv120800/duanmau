@@ -1,5 +1,5 @@
 <?php
-function getAllSanpham($id_danhmuc = 0, $limit = 12, $offset = 0)
+function getAllSanphamClient($id_danhmuc = 0, $limit = 12, $offset = 0)
 {
     try {
         $sql = "SELECT * from sanpham";

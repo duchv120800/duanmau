@@ -9,12 +9,16 @@
         <div class="row">
             <div class="col-md-8 col-lg-6 col-text-center">
                 <div class="section-title text-center">
-                    <h2>Tất cả <span>sản phẩm</span></h2>
+                    <?php if (isset($tendanhmuc) && $tendanhmuc != '') {
+                        echo '<h2>' . $tendanhmuc['ten'] . '</h2>';
+                    } else {
+                        echo '<h2>Tất cả <span>sản phẩm</span></h2>';
+                    } ?>
                     <div class="shape">
                         <img src="<?= BASE_URL ?>client/template/rideo/rideo/img/icon/t-shape.png" width="16" height="16" alt="Title Shape" />
                     </div>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a
-                        page when looking at its layout.</p>
+                    <p>Bắt đầu mỗi ngày với một chút hương thơm.</p>
+                    <p>Hương thơm quyến rũ, tôn vinh cá tính riêng biệt của bạn, để mỗi ngày đều là một kiệt tác.</p>
                 </div>
             </div>
         </div>

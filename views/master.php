@@ -9,7 +9,7 @@
 	<title>Nước hoa DAH</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="https://htmldemo.net/rideo/rideo/img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="<?=BASE_URL?>uploads/logo.png">
 	<link rel="apple-touch-icon" href="apple-touch-icon.html">
 	<!-- Place favicon.ico in the root directory -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -93,6 +93,10 @@
 
 		.cart-menu-btn {
 			padding: 5px 10px !important;
+		}
+		.ghichu_dathang{
+			width: 100% !important;
+			border-color: #e6e8e9;
 		}
 	</style>
 </head>
