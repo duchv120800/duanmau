@@ -5,7 +5,7 @@
                 <div class="col-12 header-bottom-bg">
                     <div class="floatleft">
                         <a href="<?= BASE_URL ?>">
-                            <img src="<?= BASE_URL ?>uploads/logo.png" width="100" height="55" alt="DAH" />
+                            <!-- <img src="<?= BASE_URL ?>uploads/logo.png" width="70" height="30" alt="DAH" /> -->
                         </a>
                     </div>
                     <div class="mainmenu text-center floatleft">
@@ -133,15 +133,13 @@
                             <li><a href="#"><i class="pe-7s-shopbag"></i> <span style="color:red;" id="tongSanpham"><?= !empty($_SESSION['giohang']) ? count($_SESSION['giohang']) : 0 ?></span></a>
                                 <ul class="cart-menu">
                                     <li class="cart-menu-btn">
+                                        <?php
+                                        if (isset($_SESSION['taikhoan']['id_taikhoan']) && $_SESSION['taikhoan']['id_taikhoan'] !== '') {
+                                        ?>
+                                            <a href="<?= BASE_URL ?>?act=donhang&id_ttdh=0">Đơn hàng</a>
+                                        <?php } ?>
                                         <a href="<?= BASE_URL ?>?act=giohang">Giỏ hàng</a>
                                     </li>
-                                    <?php
-                                    if (isset($_SESSION['taikhoan']['id_taikhoan']) && $_SESSION['taikhoan']['id_taikhoan'] !== '') {
-                                    ?>
-                                        <li class="cart-menu-btn">
-                                            <a href="<?= BASE_URL ?>?act=donhang&id_ttdh=0">Đơn hàng</a>
-                                        </li>
-                                    <?php } ?>
                                 </ul>
                             </li>
                         </ul>

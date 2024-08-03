@@ -71,7 +71,7 @@ function DirDangXuat()
 {
     unset($_SESSION['taikhoan']['tendangnhap']);
     unset($_SESSION['taikhoan']['vaitro']);
-    unset($_SESSION['taikhoan']['id']);
+    unset($_SESSION['taikhoan']['id_taikhoan']);
     $view = "taikhoan/dangnhap";
     require_once PATH_VIEW . "master.php";
 }

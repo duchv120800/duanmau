@@ -45,6 +45,7 @@ function getOneDonHang($id)
             INNER JOIN sanpham
             ON chitietdonhang.id_sanpham = sanpham.id
             WHERE donhang.id=:id
+            ORDER BY donhang.id DESC
             ";
 
         $stmt = $GLOBALS['conn']->prepare($sql);
