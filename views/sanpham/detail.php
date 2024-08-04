@@ -52,9 +52,9 @@
 									</div>
 								</div> -->
                             <div class="actions-btn">
-
                                 <ul class="clearfix text-center">
                                     <li>
+                                        <input type="number" value="1" id="soluongsp" min="1" class="plus-minus-box input-soluong">
                                         <button class="addToCard" data-id="<?= $sanpham['id'] ?>" onclick="addGiohang(<?= $sanpham['id'] ?>, '<?= $sanpham['ten'] ?>', <?= $sanpham['giakhuyenmai'] ?>)">
                                             <i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
                                         </button>
@@ -124,8 +124,8 @@
                             <div class="leave-comment">
                                 <?php foreach ($binhluans as $binhluan):?>
                                     <div>
-                                    <h5 style="display: inline-block;"><?=$binhluan['tentaikhoan']?> </h5>
-                                    <p style="display: inline-block;"> <?=$binhluan['ngaybinhluan']?></p>
+                                    <h5 style="display: inline-block; margin-right:20px;"><i class="bi bi-person-circle"></i> <?=$binhluan['tentaikhoan']?> </h5>
+                                    <p style="display: inline-block;"> <i class="bi bi-clock"></i> <?=$binhluan['ngaybinhluan']?></p>
                                     </div>
                                 <p><?=$binhluan['noidung']?></p>
                                 <hr>

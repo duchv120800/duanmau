@@ -101,6 +101,18 @@
 		.input-text>input{
 			color: black !important;
 		}
+		.items-dsc p {
+			line-height: 150px !important;
+		}
+
+		.input-soluong{
+			border: 2px solid #ddd;
+			width: 40px;
+			border-radius: 4px;
+			font-size: large;
+			font-weight: 400;
+			margin-right: 20px;
+		}
 	</style>
 </head>
 
@@ -167,6 +179,11 @@
 		let tongSanpham = document.getElementById('tongSanpham');
 
 		function addGiohang(idSanpham, tenSanpham, giaSanpham) {
+			let soluongSanpham = $('#soluongsp').val();
+			if (soluongSanpham <= 0) {
+				soluongSanpham = 1;
+			}
+			
 			$.ajax({
 				type: "POST",
 				url: "<?= BASE_URL ?>models/giohang.php",
@@ -174,6 +191,7 @@
 					id: idSanpham,
 					ten: tenSanpham,
 					gia: giaSanpham,
+					soluong: soluongSanpham,
 				},
 				success: function(response) {
 					tongSanpham.innerText = response;

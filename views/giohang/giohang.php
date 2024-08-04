@@ -62,14 +62,12 @@ if (empty($listSanphamGiohang)) {
 										<td>
 											<form action="#">
 												<div class="plus-minus">
-													<!-- <a class="dec qtybutton" onclick="capNhatSoLuong()">-</a> -->
-													<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box">
-													<!-- <a class="inc qtybutton" onclick="capNhatSoLuong()">+</a> -->
+													<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box"  style="border:1px solid #ddd">
 												</div>
 											</form>
 										</td>
 										<td><?= number_format((int)$sanpham['giakhuyenmai'] * (int)$soluong, 0, ',', '.') ?>đ</td>
-										<td><i onclick="xoaSanphamGiohang(<?= $sanpham['id'] ?>)" class="fa fa-trash" title="Remove this product"></i></td>
+										<td><i onclick="xoaSanphamGiohang(<?= $sanpham['id'] ?>)" class="fa fa-trash" title="Xóa sản phẩm"></i></td>
 									</tr>
 								<?php
 									$tongTienHang += ((int)$sanpham['giakhuyenmai'] * (int)$soluong);

@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$idSanpham = $_POST['id'] ?? '';
 	$tenSanpham = $_POST['ten'] ?? '';
 	$giaSanpham = $_POST['gia'] ?? '';
+	$soluongSanpham = $_POST['soluong'] ?? 1;
 
 	if (!empty($idSanpham) && !empty($tenSanpham) && !empty($giaSanpham)) {
 
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				'id' => $idSanpham,
 				'ten' => $tenSanpham,
 				'gia' => $giaSanpham,
-				'soluong' => 1,
+				'soluong' => $soluongSanpham,
 			];
 			$_SESSION['giohang'][] = $sanpham;
 		}
