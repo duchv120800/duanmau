@@ -126,17 +126,32 @@ if (!empty($_SESSION['giohang'])) {
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="estimate-text responsive">
-						<div class="subtotal clearfix">
-							<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
-							<p>Tổng tiền thanh toán: <span class="floatright"><?= number_format($tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
-							<input type="hidden" name="tongtien" value="<?= $tongTienHang + 15000 ?>">
+							<p>Tóm tắt đơn hàng :</p>
+							<div class="estimate-text responsive">
+								<div class="subtotal clearfix">
+									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
+									<p>Mã giảm giá:
+										<span class="floatright">
+											<select name="voucher" id="voucher" onchange="getVoucher()">
+												<option value="0">Chọn voucher</option>
+												<option value="100">Miễn phí vận chuyển</option>
+												<option value="50">Giảm 50% phí vận chuyển</option>
+											</select>
+										</span>
+									</p>
+									<p>Tổng tiền thanh toán: <span class="floatright" id="tongTienThanhToan"><?= number_format($tongTienThanhToan = $tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
+									<input type="hidden" name="tongtien"  value="<?=$tongTienThanhToan = $tongTienHang + 15000 ?>">
+									<select name="phuongthucthanhtoan" id="">
+										<option value="">Chọn phương thức thanh toán</option>
+										<option value="">Thanh toán khi nhận hàng</option>
+										<option value="">Ví momo</option>
+									</select>
+								</div>
+								<div class="default-btn text-right">
+									<input type="submit" name="thanhtoan" value="THANH TOÁN">
+								</div>
+							</div>
 						</div>
-						<div class="default-btn text-right">
-							<input type="submit" name="thanhtoan" value="THANH TOÁN">
-						</div>
-					</div>
-				</div>
 			</div>
 		</form>
 	<?php

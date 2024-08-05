@@ -6,7 +6,7 @@ function ViewGioHang()
         $giohang = $_SESSION['giohang'];
         $idSanpham = array_column($giohang, 'id');
         $listIdSanpham = implode(',', $idSanpham);
-
+        $phuongthucthanhtoans=getAll('phuongthucthanhtoan');
         $listSanphamGiohang = getAllSanphamGiohang($listIdSanpham);
     }
 
@@ -30,6 +30,7 @@ function ThanhToan()
             "ngaydathang" => $ngaydathang,
             "ghichu" => $_POST['ghichu'],
             "tongtien" => $_POST['tongtien'],
+            "id_phuongthucthanhtoan" => $_POST['id_phuongthucthanhtoan'],
             "id_taikhoan" => $_SESSION['taikhoan']['id_taikhoan'],
             "id_trangthai" => 1,
         ];

@@ -37,6 +37,10 @@
             <h4><i class="bi bi-file-person-fill"></i> <?= $donhangs[0]['tennguoinhan'] ?></h4>
             <p><i class="bi bi-telephone-fill"></i> <?= $donhangs[0]['sodienthoainguoinhan'] ?></p>
             <p><i class="bi bi-geo-alt-fill"></i> <?= $donhangs[0]['diachinhanhang'] ?></p>
+            <p><i class="bi bi-credit-card-2-back"></i> <?= $donhangs[0]['tenphuongthuc'] ?></p>
+            <?php if(!empty($donhangs[0]['ghichu'])) : ?>
+            <p><i class="bi bi-chat-square-text"></i> <?= $donhangs[0]['ghichu'] ?></p>
+            <?php endif; ?>
         </div>
         <hr>
         <!-- </div> -->

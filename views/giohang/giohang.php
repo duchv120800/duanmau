@@ -62,7 +62,7 @@ if (empty($listSanphamGiohang)) {
 										<td>
 											<form action="#">
 												<div class="plus-minus">
-													<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box"  style="border:1px solid #ddd">
+													<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box" style="border:1px solid #ddd">
 												</div>
 											</form>
 										</td>
@@ -94,19 +94,19 @@ if (empty($listSanphamGiohang)) {
 								<form action="#">
 									<label>Tên người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="text" name="tennguoinhan" required/>
+										<input type="text" name="tennguoinhan" required />
 									</div>
 									<label>Số điện thoại người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="number" name="sodienthoainguoinhan" required/>
+										<input type="number" name="sodienthoainguoinhan" required />
 									</div>
 									<label>Email người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="email" name="emailnguoinhan" required/>
+										<input type="email" name="emailnguoinhan" required />
 									</div>
 									<label>Ghi chú</label>
 									<div>
-										<textarea class="ghichu_dathang" name="ghichu" placeholder="" rows="3"></textarea>
+										<textarea class="ghichu_dathang" name="ghichu" placeholder="Nhập ghi chú hoặc lưu ý cho người bán" rows="3"></textarea>
 									</div>
 								</form>
 							</div>
@@ -115,28 +115,44 @@ if (empty($listSanphamGiohang)) {
 							<div class="estimate-text">
 								<label>Tỉnh/Thành phố<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tinh/thanhpho" required/>
+									<input type="text" name="tinh/thanhpho" required />
 								</div>
 								<label>Quận/Huyện<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="quan/huyen" required/>
+									<input type="text" name="quan/huyen" required />
 								</div>
 								<label>Xã/Phường<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="xa/phuong" required/>
+									<input type="text" name="xa/phuong" required />
 								</div>
 								<label>Tên đường/Số nhà<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tenduong/sonha" required/>
+									<input type="text" name="tenduong/sonha" required />
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
+							<p>Tóm tắt đơn hàng :</p>
 							<div class="estimate-text responsive">
 								<div class="subtotal clearfix">
 									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
-									<p>Tổng tiền thanh toán: <span class="floatright"><?= number_format($tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
-									<input type="hidden" name="tongtien" value="<?= $tongTienHang + 15000 ?>">
+									<p>Mã giảm giá:
+										<span class="floatright">
+											<select name="voucher" id="voucher" onchange="getVoucher()">
+												<option value="0">Chọn voucher</option>
+												<option value="100">Miễn phí vận chuyển</option>
+												<option value="50">Giảm 50% phí vận chuyển</option>
+											</select>
+										</span>
+									</p>
+									<p>Tổng tiền thanh toán: <span class="floatright" id="tongTienThanhToan"><?= number_format($tongTienThanhToan = $tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
+									<input type="hidden" name="tongtien" value="<?= $tongTienThanhToan = $tongTienHang + 15000 ?>">
+									<label class="mt-20" for="">Chọn phương thức thanh toán</label>
+									<select name="id_phuongthucthanhtoan" id="">
+										<?php foreach ($phuongthucthanhtoans as $phuongthucthanhtoan) : ?>
+											<option value="<?= $phuongthucthanhtoan['id'] ?>"><?= $phuongthucthanhtoan['tenphuongthuc'] ?></option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 								<div class="default-btn text-right">
 									<input type="submit" name="thanhtoan" value="THANH TOÁN">
@@ -185,7 +201,6 @@ if (empty($listSanphamGiohang)) {
 	}
 
 	function xoaSanphamGiohang(idSanpham) {
-		console.log(idSanpham);
 		if (confirm('Bạn có chắc chắn xóa sản phẩm khỏi giỏ hàng?')) {
 			$.ajax({
 				type: 'POST',
@@ -203,5 +218,18 @@ if (empty($listSanphamGiohang)) {
 				}
 			});
 		}
+	}
+
+	function formatNumberToVND(number) {
+		return number.toLocaleString('vi-VN', {
+			style: 'currency',
+			currency: 'VND'
+		});
+	}
+
+	function getVoucher() {
+		let voucher = document.getElementById("voucher").value;
+		let tongTienThanhToan = document.getElementById("tongTienThanhToan");
+		tongTienThanhToan.innerHTML = formatNumberToVND(<?= (int)$tongTienHang ?> + (15000 - 15000 * voucher / 100));
 	}
 </script>

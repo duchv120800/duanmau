@@ -36,7 +36,7 @@ function getOneDonHang($id)
 {
     try {
         $sql = "SELECT donhang.*, chitietdonhang.soluong, chitietdonhang.tongtien,
-                sanpham.ten,sanpham.hinhanh, trangthaidonhang.tentrangthai
+                sanpham.ten,sanpham.hinhanh, trangthaidonhang.tentrangthai, phuongthucthanhtoan.tenphuongthuc
             FROM donhang 
             INNER JOIN chitietdonhang
             ON donhang.id = chitietdonhang.id_donhang
@@ -44,6 +44,8 @@ function getOneDonHang($id)
             ON donhang.id_trangthai = trangthaidonhang.id
             INNER JOIN sanpham
             ON chitietdonhang.id_sanpham = sanpham.id
+            INNER JOIN phuongthucthanhtoan
+            ON donhang.id_phuongthucthanhtoan = phuongthucthanhtoan.id
             WHERE donhang.id=:id
             ORDER BY donhang.id DESC
             ";
