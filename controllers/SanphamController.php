@@ -22,10 +22,10 @@ function ChiTietSanPham($idsp)
     require_once PATH_VIEW . "master.php";
 }
 
-function ListSanPham($id_danhmuc)
+function ListSanPham($id_danhmuc,$sale)
 {
     $view = 'sanpham/list';
-    $listsanphams= getAllSanphamClient($id_danhmuc);
+    $listsanphams= getAllSanphamClient($id_danhmuc,$sale);
     $tendanhmuc=getTenDanhmuc($id_danhmuc);
     require_once PATH_VIEW . "master.php";
 }

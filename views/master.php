@@ -86,14 +86,6 @@
 		.btn_donhang {
 			font-weight: 500;
 		}
-
-		/* .cart-menu {
-			width: 200px !important;
-		} */
-
-		/* .cart-menu-btn {
-			padding: 5px 10px !important;
-		} */
 		.ghichu_dathang{
 			width: 100% !important;
 			border-color: #e6e8e9;

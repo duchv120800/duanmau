@@ -175,9 +175,11 @@
                             <div class="product-item">
                                 <div class="pro-img">
                                     <a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $sanphamlienquan['id'] ?>"><img src="<?= BASE_URL ?>uploads/<?= $sanphamlienquan['hinhanh'] ?>" width="263" height="299" alt="Product" /></a>
+                                    <?php if($sanphamlienquan['sale'] > 0){ ?>
                                     <div class="tag-n-s">
                                         <span>Sale</span>
                                     </div>
+                                    <?php } ?>
                                 </div>
                                 <div class="riding-title clearfix">
                                     <div class="product-title text-start floatleft">

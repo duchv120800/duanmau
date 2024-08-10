@@ -2,7 +2,7 @@
 function getDonHang($id_taikhoan, $id_trangthai)
 {
     try {
-        $sql = "SELECT donhang.*, chitietdonhang.soluong, chitietdonhang.tongtien,
+        $sql = "SELECT donhang.*, chitietdonhang.soluong, chitietdonhang.tongtien,chitietdonhang.id_sanpham,
                 sanpham.ten,sanpham.hinhanh, trangthaidonhang.tentrangthai
             FROM donhang 
             INNER JOIN chitietdonhang
@@ -16,10 +16,13 @@ function getDonHang($id_taikhoan, $id_trangthai)
         if ($id_trangthai > 0) {
             $sql .= "AND donhang.id_trangthai=:id_trangthai";
         }
+      
+        $sql.=" ORDER BY donhang.id DESC";
 
         $stmt = $GLOBALS['conn']->prepare($sql);
 
         $stmt->bindParam(':id_taikhoan', $id_taikhoan);
+
         if($id_trangthai > 0){
             $stmt->bindParam(':id_trangthai', $id_trangthai);
         }
@@ -64,7 +67,7 @@ function getOneDonHang($id)
 
 function huyDonHang($id) {
     try {
-        $sql = "UPDATE donhang SET id_trangthai = 7 WHERE id =:id";
+        $sql = "UPDATE donhang SET id_trangthai = 9 WHERE id =:id";
         $stmt = $GLOBALS['conn']->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();

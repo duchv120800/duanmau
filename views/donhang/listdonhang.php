@@ -53,10 +53,10 @@ if (empty($donhangs)) {
                                                                         echo 'warning';
                                                                     } else if ($trangthai === 5) {
                                                                         echo 'info';
-                                                                    } else if ($trangthai === 6) {
-                                                                        echo 'success';
-                                                                    } else {
+                                                                    } else if ($trangthai === 9) {
                                                                         echo 'danger';
+                                                                    } else {
+                                                                        echo 'success';
                                                                     } ?>"><?= $donhang['tentrangthai'] ?></span>
                                         </td>
                                         <td>

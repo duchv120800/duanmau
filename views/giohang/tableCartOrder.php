@@ -5,6 +5,7 @@ include '../../commons/global.php';
 include '../../commons/connect.php';
 include '../../commons/cart.php';
 include '../../commons/count.php';
+include '../../commons/crud.php';
 include '../../commons/hidden_notification.php';
 //require tất cả file trong controllers và models
 require_file(PATH_CONTROLLER);
@@ -14,6 +15,7 @@ if (!empty($_SESSION['giohang'])) {
 	$giohang = $_SESSION['giohang'];
 	$idSanpham = array_column($giohang, 'id');
 	$listIdSanpham = implode(',', $idSanpham);
+	$phuongthucthanhtoans=getAll('phuongthucthanhtoan');
 	$listSanphamGiohang = getAllSanphamGiohang($listIdSanpham);
 ?>
 	<div class="row">
@@ -55,7 +57,7 @@ if (!empty($_SESSION['giohang'])) {
 									<form action="#">
 										<div class="plus-minus">
 											<!-- <a class="dec qtybutton" onclick="capNhatSoLuong()">-</a> -->
-											<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box"  style="border:1px solid #ddd">
+											<input type="number" value="<?= $soluong ?>" id="soluong_<?= $sanpham['id'] ?>" oninput="capNhatSoLuong(<?= $sanpham['id'] ?>, <?= $key ?>)" class="plus-minus-box" style="border:1px solid #ddd">
 											<!-- <a class="inc qtybutton" onclick="capNhatSoLuong()">+</a> -->
 										</div>
 									</form>
@@ -88,19 +90,19 @@ if (!empty($_SESSION['giohang'])) {
 						<form action="#">
 							<label>Tên người nhận<span style="color:red;">*</span></label>
 							<div class="input-text">
-								<input type="text" name="tennguoinhan" />
+								<input type="text" name="tennguoinhan" required />
 							</div>
 							<label>Số điện thoại người nhận<span style="color:red;">*</span></label>
 							<div class="input-text">
-								<input type="number" name="sodienthoainguoinhan" />
+								<input type="number" name="sodienthoainguoinhan" required />
 							</div>
 							<label>Email người nhận<span style="color:red;">*</span></label>
 							<div class="input-text">
-								<input type="email" name="emailnguoinhan" />
+								<input type="email" name="emailnguoinhan" required />
 							</div>
 							<label>Ghi chú</label>
 							<div>
-								<textarea class="ghichu_dathang" name="ghichu" placeholder="" rows="3"></textarea>
+								<textarea class="ghichu_dathang" name="ghichu" placeholder="Nhập ghi chú hoặc lưu ý cho người bán" rows="3"></textarea>
 							</div>
 						</form>
 					</div>
@@ -109,49 +111,50 @@ if (!empty($_SESSION['giohang'])) {
 					<div class="estimate-text">
 						<label>Tỉnh/Thành phố<span style="color:red;">*</span></label>
 						<div class="input-text">
-							<input type="text" name="tinh/thanhpho" />
+							<input type="text" name="tinh/thanhpho" required />
 						</div>
 						<label>Quận/Huyện<span style="color:red;">*</span></label>
 						<div class="input-text">
-							<input type="text" name="quan/huyen" />
+							<input type="text" name="quan/huyen" required />
 						</div>
 						<label>Xã/Phường<span style="color:red;">*</span></label>
 						<div class="input-text">
-							<input type="text" name="xa/phuong" />
+							<input type="text" name="xa/phuong" required />
 						</div>
 						<label>Tên đường/Số nhà<span style="color:red;">*</span></label>
 						<div class="input-text">
-							<input type="text" name="tenduong/sonha" />
+							<input type="text" name="tenduong/sonha" required />
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-							<p>Tóm tắt đơn hàng :</p>
-							<div class="estimate-text responsive">
-								<div class="subtotal clearfix">
-									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
-									<p>Mã giảm giá:
-										<span class="floatright">
-											<select name="voucher" id="voucher" onchange="getVoucher()">
-												<option value="0">Chọn voucher</option>
-												<option value="100">Miễn phí vận chuyển</option>
-												<option value="50">Giảm 50% phí vận chuyển</option>
-											</select>
-										</span>
-									</p>
-									<p>Tổng tiền thanh toán: <span class="floatright" id="tongTienThanhToan"><?= number_format($tongTienThanhToan = $tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
-									<input type="hidden" name="tongtien"  value="<?=$tongTienThanhToan = $tongTienHang + 15000 ?>">
-									<select name="phuongthucthanhtoan" id="">
-										<option value="">Chọn phương thức thanh toán</option>
-										<option value="">Thanh toán khi nhận hàng</option>
-										<option value="">Ví momo</option>
+					<p>Tóm tắt đơn hàng :</p>
+					<div class="estimate-text responsive">
+						<div class="subtotal clearfix">
+							<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
+							<p>Mã giảm giá:
+								<span class="floatright">
+									<select name="voucher" id="voucher" onchange="getVoucher()">
+										<option value="0">Chọn voucher</option>
+										<option value="100">Miễn phí vận chuyển</option>
+										<option value="50">Giảm 50% phí vận chuyển</option>
 									</select>
-								</div>
-								<div class="default-btn text-right">
-									<input type="submit" name="thanhtoan" value="THANH TOÁN">
-								</div>
-							</div>
+								</span>
+							</p>
+							<p>Tổng tiền thanh toán: <span class="floatright" id="tongTienThanhToan"><?= number_format($tongTienThanhToan = $tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
+							<input type="hidden" name="tongtien" value="<?= $tongTienThanhToan = $tongTienHang + 15000 ?>">
+							<label class="mt-20" for="">Chọn phương thức thanh toán</label>
+							<select name="id_phuongthucthanhtoan" style="padding-left: 5px; border-color:#e6e8e9">
+								<?php foreach ($phuongthucthanhtoans as $phuongthucthanhtoan) : ?>
+									<option value="<?= $phuongthucthanhtoan['id'] ?>"><?= $phuongthucthanhtoan['tenphuongthuc'] ?></option>
+								<?php endforeach; ?>
+							</select>
 						</div>
+						<div class="default-btn text-right">
+							<input type="submit" name="thanhtoan" value="THANH TOÁN">
+						</div>
+					</div>
+				</div>
 			</div>
 		</form>
 	<?php

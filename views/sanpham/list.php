@@ -31,6 +31,11 @@
                                 <div class="product-item">
                                     <div class="pro-img">
                                         <a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $listsanpham['id'] ?>"><img src="<?= BASE_URL ?>uploads/<?= $listsanpham['hinhanh'] ?>" width="318" height="239" alt="Product" /></a>
+                                        <?php if($listsanpham['sale'] > 0){ ?>
+                                    <div class="tag-n-s">
+                                        <span>Sale</span>
+                                    </div>
+                                    <?php } ?>
                                     </div>
                                     <div class="actions-btn">
                                         <ul class="clearfix">

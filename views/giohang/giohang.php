@@ -94,19 +94,19 @@ if (empty($listSanphamGiohang)) {
 								<form action="#">
 									<label>Tên người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="text" name="tennguoinhan" required />
+										<input type="text" name="tennguoinhan" placeholder="Nhập tên người nhận" required />
 									</div>
 									<label>Số điện thoại người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="number" name="sodienthoainguoinhan" required />
+										<input type="number" name="sodienthoainguoinhan" placeholder="Nhập số điện thoại người nhận" required />
 									</div>
 									<label>Email người nhận<span style="color:red;">*</span></label>
 									<div class="input-text">
-										<input type="email" name="emailnguoinhan" required />
+										<input type="email" name="emailnguoinhan" placeholder="Nhập email người nhận" required />
 									</div>
 									<label>Ghi chú</label>
 									<div>
-										<textarea class="ghichu_dathang" name="ghichu" placeholder="Nhập ghi chú hoặc lưu ý cho người bán" rows="3"></textarea>
+										<textarea style="padding:5px" class="ghichu_dathang" name="ghichu" placeholder="Nhập ghi chú hoặc lưu ý cho người bán" rows="3"></textarea>
 									</div>
 								</form>
 							</div>
@@ -115,19 +115,19 @@ if (empty($listSanphamGiohang)) {
 							<div class="estimate-text">
 								<label>Tỉnh/Thành phố<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tinh/thanhpho" required />
+									<input type="text" name="tinh/thanhpho" placeholder="Nhập Tỉnh/Thành phố" required />
 								</div>
 								<label>Quận/Huyện<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="quan/huyen" required />
+									<input type="text" name="quan/huyen" placeholder="Nhập Quận/Huyện" required />
 								</div>
 								<label>Xã/Phường<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="xa/phuong" required />
+									<input type="text" name="xa/phuong" placeholder="Nhập Xã/Phường" required />
 								</div>
 								<label>Tên đường/Số nhà<span style="color:red;">*</span></label>
 								<div class="input-text">
-									<input type="text" name="tenduong/sonha" required />
+									<input type="text" name="tenduong/sonha" placeholder="Nhập Tên đường/Số nhà" required />
 								</div>
 							</div>
 						</div>
@@ -138,7 +138,7 @@ if (empty($listSanphamGiohang)) {
 									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
 									<p>Mã giảm giá:
 										<span class="floatright">
-											<select name="voucher" id="voucher" onchange="getVoucher()">
+											<select name="voucher" id="voucher" onchange="getVoucher()" style="padding-left: 5px;">
 												<option value="0">Chọn voucher</option>
 												<option value="100">Miễn phí vận chuyển</option>
 												<option value="50">Giảm 50% phí vận chuyển</option>
@@ -148,7 +148,7 @@ if (empty($listSanphamGiohang)) {
 									<p>Tổng tiền thanh toán: <span class="floatright" id="tongTienThanhToan"><?= number_format($tongTienThanhToan = $tongTienHang + 15000, 0, ',', '.') ?>đ</span></p>
 									<input type="hidden" name="tongtien" value="<?= $tongTienThanhToan = $tongTienHang + 15000 ?>">
 									<label class="mt-20" for="">Chọn phương thức thanh toán</label>
-									<select name="id_phuongthucthanhtoan" id="">
+									<select name="id_phuongthucthanhtoan" style="padding-left: 5px; border-color:#e6e8e9">
 										<?php foreach ($phuongthucthanhtoans as $phuongthucthanhtoan) : ?>
 											<option value="<?= $phuongthucthanhtoan['id'] ?>"><?= $phuongthucthanhtoan['tenphuongthuc'] ?></option>
 										<?php endforeach; ?>

@@ -24,7 +24,6 @@
                                     <h5> Điện thoại # : <strong style="color:#17a2b8"><?= $user['sodienthoai'] ?></strong></h5>
                                     <h5> Giới tính : <strong style="color:#17a2b8"><?= $user['gioitinh'] ? 'Nam' : 'Nữ' ?></strong></h5>
                                     <h5> Địa chỉ : <strong style="color:#17a2b8"><?= $user['diachi'] ?></strong></h5>
-                                    <h5><strong style="color:#17a2b8">Thêm địa chỉ nhận hàng</strong></h5>
                                 </div>
                                 <div class="col-5 text-center">
                                     <img src="<?= BASE_URL . 'uploads/' . $user['anhdaidien'] ?>" alt="user-avatar" class="img-circle img-fluid" style="width:250px">

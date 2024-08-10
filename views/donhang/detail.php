@@ -19,27 +19,30 @@
             ?>
         </div>
         <!-- <div class="row"> -->
+            <h3 class="text-center">CHI TIẾT ĐƠN HÀNG</h3>
         <div style="padding: 10px;text-align:center;border-radius:5px; text-transform:uppercase" class="alert-<?php $id_trangthai = $donhangs[0]['id_trangthai'];
                                                                                                                 if ($id_trangthai <= 4) {
                                                                                                                     echo 'warning';
                                                                                                                 } else if ($id_trangthai === 5) {
-                                                                                                                    echo 'info';
-                                                                                                                } else if ($id_trangthai === 6) {
-                                                                                                                    echo 'success';
-                                                                                                                } else {
+                                                                                                                    echo 'primary';
+                                                                                                                } else if ($id_trangthai === 9) {
                                                                                                                     echo 'danger';
+                                                                                                                } else {
+                                                                                                                    echo 'success';
                                                                                                                 } ?>">
             <h5><?= $donhangs[0]['tentrangthai'] ?></h5>
         </div>
         <hr>
         <div>
-            <p># Mã đơn hàng: <b><?= $donhangs[0]['madonhang'] ?></b></p>
-            <h4><i class="bi bi-file-person-fill"></i> <?= $donhangs[0]['tennguoinhan'] ?></h4>
-            <p><i class="bi bi-telephone-fill"></i> <?= $donhangs[0]['sodienthoainguoinhan'] ?></p>
-            <p><i class="bi bi-geo-alt-fill"></i> <?= $donhangs[0]['diachinhanhang'] ?></p>
-            <p><i class="bi bi-credit-card-2-back"></i> <?= $donhangs[0]['tenphuongthuc'] ?></p>
+            <p><b># Mã đơn hàng :</b> <?= $donhangs[0]['madonhang'] ?></p>
+            <p><i class="bi bi-calendar-check"></i> <b> Ngày đặt hàng :</b> <?= date('d-m-Y', strtotime($donhangs[0]['ngaydathang'])) ?></p>
+            <p><i class="bi bi-file-person-fill"></i><b> Tên người nhận : </b><?= $donhangs[0]['tennguoinhan'] ?></p>
+            <p><i class="bi bi-telephone-fill"></i><b> Số điện thoại nhận hàng : </b><?= $donhangs[0]['sodienthoainguoinhan'] ?></p>
+            <p><i class="bi bi-envelope-at-fill"></i><b> Email người nhận : </b><?= $donhangs[0]['emailnguoinhan'] ?></p>
+            <p><i class="bi bi-geo-alt-fill"></i><b> Địa chỉ nhận hàng : </b><?= $donhangs[0]['diachinhanhang'] ?></p>
+            <p><i class="bi bi-credit-card-2-back"></i><b> Phương thức thanh toán : </b><?= $donhangs[0]['tenphuongthuc'] ?></p>
             <?php if(!empty($donhangs[0]['ghichu'])) : ?>
-            <p><i class="bi bi-chat-square-text"></i> <?= $donhangs[0]['ghichu'] ?></p>
+            <p><i class="bi bi-chat-square-text"></i><b> Ghi chú : </b><?= $donhangs[0]['ghichu'] ?></p>
             <?php endif; ?>
         </div>
         <hr>
@@ -65,7 +68,7 @@
         <div class="text-center mt-20 mb-20">
             <a class="btn btn-info btn_donhang" href="<?= BASE_URL ?>?act=donhang&id_ttdh=0">Tất cả đơn hàng</a>
             <?php if ($id_trangthai <= 4) { ?>
-                <a class="btn btn-danger btn_donhang" href="<?= BASE_URL ?>?act=huy_donhang&id_dh=<?= $donhang['id'] ?>">Hủy đơn hàng</a>
+                <a class="btn btn-danger btn_donhang" href="<?= BASE_URL ?>?act=huy_donhang&id_dh=<?= $donhang['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này?')">Hủy đơn hàng</a>
             <?php } ?>
         </div>
     </div>

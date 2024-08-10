@@ -84,13 +84,15 @@ require_once PATH_VIEW . 'layouts/components/slider.php';
                             </li>
                         </ul>
                     </div>
-                    <a class="shop-btn" href="shop.html">Xem thêm</a>
+                    <a class="shop-btn" href="<?=BASE_URL?>?act=sanpham&sale=1">Xem thêm</a>
                 </div>
             </div>
             <div class="col-md-6">
+                <a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $sanphamsales[0]['id'] ?>">
                 <div class="discount-right">
-                    <img src="<?= BASE_URL ?>uploads/<?= $sanphamsales[0]['hinhanh'] ?>" width="555" height="426" alt="" />
-                </div>
+                        <img src="<?= BASE_URL ?>uploads/<?= $sanphamsales[0]['hinhanh'] ?>" width="555" height="426" alt="" />
+                    </div>
+                </a>
             </div>
         </div>
     </div>

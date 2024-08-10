@@ -2,14 +2,14 @@
   <section class="content">
     <div class="card card-solid">
       <?php
-      if ($donhang['id_trangthai'] == 1) {
+      if ($donhang['id_trangthai'] === 1) {
         $bgColor = 'warning';
-      } else if ($donhang['id_trangthai'] < 5) {
+      } else if ($donhang['id_trangthai'] <= 4) {
         $bgColor = 'info';
-      } else if ($donhang['id_trangthai'] == 5) {
-        $bgColor = 'danger';
-      } else if ($donhang['id_trangthai'] == 6) {
+      } else if ($donhang['id_trangthai'] === 5) {
         $bgColor = 'primary';
+      } else if ($donhang['id_trangthai'] === 9) {
+        $bgColor = 'danger';
       } else {
         $bgColor = 'success';
       }
@@ -59,11 +59,12 @@
                 <strong>Mã đơn hàng:</strong>
                 <?= $donhang['madonhang'] ?><br>
                 <strong>Ngày đặt hàng:</strong>
-                <?= $donhang['ngaydathang'] ?><br>
+                <?= date("d/m/Y", strtotime($donhang['ngaydathang'])) ?><br>
                 <strong>Trạng thái đơn hàng:</strong>
                 <?= $donhang['tentrangthai'] ?><br>
                 <strong>Thanh toán:</strong>
-                <?= $donhang['hinhthucthanhtoan'] ?><br>
+                <?=  $donhang['tenphuongthuc'] ?><br>
+                
               </div>
             </div>
           </div>
@@ -91,9 +92,9 @@
                       <td>
                         <img src="<?= BASE_URL . 'uploads/' . $sanpham['anhsanpham'] ?>" alt="" style="width:50px;height:50px;object-fit:contain;">
                       </td>
-                      <td><?= $sanpham['dongia'] ?></td>
+                      <td><?= number_format($sanpham['dongia'], 0, ',', '.')?>đ</td>
                       <td><?= $sanpham['soluong'] ?></td>
-                      <td><?= $sanpham['tongtien'] ?></td>
+                      <td><?= number_format($sanpham['tongtien'], 0, ',', '.')?>đ</td>
                     </tr>
                     <?php $tongtien += $sanpham['tongtien']; ?>
                   <?php endforeach; ?>

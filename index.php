@@ -18,9 +18,17 @@ if(isset($_GET['id_danhmuc']) && ($_GET['id_danhmuc']>0)){
     $id_danhmuc=0;
 }
 
+if(isset($_GET['sale']) && ($_GET['sale']>0)){
+    $sale=(int)$_GET['sale'];
+}else{
+    $sale=0;
+}
+
 match ($act) {
     '/' => HomeIndex(),
-    'sanpham' => ListSanPham($id_danhmuc),
+    'lienhe' => lienhe(),
+    'gioithieu' => gioithieu(),
+    'sanpham' => ListSanPham($id_danhmuc,$sale),
     'sp_detail'=> ChiTietSanPham($_GET['id_sp']),
     'dangnhap' => DirDangNhap(),
     'dangxuat' => DirDangXuat(),

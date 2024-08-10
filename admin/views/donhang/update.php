@@ -12,7 +12,7 @@
                         <div class="row g-3"> <!--begin::Col-->
                             <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Mã đơn hàng</label>
-                                <input type="text" value="<?= $donhang['madonhang'] ?>" name="madonhang" placeholder="Nhập mã đơn hàng" class="form-control" id="validationCustom01" required>
+                                <input type="text" value="<?= $donhang['madonhang'] ?>" name="madonhang" placeholder="Nhập mã đơn hàng" class="form-control" id="validationCustom01" disabled>
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!
@@ -51,31 +51,15 @@
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Ngày đặt hàng</label>
-                                <input type="date" value="<?= $donhang['ngaydathang'] ?>" name="ngaydathang" placeholder="Nhập theo fomat yyyy-mm-dd" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Có vẻ tốt!</div>
-                                <div class="invalid-feedback">
-                                    Không được để trống trường này!
-                                </div>
-                            </div> <!--end::Col--> <!--begin::Col-->
-                            <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Ghi chú</label>
-                                <input type="text" value="<?= $donhang['ghichu'] ?>" name="ghichu" placeholder="Nhập Ghi chú" class="form-control" id="validationCustom01" required>
-                                <div class="valid-feedback">Có vẻ tốt!</div>
-                                <div class="invalid-feedback">
-                                    Không được để trống trường này!
-                                </div>
-                            </div> <!--end::Col--> <!--begin::Col-->
-                            <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Tổng tiền</label>
-                                <input type="number" value="<?= $donhang['tongtien'] ?>" name="tongtien" placeholder="Nhập tổng số tiền" class="form-control" id="validationCustom01" required>
+                                <input type="text" value="<?= $donhang['ghichu'] ?>" name="ghichu" placeholder="Nhập Ghi chú" class="form-control" id="validationCustom01">
                                 <div class="valid-feedback">Có vẻ tốt!</div>
                                 <div class="invalid-feedback">
                                     Không được để trống trường này!
                                 </div>
                             </div> <!--end::Col--> <!--begin::Col-->
                         </div> <!--end::Row-->
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <label for="validationCustom04" class="form-label">Tài khoản</label>
                             <select class="form-select" name="id_taikhoan" id="validationCustom04" required>
                                 <?php foreach ($listTaikhoan as $taikhoan) : ?>
@@ -96,7 +80,7 @@
                             <div class="invalid-feedback">
                                 Không được để trống trường này!
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
                             <label for="validationCustom04" class="form-label">Trạng thái</label>
                             <select class="form-select" name="id_trangthai" id="validationCustom04" required>

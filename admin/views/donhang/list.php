@@ -28,7 +28,7 @@
                                     <tr class="table-primary">
                                         <th style="width: 10px">Stt</th>
                                         <th>Mã đơn hàng</th>
-                                        <th>Tên người đặt</th>
+                                        <th>Ngày đặt hàng</th>
                                         <th>Tên người nhận</th>
                                         <th>Số điện thoại nhận hàng</th>
                                         <th>Tổng tiền</th>
@@ -42,7 +42,7 @@
                                         <tr class="align-middle" style="text-align:center">
                                             <td><?= $stt ?></td>
                                             <td><?= $donhang['madonhang'] ?></td>
-                                            <td><?= $donhang['tentaikhoan'] ?></td>
+                                            <td><?= date("d/m/Y", strtotime($donhang['ngaydathang'])) ?></td>
                                             <td><?= $donhang['tennguoinhan'] ?></td>
                                             <td><?= $donhang['sodienthoainguoinhan'] ?></td>
                                             <td><?= number_format($donhang['tongtien'], 0, ',', '.')?>đ</td>

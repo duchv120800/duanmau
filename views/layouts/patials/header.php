@@ -26,9 +26,9 @@
                                 </li>
                                 </li>
                                 <li><a href="<?= BASE_URL ?>?act=sanpham&id_danhmuc=0">Sản phẩm</a></li>
-                                <li><a href="blog-1.html">Giới thiệu</a></li>
+                                <li><a href="<?= BASE_URL ?>?act=gioithieu">Giới thiệu</a></li>
                                 <li>
-                                    <a href="contact.html">Liên hệ</a>
+                                    <a href="<?= BASE_URL ?>?act=lienhe">Liên hệ</a>
                                 </li>
                                 <li><a href="">Tài khoản</a>
                                     <ul>
