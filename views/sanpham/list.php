@@ -31,11 +31,11 @@
                                 <div class="product-item">
                                     <div class="pro-img">
                                         <a href="<?= BASE_URL ?>?act=sp_detail&id_sp=<?= $listsanpham['id'] ?>"><img src="<?= BASE_URL ?>uploads/<?= $listsanpham['hinhanh'] ?>" width="318" height="239" alt="Product" /></a>
-                                        <?php if($listsanpham['sale'] > 0){ ?>
-                                    <div class="tag-n-s">
-                                        <span>Sale</span>
-                                    </div>
-                                    <?php } ?>
+                                        <?php if ($listsanpham['sale'] > 0) { ?>
+                                            <div class="tag-n-s">
+                                                <span>Sale</span>
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                     <div class="actions-btn">
                                         <ul class="clearfix">
@@ -58,6 +58,15 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="card-footer clearfix">
+            <ul class="pagination pagination-sm m-0 justify-content-center">
+                <li class="page-item"> <a class="page-link" href="<?= BASE_URL ?>?act=sanpham&page=<?= (int)$current_page - 1 ?>">&laquo;</a> </li>
+                <li class="page-item <?= $current_page == 1 ? 'active' : '' ?>"> <a class="page-link" href="<?= BASE_URL . '?act=sanpham&page=1' ?>">1</a> </li>
+                <li class="page-item <?= $current_page == 2 ? 'active' : '' ?>"> <a class="page-link" href="<?= BASE_URL . '?act=sanpham&page=2' ?>">2</a> </li>
+                <li class="page-item <?= $current_page == 3 ? 'active' : '' ?>"> <a class="page-link" href="<?= BASE_URL . '?act=sanpham&page=3' ?>">3</a> </li>
+                <li class="page-item"> <a class="page-link" href="<?= BASE_URL ?>?act=sanpham&page=<?= (int)$current_page + 1 ?>">&raquo;</a> </li>
+            </ul>
         </div>
     </div>
 </section>

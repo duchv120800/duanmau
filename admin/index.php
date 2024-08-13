@@ -14,13 +14,18 @@
     }else{
         $act=$_GET["act"] ?? '/';
     }
+
+    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+    if($current_page < 1){
+        $current_page = 1;
+    }
    
     match($act){
         'login'=> DirLogin(),
         'logout'=> Logout(),
         '/'=> DashboardIndex(),
         // start crud taikhoan
-        'ds_tk'=>ListTaiKhoan(),
+        'ds_tk'=>ListTaiKhoan($current_page),
         'detail_tk'=>DetailTaikhoan($_GET['id']),
         'add_tk'=>AddTaiKhoan(),
         'update_tk'=>UpdateTaiKhoan($_GET['id']),
@@ -33,14 +38,14 @@
         'delete_dm'=>DeleteDanhMuc($_GET['id']),
         // end danh muc
         // start crud san pham
-        'ds_sp'=>ListSanPham(),
+        'ds_sp'=>ListSanPham($current_page),
         'detail_sp'=>DetailSanPham($_GET['id']),
         'add_sp'=>AddSanPham(),
         'update_sp'=>UpdateSanPham($_GET['id']),
         'delete_sp'=>DeleteSanPham($_GET['id']),
         // end san pham
         // start crud don hang
-        'ds_dh'=>ListDonhang(),
+        'ds_dh'=>ListDonhang($current_page),
         'detail_dh'=>DetailDonhang($_GET['id']),
         'add_dh'=>AddDonhang(),
         'update_dh'=>UpdateDonhang($_GET['id']),
@@ -48,9 +53,8 @@
         // end don hang
         
         //start bình luận
-        'ds_bl' => ListBinhluan(),
-        'update_bl' => UpdateBinhluan(), 
-        'save_edit' => SaveEditBinhluan(), 
+        'ds_bl' => ListBinhluan($current_page),
+        'update_bl' => UpdateBinhluan($_GET['id']), 
         'delete_bl' => DeleteBinhluan(),
         // end bình luận
     };

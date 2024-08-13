@@ -52,6 +52,8 @@ function ThanhToan()
             }
             unset($_SESSION['giohang']);
         }
+        $_SESSION['thongbao'] = 'Bạn đã đặt hàng thành công';
+        $_SESSION['alert'] = true;
         header('location:' . BASE_URL . '?act=donhang&id_ttdh=0');
     }
     require PATH_VIEW . "master.php";

@@ -1,10 +1,10 @@
 <?php
-function ListTaiKhoan()
+function ListTaiKhoan($current_page)
 {
     $view = 'taikhoan/list';
     $title = 'Tài Khoản';
     $main_title = 'Tài khoản';
-    $listUsers = getAllTaikhoan();
+    $listUsers = getAllTaikhoan($current_page);
     require PATH_VIEW_ADMIN . "master.php";
 }
 

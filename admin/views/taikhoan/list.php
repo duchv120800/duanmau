@@ -61,12 +61,12 @@
                             </table>
                         </div> <!-- /.card-body -->
                         <div class="card-footer clearfix">
-                            <ul class="pagination pagination-sm m-0 float-end">
-                                <li class="page-item"> <a class="page-link" href="#">&laquo;</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#">1</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#">2</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#">3</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#">&raquo;</a> </li>
+                            <ul class="pagination pagination-sm m-0 justify-content-center">
+                                <li class="page-item"> <a class="page-link" href="<?= BASE_URL_ADMIN ?>?act=ds_tk&page=<?= (int)$current_page - 1 ?>">&laquo;</a> </li>
+                                <li class="page-item"> <a class="page-link <?= $current_page == 1 ? 'active' : '' ?>" href="<?= BASE_URL_ADMIN . '?act=ds_tk&page=1' ?>">1</a> </li>
+                                <li class="page-item"> <a class="page-link <?= $current_page == 2 ? 'active' : '' ?>" href="<?= BASE_URL_ADMIN . '?act=ds_tk&page=2' ?>">2</a> </li>
+                                <li class="page-item"> <a class="page-link <?= $current_page == 3 ? 'active' : '' ?>" href="<?= BASE_URL_ADMIN . '?act=ds_tk&page=3' ?>">3</a> </li>
+                                <li class="page-item"> <a class="page-link" href="<?= BASE_URL_ADMIN ?>?act=ds_tk&page=<?= (int)$current_page + 1 ?>">&raquo;</a> </li>
                             </ul>
                         </div>
                     </div> <!-- /.card -->

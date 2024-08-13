@@ -43,6 +43,14 @@
                                 <?php endforeach; ?>
                             </div> <!--end::Col--> <!--begin::Col-->
                             <div class="col-md-6">
+                                <label for="validationCustom01" class="form-label">% sale</label>
+                                <input type="number" value="<?= $sanpham['sale'] ?>"  name="sale" placeholder="Nhập số % sale" class="form-control" id="validationCustom01">
+                                <div class="valid-feedback">Có vẻ tốt!</div>
+                                <div class="invalid-feedback">
+                                    Không được để trống trường này.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <label for="validationCustom01" class="form-label">Giá</label>
                                 <input type="number" value="<?= $sanpham['gia'] ?>" name="gia" placeholder="Nhập giá" class="form-control" id="validationCustom01" required>
                                 <div class="valid-feedback">Có vẻ tốt!</div>

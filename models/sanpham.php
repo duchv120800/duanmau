@@ -1,5 +1,5 @@
 <?php
-function getAllSanphamClient($id_danhmuc = 0, $sale=0, $limit = 12, $offset = 0)
+function getAllSanphamClient($id_danhmuc, $sale, $current_page)
 {
     try {
         $sql = "SELECT * from sanpham";
@@ -11,8 +11,10 @@ function getAllSanphamClient($id_danhmuc = 0, $sale=0, $limit = 12, $offset = 0)
         }else if($sale==1){
             $sql .= " where sale > 0";
         }
-        
-        $sql .= " order by sanpham.id desc limit " . $limit . " offset " . $offset;
+        $limit = 9;
+        $offset = ($current_page - 1) * $limit;
+
+        $sql .= " ORDER BY sanpham.id DESC LIMIT " . $limit . " offset " . $offset;
 
         $stmt = $GLOBALS['conn']->prepare($sql);
 

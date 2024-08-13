@@ -1,10 +1,11 @@
 <?php
-function ListSanPham()
+function ListSanPham($current_page)
 {
     $view = 'sanpham/list';
     $title = 'Sản phẩm';
     $main_title = 'Sản phẩm';
-    $listSanpham = getAllSanPham();
+    $current_page;
+    $listSanpham = getAllSanPham($current_page);
     require PATH_VIEW_ADMIN . "master.php";
 }
 
@@ -52,6 +53,7 @@ function AddSanPham()
             "phongcach" => $_POST['phongcach'],
             "doluuhuong" => $_POST['doluuhuong'],
             "nongdo" => $_POST['nongdo'],
+            "sale" => $_POST['sale'],
             "id_danhmuc" => $_POST['id_danhmuc'],
         ];
 
@@ -119,6 +121,7 @@ function UpdateSanPham($id)
             "phongcach" => $_POST['phongcach'],
             "doluuhuong" => $_POST['doluuhuong'],
             "nongdo" => $_POST['nongdo'],
+            "sale" => $_POST['sale'],
             "id_danhmuc" => $_POST['id_danhmuc'],
         ];
 
@@ -152,7 +155,7 @@ function UpdateSanPham($id)
 
 function DeleteSanPham($id)
 {
-    $donhang=getSanPhamLienQuan('donhang',$id);
+    $donhang=getSanPhamLienQuan('chitietdonhang',$id);
     $anhsanpham=getSanPhamLienQuan('anhsanpham',$id);
     if(empty($donhang)&&empty($anhsanpham)){
         delete('sanpham', $id);
@@ -166,6 +169,6 @@ function DeleteSanPham($id)
     $view = 'sanpham/list';
     $title = 'Sản phẩm';
     $main_title = 'Sản phẩm';
-    $listSanpham = getAllSanPham();
+    $listSanpham = getAllSanPham($current_page=1);
     require PATH_VIEW_ADMIN . "master.php";
 }

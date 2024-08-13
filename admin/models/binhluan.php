@@ -1,5 +1,5 @@
 <?php
-function getAllBinhluan() {
+function getAllBinhluan($current_page) {
     try {
         // Câu truy vấn SQL để lấy dữ liệu từ ba bảng
         $sql = "
@@ -18,6 +18,12 @@ function getAllBinhluan() {
             JOIN
                 sanpham s ON b.id_sanpham = s.id
         ";
+
+        $limit = 10;
+
+        $offset = ($current_page - 1) * $limit;
+
+        $sql .= " ORDER BY id DESC LIMIT " . $limit . " offset " . $offset;
 
         // Chuẩn bị và thực thi câu truy vấn
         $stmt = $GLOBALS['conn']->prepare($sql);
@@ -41,12 +47,12 @@ function getBinhluanById($id) {
         debug($e);
     }
 }
-function updateBinhluanStatus($id, $status) {
+function updateBinhluanStatus($id, $trangthai) {
     try {
-        $sql = "UPDATE binhluan SET trangthai = :status WHERE id = :id";
+        $sql = "UPDATE binhluan SET trangthai = :trangthai WHERE id = :id";
         $stmt = $GLOBALS['conn']->prepare($sql);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':trangthai', $trangthai);
         $stmt->execute();
     } catch (\Exception $e) {
         debug($e);

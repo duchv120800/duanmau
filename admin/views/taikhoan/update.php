@@ -67,13 +67,6 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="validationCustom01" class="form-label">Vai trò</label>
-                                <input type="text" value="Khách hàng" class="form-control" id="validationCustom01" disabled>
-                                <div class="invalid-feedback">
-                                    Không được để trống trường này.
-                                </div>
-                            </div>
-                            <div class="col-md-6">
                                 <label for="validationCustom04" class="form-label">Ảnh đại diện</label>
                                 <input type="file" name="anhdaidien" class="form-control">
                                 <img src="<?=BASE_URL.'uploads/'.$user['anhdaidien']?>" style="width:100px;height:100px;object-fit:contain;" alt="">

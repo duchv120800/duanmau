@@ -1,40 +1,28 @@
 <?php
-function ListBinhluan() {
+function ListBinhluan($current_page) {
     $view = 'binhluan/list';
     $title = 'Bình luận';
     $main_title = 'Danh sách bình luận';
-
-    $listBinhluan = getAllBinhluan();
+    $listBinhluan = getAllBinhluan($current_page);
 
     require PATH_VIEW_ADMIN . "master.php";
 }
 
-function UpdateBinhluan() {
-    $id = $_GET['id'] ?? 0;
+function UpdateBinhluan($id) {
     $binhluan = getBinhluanById($id);
-
-    if (!$binhluan) {
-        die('Bình luận không tồn tại.');
-    }
-
+    
     $view = 'binhluan/update';
     $title = 'Chỉnh sửa Bình luận';
     $main_title = 'Chỉnh sửa Bình luận';
-
-    require PATH_VIEW_ADMIN . "master.php";
-}
-
-function SaveEditBinhluan() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $id = intval($_POST['id']);
-        $status = intval($_POST['trangthai']);
-
-        updateBinhluanStatus($id, $status);
-
+    if(isset($_POST['updateBL'])){
+        $trangthai=$_POST['trangthai'];
+        updateBinhluanStatus($id, $trangthai);
         header('Location: ' . BASE_URL_ADMIN . '?act=ds_bl');
         exit();
     }
+    require PATH_VIEW_ADMIN . "master.php";
 }
+
 
 function DeleteBinhluan() {
     $id = $_GET['id'] ?? 0;

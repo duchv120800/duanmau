@@ -11,25 +11,30 @@ include './commons/hidden_notification.php';
 require_file(PATH_CONTROLLER);
 require_file(PATH_MODEL);
 
-$act=$_GET["act"]?? "/";
-if(isset($_GET['id_danhmuc']) && ($_GET['id_danhmuc']>0)){
-    $id_danhmuc=(int)$_GET['id_danhmuc'];
-}else{
-    $id_danhmuc=0;
+$act = $_GET["act"] ?? "/";
+if (isset($_GET['id_danhmuc']) && ($_GET['id_danhmuc'] > 0)) {
+    $id_danhmuc = (int)$_GET['id_danhmuc'];
+} else {
+    $id_danhmuc = 0;
 }
 
-if(isset($_GET['sale']) && ($_GET['sale']>0)){
-    $sale=(int)$_GET['sale'];
-}else{
-    $sale=0;
+if (isset($_GET['sale']) && ($_GET['sale'] > 0)) {
+    $sale = (int)$_GET['sale'];
+} else {
+    $sale = 0;
+}
+
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+if ($current_page < 1) {
+    $current_page = 1;
 }
 
 match ($act) {
     '/' => HomeIndex(),
     'lienhe' => lienhe(),
     'gioithieu' => gioithieu(),
-    'sanpham' => ListSanPham($id_danhmuc,$sale),
-    'sp_detail'=> ChiTietSanPham($_GET['id_sp']),
+    'sanpham' => ListSanPham($id_danhmuc, $sale, $current_page),
+    'sp_detail' => ChiTietSanPham($_GET['id_sp']),
     'dangnhap' => DirDangNhap(),
     'dangxuat' => DirDangXuat(),
     'dangky' => DangKy(),
@@ -39,5 +44,4 @@ match ($act) {
     'donhang' => ViewDonHang($_GET['id_ttdh']),
     'dh_detail' => ChiTietDonHang($_GET['id_dh']),
     'huy_donhang' => DirHuyDonHang($_GET['id_dh']),
-    
 };

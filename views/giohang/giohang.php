@@ -10,6 +10,7 @@ if (empty($listSanphamGiohang)) {
 	echo "<h2 style='margin:100px; text-align:center; color:#ff6600;'>Chưa có sản phẩm nào trong giỏ hàng!</h2>";
 } else {
 ?>
+		<h3 class="text-center mt-20">Giỏ hàng</h3>
 	<section class="cart-page section-padding">
 		<div id="cartOrder" class="container">
 			<div id="alert" class="alert alert-<?= $alert ? ' success' : ' danger'; ?>" <?= isset($notification) && $notification !== "" ? "" : "hidden"; ?>>
@@ -138,7 +139,7 @@ if (empty($listSanphamGiohang)) {
 									<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
 									<p>Mã giảm giá:
 										<span class="floatright">
-											<select name="voucher" id="voucher" onchange="getVoucher()" style="padding-left: 5px;">
+											<select name="voucher" id="voucher" onchange="getVoucher()" style="padding-left: 5px; border-color:#ddd;">
 												<option value="0">Chọn voucher</option>
 												<option value="100">Miễn phí vận chuyển</option>
 												<option value="50">Giảm 50% phí vận chuyển</option>

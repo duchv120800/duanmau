@@ -1,10 +1,10 @@
 <?php
-function ListDonhang()
+function ListDonhang($current_page)
 {
     $view = 'donhang/list';
     $title = 'Đơn hàng';
     $main_title = 'Đơn hàng';
-    $listDonhang = getAllDonhang();
+    $listDonhang = getAllDonhang($current_page);
     require PATH_VIEW_ADMIN . "master.php";
 }
 
@@ -82,13 +82,37 @@ function UpdateDonhang($id)
 
 function DeleteDonhang($id)
 {
-    $sanpham = delete('donhang', $id);
-    $alert = true;
-    $notification = 'Xóa đơn hàng thành công!';
+    $donhang=getOneDonhang($id);
+    if($donhang['id_trangthai'] == 7){
+        deleteDonhangDetail($id);
+        $deleteDonhang = delete('donhang', $id);
+        if($deleteDonhang!==false){
+            $alert = true;
+            $notification = 'Xóa đơn hàng thành công!';
+        }
+    }else{
+        $alert = false;
+        $notification = 'Đơn hàng chưa hoàn thành nên không thể xóa!';
+    }
 
     $view = 'donhang/list';
     $title = 'Đơn hàng';
     $main_title = 'Đơn hàng';
-    $listDonhang = getAllDonhang();
+    $listDonhang = getAllDonhang($current_page=1);
     require PATH_VIEW_ADMIN . "master.php";
 }
+
+function deleteDonhangDetail($id_donhang){
+    try {
+
+     $sql="DELETE FROM chitietdonhang WHERE id_donhang =:id_donhang";
+
+     $stmt = $GLOBALS['conn']->prepare($sql);
+     
+     $stmt->bindParam(':id_donhang',$id_donhang);
+
+     $stmt->execute();
+    } catch (\Exception $e) {
+         debug($e);
+    }
+ }

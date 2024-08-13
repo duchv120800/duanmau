@@ -15,10 +15,10 @@
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h3 class="card-title">Chỉnh sửa bình luận</h3>
+                            <h3 class="card-title">Sửa trạng thái bình luận</h3>
                         </div> <!-- /.card-header -->
                         <div class="card-body">
-                            <form method="POST" action="<?= BASE_URL_ADMIN . '?act=save_edit' ?>">
+                            <form method="POST" action="">
                                 <input type="hidden" name="id" value="<?= $binhluan['id'] ?>">
                                 <div class="mb-3">
                                     <label for="trangthai" class="form-label">Trạng thái</label>
@@ -27,7 +27,7 @@
                                         <option value="0" <?= $binhluan['trangthai'] == 0 ? 'selected' : '' ?>>Ẩn</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="submit" name="updateBL" class="btn btn-primary">Lưu</button>
                                 <a href="<?= BASE_URL_ADMIN . '?act=ds_bl' ?>" class="btn btn-secondary">Quay lại</a>
                             </form>
                         </div> <!-- /.card-body -->

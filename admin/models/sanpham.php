@@ -1,13 +1,19 @@
 <?php
-function getAllSanPham()
+
+function getAllSanPham($current_page)
 {
     try {
         $sql = "SELECT sanpham.*, danhmuc.ten AS ten_danhmuc 
-            FROM sanpham 
-            LEFT JOIN danhmuc
-            ON sanpham.id_danhmuc = danhmuc.id 
-            ORDER BY sanpham.id DESC
-            ";
+        FROM sanpham 
+        LEFT JOIN danhmuc
+        ON sanpham.id_danhmuc = danhmuc.id 
+        ";
+
+        $limit = 10;
+        // Tính toán offset
+        $offset = ($current_page - 1) * $limit;
+
+        $sql .= " ORDER BY sanpham.id DESC LIMIT " . $limit . " offset " . $offset;
 
         $stmt = $GLOBALS['conn']->prepare($sql);
 

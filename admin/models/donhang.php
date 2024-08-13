@@ -1,5 +1,5 @@
 <?php
-function getAllDonhang()
+function getAllDonhang($current_page)
 {
     try {
         $sql = "
@@ -24,9 +24,13 @@ function getAllDonhang()
             )
             SELECT *
             FROM CTE
-            WHERE row_num = 1
-            ORDER BY id DESC;
-            ";
+            WHERE row_num = 1";
+
+        $limit = 10;
+
+        $offset = ($current_page - 1) * $limit;
+
+        $sql .= " LIMIT " . $limit . " offset " . $offset;
 
         $stmt = $GLOBALS['conn']->prepare($sql);
 

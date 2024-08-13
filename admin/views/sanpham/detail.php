@@ -27,7 +27,7 @@
                         <hr>
                         <h5 class="mt-3">Giá sản phẩm :
                             <em><span style="text-decoration-line: line-through; color:red"><?= number_format($sanpham['gia'], 0, ',', '.')?>đ</span>
-                                <?= number_format($sanpham['gia'], 0, ',', '.')?>đ</em>
+                                <?= number_format($sanpham['giakhuyenmai'], 0, ',', '.')?>đ</em>
                         </h5>
 
                         <hr>

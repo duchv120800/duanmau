@@ -134,7 +134,7 @@ if (!empty($_SESSION['giohang'])) {
 							<p>Phí vận chuyển: <span class="floatright">15.000đ</span></p>
 							<p>Mã giảm giá:
 								<span class="floatright">
-									<select name="voucher" id="voucher" onchange="getVoucher()">
+									<select name="voucher" id="voucher" onchange="getVoucher()" style="padding-left: 5px; border-color:#ddd;">
 										<option value="0">Chọn voucher</option>
 										<option value="100">Miễn phí vận chuyển</option>
 										<option value="50">Giảm 50% phí vận chuyển</option>
